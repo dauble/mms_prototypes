@@ -1,0 +1,91 @@
+---
+layout: default
+---
+<div class="breadcrumb"><a href="{{ '/books/' | relative_url }}">Books</a> / {{ page.title }}</div>
+
+{% if page.quote %}
+<section class="wrap">
+  <div class="book-hero">
+    <div class="book-hero__scrim"></div>
+    <p class="book-hero__quote">&ldquo;{{ page.quote }}&rdquo;</p>
+  </div>
+</section>
+{% endif %}
+
+<section class="book-detail wrap">
+  <div>
+    <div class="book-detail__cover placeholder-block">
+      <span class="placeholder-label">BOOK COVER<br>{{ page.title }}</span>
+    </div>
+    <div class="book-detail__social">
+      <a class="social-icon" href="{{ site.social_links.facebook }}" aria-label="Share on Facebook">FB</a>
+      <a class="social-icon" href="{{ site.social_links.x }}" aria-label="Share on X">X</a>
+      <a class="social-icon" href="mailto:?subject={{ page.title | url_encode }}" aria-label="Share by email">&#9993;</a>
+    </div>
+  </div>
+  <div>
+    {% if page.category %}<div class="eyebrow" style="margin-bottom:14px">{{ page.category }}</div>{% endif %}
+    <h1 class="book-detail__title">{{ page.title }}</h1>
+    <p class="book-detail__desc">{{ page.description }}</p>
+    <div class="hero__actions">
+      {% if page.amazon_url %}<a class="btn btn-primary" href="{{ page.amazon_url }}">Buy on Amazon</a>{% endif %}
+      {% if page.bookshop_url %}<a class="btn btn-outline" href="{{ page.bookshop_url }}">Bookshop.org</a>{% endif %}
+      {% if page.bn_url %}<a class="btn btn-outline" href="{{ page.bn_url }}">Barnes &amp; Noble</a>{% endif %}
+    </div>
+    {% if page.formats %}
+    <div class="book-detail__formats">
+      {% for format in page.formats %}<span class="format-pill">{{ format }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    <div class="affiliate-note">Affiliate links — see disclosure below</div>
+  </div>
+</section>
+
+<section class="section--tight wrap" style="max-width:760px">
+  <h2 class="section-title" style="font-size:20px;margin-bottom:14px">About This Book</h2>
+  <div class="prose">{{ content }}</div>
+</section>
+
+{% if page.press %}
+<section class="section--tight wrap">
+  <h2 class="section-title" style="font-size:20px">Press &amp; Praise</h2>
+  <div class="press-cards">
+    {% for item in page.press %}
+    <div class="press-card">
+      <div class="press-card__mark" style="color:{% cycle 'var(--teal)', 'var(--coral)', 'var(--green)' %}">&ldquo;</div>
+      <div class="press-card__quote">{{ item.quote }}</div>
+      <div class="press-card__source">&mdash; {{ item.source }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section--tight wrap">
+  <h2 class="section-title" style="font-size:20px">More by Marcia</h2>
+  <div class="shelf">
+    {% assign other_books = site.books | where_exp: "b", "b.url != page.url" | sort: "date" | reverse %}
+    {% for book in other_books %}
+    <a class="book-card" href="{{ book.url | relative_url }}">
+      <div class="book-card__cover placeholder-block"></div>
+      <div class="book-card__title">{{ book.title }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "description": {{ page.description | jsonify }}
+  {% if page.date %}, "datePublished": "{{ page.date | date: '%Y-%m-%d' }}"{% endif %}
+  {% if page.formats %}, "bookFormat": {{ page.formats | jsonify }}{% endif %}
+}
+</script>

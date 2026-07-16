@@ -1,0 +1,72 @@
+title: Marcia Mount Shoop
+tagline: Author, theologian, and speaker on embodiment, trauma, and healing
+description: >-
+  Marcia Mount Shoop writes and speaks at the intersection of theology,
+  embodiment, and justice. Explore her books, writing, sermons, and
+  speaking engagements.
+url: "https://www.marciamountshoop.com"
+baseurl: ""
+lang: en_US
+locale: en_US
+author:
+  name: Marcia Mount Shoop
+
+social_links:
+  facebook: "https://facebook.com/"
+  instagram: "https://instagram.com/"
+  x: "https://x.com/"
+  youtube: "https://youtube.com/"
+  substack: "https://marciamountshoop.substack.com/"
+
+affiliate_disclosure: >-
+  As an Amazon Associate and Bookshop.org affiliate, Marcia earns from
+  qualifying purchases.
+
+# jekyll-seo-tag / jekyll-sitemap read these
+twitter:
+  card: summary_large_image
+  username: ""
+social:
+  name: Marcia Mount Shoop
+  links:
+    - "https://facebook.com/"
+    - "https://instagram.com/"
+    - "https://x.com/"
+    - "https://youtube.com/"
+
+collections:
+  books:
+    output: true
+    permalink: /books/:path/
+  writing:
+    output: true
+    permalink: /writing-and-talks/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "book"
+  - scope:
+      path: ""
+      type: "writing"
+    values:
+      layout: "writing-entry"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
