@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var filterBar = document.querySelector('[data-filter-bar]');
   if (filterBar) {
-    var pills = filterBar.querySelectorAll('.filter-pill');
+    var pills = filterBar.querySelectorAll('[data-filter]');
     var entries = document.querySelectorAll('[data-entry-type]');
 
     filterBar.addEventListener('click', function (event) {
-      var pill = event.target.closest('.filter-pill');
+      var pill = event.target.closest('[data-filter]');
       if (!pill) return;
 
       pills.forEach(function (p) { p.setAttribute('aria-pressed', 'false'); });

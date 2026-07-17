@@ -1,0 +1,13 @@
+<nav class="site-nav-1a">
+  <a href="{{ '/options/1a/' | relative_url }}" class="site-nav-1a__brand">{{ site.author.name }}</a>
+  <button class="site-nav-1a__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" id="site-nav-toggle">Menu</button>
+  <div class="site-nav-1a__links" id="site-nav-links">
+    <a href="{{ '/options/1a/' | relative_url }}" {% if page.url == '/options/1a/' %}aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/options/1a/books/' | relative_url }}" {% if page.url == '/options/1a/books/' %}aria-current="page"{% endif %}>Books</a>
+    <a href="{{ '/options/1a/about/' | relative_url }}" {% if page.url == '/options/1a/about/' %}aria-current="page"{% endif %}>About</a>
+    <a href="{{ '/options/1a/writing-and-talks/' | relative_url }}" {% if page.url == '/options/1a/writing-and-talks/' %}aria-current="page"{% endif %}>Writing &amp; Talks</a>
+    <a href="{{ '/options/1a/speaking/' | relative_url }}" {% if page.url == '/options/1a/speaking/' %}aria-current="page"{% endif %}>Speaking</a>
+    <a href="{{ '/options/1a/contact/' | relative_url }}" {% if page.url == '/options/1a/contact/' %}aria-current="page"{% endif %}>Contact</a>
+  </div>
+  <a href="{{ '/options/1a/books/' | relative_url }}" class="btn-1a btn-1a-primary">Shop Books</a>
+</nav>

@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Speaking
+layout: default-3a
+title: "Speaking — Option 3a"
 description: >-
   Book Marcia Mount Shoop to speak on sports reform, race and power,
   embodiment and trauma, and congregational consulting.
-permalink: /speaking/
+permalink: /options/3a/speaking/
 ---
 <section class="wrap">
   <div class="hero-photo">
@@ -69,8 +69,8 @@ permalink: /speaking/
     <h2 class="inquiry__title">Bring Marcia to Your Community</h2>
     <p class="inquiry__desc">Share a few details about your event and Marcia will follow up to discuss fit, format, and availability.</p>
   </div>
-  <form class="inquiry__form" name="speaking-inquiry" method="POST" data-netlify="true" netlify-honeypot="company">
-    <input type="hidden" name="form-name" value="speaking-inquiry">
+  <form class="inquiry__form" name="speaking-inquiry-3a" method="POST" data-netlify="true" netlify-honeypot="company">
+    <input type="hidden" name="form-name" value="speaking-inquiry-3a">
     <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
     <input type="text" name="name" placeholder="Name" required>
     <input type="email" name="email" placeholder="Email" required>

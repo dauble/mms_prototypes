@@ -1,10 +1,10 @@
 ---
-layout: default
-title: About
+layout: default-3a
+title: "About — Option 3a"
 description: >-
   About Marcia Mount Shoop — pastor, author, and speaker working at the
   intersection of theology, embodiment, and justice.
-permalink: /about/
+permalink: /options/3a/about/
 ---
 <section class="page-hero">
   <h1 class="page-hero__title">About Marcia</h1>
@@ -31,4 +31,4 @@ permalink: /about/
   </div>
 </section>
 
-{% include cta-band.html %}
+{% include 3a/cta-band.html %}

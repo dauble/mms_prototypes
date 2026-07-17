@@ -1,9 +1,8 @@
-title: Marcia Mount Shoop
+title: "Marcia Mount Shoop — Site Prototypes"
 tagline: Author, theologian, and speaker on embodiment, trauma, and healing
 description: >-
-  Marcia Mount Shoop writes and speaks at the intersection of theology,
-  embodiment, and justice. Explore her books, writing, sermons, and
-  speaking engagements.
+  Internal prototype hub for the marciamountshoop.com redesign. Not the
+  live site — for client review of design directions only.
 url: "https://www.marciamountshoop.com"
 baseurl: ""
 lang: en_US
@@ -35,32 +34,58 @@ social:
     - "https://youtube.com/"
 
 collections:
-  books:
+  books_3a:
     output: true
-    permalink: /books/:path/
-  writing:
+    permalink: /options/3a/books/:path/
+  writing_3a:
     output: true
-    permalink: /writing-and-talks/:path/
+    permalink: /options/3a/writing-and-talks/:path/
+  books_1a:
+    output: true
+    permalink: /options/1a/books/:path/
+  writing_1a:
+    output: true
+    permalink: /options/1a/writing-and-talks/:path/
 
 defaults:
   - scope:
-      path: ""
+      path: "options/3a"
       type: "pages"
     values:
-      layout: "default"
+      layout: "default-3a"
+      variant: "3a"
   - scope:
       path: ""
-      type: "books"
+      type: "books_3a"
     values:
-      layout: "book"
+      layout: "book-3a"
+      variant: "3a"
   - scope:
       path: ""
-      type: "writing"
+      type: "writing_3a"
     values:
-      layout: "writing-entry"
+      layout: "writing-entry-3a"
+      variant: "3a"
+  - scope:
+      path: "options/1a"
+      type: "pages"
+    values:
+      layout: "default-1a"
+      variant: "1a"
+  - scope:
+      path: ""
+      type: "books_1a"
+    values:
+      layout: "book-1a"
+      variant: "1a"
+  - scope:
+      path: ""
+      type: "writing_1a"
+    values:
+      layout: "writing-entry-1a"
+      variant: "1a"
 
 plugins:
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
 

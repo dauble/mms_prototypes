@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Contact
+layout: default-3a
+title: "Contact — Option 3a"
 description: >-
   Get in touch with Marcia Mount Shoop for speaking inquiries, media
   requests, or general questions.
-permalink: /contact/
+permalink: /options/3a/contact/
 ---
 <section class="page-hero">
   <h1 class="page-hero__title">Get in Touch</h1>
@@ -15,7 +15,7 @@ permalink: /contact/
   <div class="contact-methods">
     <div class="contact-method">
       <div class="contact-method__title">Speaking &amp; Events</div>
-      <div class="contact-method__desc">Booking a talk, retreat, or consulting engagement? See the <a class="section-link" href="{{ '/speaking/' | relative_url }}">Speaking page</a> for programs and the inquiry form.</div>
+      <div class="contact-method__desc">Booking a talk, retreat, or consulting engagement? See the <a class="section-link" href="{{ '/options/3a/speaking/' | relative_url }}">Speaking page</a> for programs and the inquiry form.</div>
     </div>
     <div class="contact-method">
       <div class="contact-method__title">Media &amp; Press</div>
@@ -25,8 +25,8 @@ permalink: /contact/
 </section>
 
 <section class="section--tight wrap" style="max-width:560px">
-  <form class="inquiry__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px">
-    <input type="hidden" name="form-name" value="contact">
+  <form class="inquiry__form" name="contact-3a" method="POST" data-netlify="true" netlify-honeypot="company" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px">
+    <input type="hidden" name="form-name" value="contact-3a">
     <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
     <input type="text" name="name" placeholder="Name" required style="background:var(--bg-soft)">
     <input type="email" name="email" placeholder="Email" required style="background:var(--bg-soft)">
@@ -35,4 +35,4 @@ permalink: /contact/
   </form>
 </section>
 
-{% include follow-along.html %}
+{% include 3a/follow-along.html %}

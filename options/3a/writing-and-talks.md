@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Writing & Talks
+layout: default-3a
+title: "Writing & Talks — Option 3a"
 description: >-
   Blog reflections, sermons, and press mentions from Marcia Mount Shoop
   in one place — sortable by type.
-permalink: /writing-and-talks/
+permalink: /options/3a/writing-and-talks/
 ---
 <section class="section wrap" style="padding-bottom:30px">
   <h1 style="font:700 40px var(--font-serif);color:var(--navy-deep);margin:0 0 12px">Writing &amp; Talks</h1>
@@ -17,7 +17,7 @@ permalink: /writing-and-talks/
   </div>
 </section>
 
-{% assign all_writing = site.writing | sort: "date" | reverse %}
+{% assign all_writing = site.writing_3a | sort: "date" | reverse %}
 {% assign featured_entry = all_writing | where: "featured", true | first %}
 {% unless featured_entry %}{% assign featured_entry = all_writing | first %}{% endunless %}
 

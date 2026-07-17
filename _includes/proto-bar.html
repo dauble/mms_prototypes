@@ -1,0 +1,9 @@
+<div class="proto-bar">
+  <a class="proto-bar__home" href="{{ '/' | relative_url }}">&larr; All options</a>
+  <div class="proto-bar__switch">
+    <span class="proto-bar__label">Viewing prototype:</span>
+    {% for opt in site.data.options %}
+    <a href="{{ opt.path | relative_url }}" {% if opt.id == page.variant %}aria-current="page"{% endif %}>{{ opt.id }} &middot; {{ opt.name }}</a>
+    {% endfor %}
+  </div>
+</div>

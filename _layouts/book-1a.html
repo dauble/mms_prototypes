@@ -1,0 +1,92 @@
+---
+layout: default-1a
+---
+<div class="breadcrumb-1a"><a href="{{ '/options/1a/books/' | relative_url }}">Books</a> / {{ page.title }}</div>
+
+{% if page.quote %}
+<section class="wrap">
+  <div class="book-hero-1a">
+    <p class="book-hero-1a__quote">&ldquo;{{ page.quote }}&rdquo;</p>
+  </div>
+</section>
+{% endif %}
+
+<section class="book-detail-1a wrap">
+  <div>
+    <div class="book-detail-1a__cover placeholder-block-1a">
+      <span class="placeholder-label-1a">BOOK COVER<br>{{ page.title }}</span>
+    </div>
+    <div class="book-detail-1a__social">
+      <a class="social-icon-1a" href="{{ site.social_links.facebook }}" aria-label="Share on Facebook">FB</a>
+      <a class="social-icon-1a" href="{{ site.social_links.x }}" aria-label="Share on X">X</a>
+      <a class="social-icon-1a" href="mailto:?subject={{ page.title | url_encode }}" aria-label="Share by email">&#9993;</a>
+    </div>
+  </div>
+  <div>
+    {% if page.category %}<div class="eyebrow-1a" style="margin-bottom:14px">{{ page.category }}</div>{% endif %}
+    <h1 class="book-detail-1a__title">{{ page.title }}</h1>
+    <p class="book-detail-1a__desc">{{ page.description }}</p>
+    <div class="hero-1a__actions">
+      {% if page.amazon_url %}<a class="btn-1a btn-1a-primary" href="{{ page.amazon_url }}">Buy on Amazon</a>{% endif %}
+      {% if page.bookshop_url %}<a class="btn-1a btn-1a-outline" href="{{ page.bookshop_url }}">Bookshop.org</a>{% endif %}
+      {% if page.bn_url %}<a class="btn-1a btn-1a-outline" href="{{ page.bn_url }}">Barnes &amp; Noble</a>{% endif %}
+    </div>
+    {% if page.formats %}
+    <div class="book-detail-1a__formats">
+      {% for format in page.formats %}<span class="format-tag-1a">{{ format }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    <div class="hero-1a__note">Affiliate links — see disclosure below</div>
+  </div>
+</section>
+
+<section class="section-1a--tight wrap" style="max-width:760px">
+  <h2 class="section-1a-title" style="font-size:20px;margin-bottom:14px">About This Book</h2>
+  <div class="prose-1a">{{ content }}</div>
+</section>
+
+{% if page.press %}
+<section class="section-1a--tight wrap">
+  <h2 class="section-1a-title" style="font-size:20px;margin-bottom:22px">Press &amp; Praise</h2>
+  <div class="press-grid-1a">
+    {% for item in page.press %}
+    <div class="press-card-1a">
+      <div class="press-card-1a__quote">&ldquo;{{ item.quote }}&rdquo;</div>
+      <div class="press-card-1a__source">&mdash; {{ item.source }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section-1a--tight wrap">
+  <div class="section-1a-head">
+    <h2 class="section-1a-title">More by Marcia</h2>
+    <a class="section-1a-link" href="{{ '/options/1a/books/' | relative_url }}">View all books &#8594;</a>
+  </div>
+  <div class="shelf-1a">
+    {% assign other_books = site.books_1a | where_exp: "b", "b.url != page.url" | sort: "date" | reverse %}
+    {% for book in other_books %}
+    <a class="book-card-1a" href="{{ book.url | relative_url }}">
+      <div class="book-card-1a__cover placeholder-block-1a"></div>
+      <div class="book-card-1a__title">{{ book.title }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "description": {{ page.description | jsonify }}
+  {% if page.date %}, "datePublished": "{{ page.date | date: '%Y-%m-%d' }}"{% endif %}
+  {% if page.formats %}, "bookFormat": {{ page.formats | jsonify }}{% endif %}
+}
+</script>
