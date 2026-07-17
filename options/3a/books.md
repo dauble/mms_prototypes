@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Books
+layout: default-3a
+title: "Books — Option 3a"
 description: >-
   Browse all of Marcia Mount Shoop's books on theology, embodiment,
   trauma, healing, sports, and justice.
-permalink: /books/
+permalink: /options/3a/books/
 ---
 <section class="page-hero">
   <h1 class="page-hero__title">Books</h1>
@@ -13,8 +13,8 @@ permalink: /books/
 
 <section class="section wrap">
   <div class="book-grid">
-    {% assign featured_books = site.books | where: "featured", true %}
-    {% assign other_books = site.books | where_exp: "b", "b.featured != true" | sort: "date" | reverse %}
+    {% assign featured_books = site.books_3a | where: "featured", true %}
+    {% assign other_books = site.books_3a | where_exp: "b", "b.featured != true" | sort: "date" | reverse %}
     {% assign all_books = featured_books | concat: other_books %}
     {% for book in all_books %}
     <a class="book-card" href="{{ book.url | relative_url }}">

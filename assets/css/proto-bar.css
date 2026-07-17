@@ -1,0 +1,57 @@
+/* Shared "which prototype am I looking at" chrome — intentionally neutral
+   so it never reads as part of either design direction's branding. */
+
+.proto-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 8px 20px;
+  background: #1c1c1e;
+  color: #d8d8dc;
+  font: 500 12.5px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 100;
+}
+
+.proto-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.proto-bar__home {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.proto-bar__home:hover { text-decoration: underline; }
+
+.proto-bar__switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.proto-bar__label {
+  color: #9a9a9e;
+  white-space: nowrap;
+}
+
+.proto-bar__switch a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #3a3a3e;
+  white-space: nowrap;
+}
+.proto-bar__switch a:hover { border-color: #6a6a6e; }
+.proto-bar__switch a[aria-current="page"] {
+  background: #fff;
+  color: #1c1c1e;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .proto-bar { justify-content: center; text-align: center; }
+}

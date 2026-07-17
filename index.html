@@ -1,0 +1,61 @@
+---
+layout: null
+permalink: /
+title: "Marcia Mount Shoop — Site Prototypes"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ page.title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}">
+</head>
+<body>
+<header class="gallery-header">
+  <div class="gallery-header__inner">
+    <div class="gallery-header__kicker">Internal Prototype Review</div>
+    <h1 class="gallery-header__title">marciamountshoop.com — Design Directions</h1>
+    <p class="gallery-header__desc">
+      {{ site.data.options.size }} fully built prototypes for review. Each one is a
+      complete, click-through site — same content and pages, different
+      visual direction. Pick one, mix ideas across them, or ask for more
+      variations.
+    </p>
+  </div>
+</header>
+
+<main class="gallery-wrap">
+  <div class="gallery-grid">
+    {% for opt in site.data.options %}
+    <a class="option-card" href="{{ opt.path | relative_url }}" style="--card-accent: {{ opt.accent }}; --card-bg: {{ opt.bg }}; --card-fg: {{ opt.fg }};">
+      <div class="option-card__preview">
+        <span class="option-card__id">{{ opt.id }}</span>
+      </div>
+      <div class="option-card__body">
+        <div class="option-card__name">{{ opt.name }}</div>
+        <div class="option-card__tagline">{{ opt.tagline }}</div>
+        <span class="option-card__cta">View full site &#8594;</span>
+      </div>
+    </a>
+    {% endfor %}
+
+    <div class="option-card option-card--placeholder">
+      <div class="option-card__body">
+        <div class="option-card__name">More on the way</div>
+        <div class="option-card__tagline">Additional directions from the design exploration can be built out on request — just say the word.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="gallery-footer">
+    This is a client-review tool, not the live site (all pages are marked
+    <code>noindex</code>). Source: <em>Author Site Options.dc.html</em>.
+  </footer>
+</main>
+</body>
+</html>

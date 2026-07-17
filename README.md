@@ -1,24 +1,43 @@
-# marciamountshoop.com
+# marciamountshoop.com — prototype hub
 
-A Jekyll site for author Marcia Mount Shoop, built from the "Author Site
-Options" design exploration — direction **3a (Soft Rounded)**: a navy /
-teal / coral / green palette with pill buttons, rounded cards & covers,
-and circular social icons. The Book Detail, Writing & Talks, and Speaking
-pages are restyled to match.
+An internal, client-facing Jekyll site for reviewing design directions
+from the "Author Site Options" design exploration. This is **not** the
+live site — every page is `noindex`/`nofollow` and `robots.txt`
+disallows all crawling. `/` is a gallery that links out to each fully
+built prototype; each prototype is a complete, click-through mini-site
+(Home, Books, Book Detail, Writing & Talks, Speaking, About, Contact)
+sharing the same content but a different visual direction.
+
+## Prototypes built so far
+
+- **`/options/1a/`** — "Editorial Plum": asymmetric hero, warm cream,
+  sage-green accent, confident serif (Lora), near-square corners,
+  restrained hairline-rule cards.
+- **`/options/3a/`** — "Soft Rounded": navy/teal/coral/green palette,
+  pill buttons, rounded cards & covers, circular icons.
+
+Adding another direction from the design doc means: duplicate an
+`options/<id>/` folder + its `_books_<id>`/`_writing_<id>` collections +
+`assets/css/<id>.css` + `_layouts/*-<id>.html` + `_includes/<id>/`, then
+add an entry to `_data/options.yml` so it shows up on the landing page.
 
 ## Structure
 
-- `_layouts/` — `default` (site chrome), `book` (book detail pages),
-  `writing-entry` (individual blog/sermon/press entries)
-- `_includes/` — nav, footer, follow-along module, CTA band, Person
-  schema
-- `_books/` — one file per book (collection, output to `/books/:slug/`)
-- `_writing/` — blog posts, sermons, and press mentions (collection,
-  output to `/writing-and-talks/:slug/`)
-- `index.md`, `books.md`, `about.md`, `writing-and-talks.md`,
-  `speaking.md`, `contact.md` — top-level pages
-- `assets/css/main.css` — design system (colors, type, components)
-- `assets/js/nav.js` — mobile nav toggle + Writing & Talks type filter
+- `index.html` — the landing gallery (`_data/options.yml` drives the
+  card list), `assets/css/gallery.css`
+- `_includes/proto-bar.html` + `assets/css/proto-bar.css` — the neutral
+  "you are viewing prototype X, switch to Y" bar shown on every
+  prototype page
+- `options/<variant>/*.md` — top-level pages for that variant
+  (permalinks under `/options/<variant>/...`)
+- `_books_<variant>/`, `_writing_<variant>/` — per-variant collections
+  (same content across variants, styled differently)
+- `_layouts/default-<variant>.html`, `book-<variant>.html`,
+  `writing-entry-<variant>.html` — per-variant page shells
+- `_includes/<variant>/` — per-variant nav, footer, and modules
+- `assets/css/<variant>.css` — per-variant design system
+- `assets/js/nav.js` — shared mobile nav toggle + Writing & Talks type
+  filter (attribute-selector based, works across variants)
 
 ## Local development
 
@@ -29,33 +48,35 @@ bundle exec jekyll serve
 
 Visit `http://localhost:4000`.
 
-## Before launch — placeholders to replace
+## Before launch (whichever direction is chosen) — placeholders to replace
 
 - **Book covers & author photos**: currently CSS placeholder blocks
   labeled `BOOK COVER` / `AUTHOR PHOTO`. Drop real images into
-  `assets/images/` and swap the `.placeholder-block` markup for `<img>`
-  tags.
+  `assets/images/` and swap the placeholder markup for `<img>` tags.
 - **Affiliate links**: `amazon_url` / `bookshop_url` / `bn_url` in each
-  `_books/*.md` file are `#` — fill in real Amazon Associates /
+  `_books_<variant>/*.md` file are `#` — fill in real Amazon Associates /
   Bookshop.org / B&N affiliate links.
 - **Bracketed copy**: text like `[Marcia's fuller description goes
-  here…]` throughout `_books/`, `_writing/`, `about.md`, and
-  `speaking.md` marks real content Marcia still needs to supply.
+  here…]` throughout the collections and `about`/`speaking` pages marks
+  real content Marcia still needs to supply.
 - **Social URLs**: update `social_links` in `_config.yml`.
-- **Forms**: the Speaking and Contact page forms are wired for
+- **Forms**: Speaking/Contact forms are wired for
   [Netlify Forms](https://docs.netlify.com/forms/setup/) (`data-netlify`
-  attributes). If not hosting on Netlify, swap the `action`/attributes
-  for your form backend of choice (e.g. Formspree).
-- **`site.url`** in `_config.yml` should match the live domain — it
-  feeds canonical URLs, sitemap.xml, and Open Graph tags.
+  attributes, per-variant form `name`s to keep test submissions
+  separated). Swap for your form backend if not on Netlify.
+- **Before going live**: drop the gallery/proto-bar chrome, pick one
+  `options/<variant>/` to promote to site root, delete the rest, remove
+  the `noindex` meta tag, and re-enable `jekyll-sitemap` + a real
+  `llms.txt` (both were removed here since this hub isn't meant to be
+  indexed).
+- **`site.url`** in `_config.yml` should match the live domain.
 
-## SEO / AEO / social sharing
+## SEO / AEO / social sharing (per prototype)
 
 - `jekyll-seo-tag` generates `<title>`, meta description, canonical, and
   Open Graph / Twitter Card tags from each page's front matter.
-- `jekyll-sitemap` generates `/sitemap.xml`; `/robots.txt` points to it.
 - `schema.org/Person` JSON-LD is included on every page; each book page
   adds `schema.org/Book` JSON-LD.
-- `/llms.txt` gives AI answer engines a plain-text summary of Marcia's
-  books, writing, and speaking.
 - Every page footer carries an FTC-compliant affiliate disclosure.
+- Sitemap generation and `llms.txt` are intentionally disabled while
+  this is a review-only hub — see "Before launch" above.
