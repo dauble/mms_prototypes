@@ -436,7 +436,7 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--ink); margin: 0; }
   background: var(--tint-neutral);
   color: var(--muted);
 }
-.filter-pill-7a[data-filter="all"] { background: oklch(30% 0.03 280); color: #fff; }
+.filter-pill-7a[data-filter="all"][aria-pressed="true"] { background: oklch(30% 0.03 280); color: #fff; }
 .filter-pill-7a[data-filter="blog"] { background: var(--pastel-sage-bg); color: var(--sage-fg); }
 .filter-pill-7a[data-filter="sermon"] { background: var(--pastel-teal-bg); color: var(--teal-fg); }
 .filter-pill-7a[data-filter="event"] { background: var(--pastel-amber-bg); color: var(--amber-fg); }

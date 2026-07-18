@@ -38,10 +38,8 @@ layout: default-7a
 <section class="section-7a wrap-7a">
   <h2 class="section-7a-title" style="margin-bottom:24px">Praise for the Book</h2>
   <div class="press-grid-7a">
-    {% assign tints = "lav,amber,blue" | split: "," %}
     {% for item in page.press %}
-    {% assign tint = tints[forloop.index0] %}
-    <div class="press-card-7a press-card-7a--{{ tint }}">
+    <div class="press-card-7a press-card-7a--{% cycle 'lav', 'amber', 'blue' %}">
       <div class="press-card-7a__quote">&ldquo;{{ item.quote }}&rdquo;</div>
       <div class="press-card-7a__source">&mdash; {{ item.source }}</div>
     </div>
