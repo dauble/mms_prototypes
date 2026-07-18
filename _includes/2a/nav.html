@@ -1,0 +1,13 @@
+<nav class="site-nav">
+  <a href="{{ '/options/2a/' | relative_url }}" class="site-nav__brand">{{ site.author.name }}</a>
+  <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" id="site-nav-toggle">Menu</button>
+  <div class="site-nav__links" id="site-nav-links">
+    <a href="{{ '/options/2a/' | relative_url }}" {% if page.url == '/options/2a/' %}aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/options/2a/books/' | relative_url }}" {% if page.url == '/options/2a/books/' %}aria-current="page"{% endif %}>Books</a>
+    <a href="{{ '/options/2a/about/' | relative_url }}" {% if page.url == '/options/2a/about/' %}aria-current="page"{% endif %}>About</a>
+    <a href="{{ '/options/2a/writing-and-talks/' | relative_url }}" {% if page.url == '/options/2a/writing-and-talks/' %}aria-current="page"{% endif %}>Writing &amp; Talks</a>
+    <a href="{{ '/options/2a/speaking/' | relative_url }}" {% if page.url == '/options/2a/speaking/' %}aria-current="page"{% endif %}>Speaking</a>
+    <a href="{{ '/options/2a/contact/' | relative_url }}" {% if page.url == '/options/2a/contact/' %}aria-current="page"{% endif %}>Contact</a>
+  </div>
+  <a href="{{ '/options/2a/books/' | relative_url }}" class="btn btn-light site-nav__cta">Shop Books</a>
+</nav>
