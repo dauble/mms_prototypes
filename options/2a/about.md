@@ -1,6 +1,6 @@
 ---
 layout: default-2a
-title: "About — Option 4"
+title: "About — Option 2"
 description: >-
   About Marcia Mount Shoop — pastor, author, and speaker working at the
   intersection of theology, embodiment, and justice.

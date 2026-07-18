@@ -1,6 +1,6 @@
 ---
 layout: default-1a
-title: "Writing & Talks — Option 1a"
+title: "Writing & Talks — Option 1"
 description: >-
   Blog reflections, sermons, and press mentions from Marcia Mount Shoop
   in one place — sortable by type.
