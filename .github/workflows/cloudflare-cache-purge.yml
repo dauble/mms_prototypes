@@ -1,0 +1,25 @@
+name: Purge Cloudflare Cache
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  purge-cache:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    name: Purge Cloudflare Cache
+    permissions: {}
+
+    steps:
+      - name: Wait for GitHub Pages to rebuild
+        run: sleep 60
+
+      - name: Purge cache
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
