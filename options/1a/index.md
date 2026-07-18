@@ -1,6 +1,6 @@
 ---
 layout: default-1a
-title: "Option 1a — Editorial Plum"
+title: "Option 1 — Editorial Plum"
 description: >-
   Marcia Mount Shoop writes and speaks at the intersection of theology,
   embodiment, and justice. Explore her books, writing, sermons, and

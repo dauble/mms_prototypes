@@ -1,0 +1,75 @@
+---
+layout: default-7a
+---
+<div class="breadcrumb-7a"><a href="{{ '/options/7a/books/' | relative_url }}">Books</a> / {{ page.title }}</div>
+
+<section class="book-hero-7a">
+  <div class="book-hero-7a__cover">
+    <div class="book-hero-7a__badge">New Release</div>
+    <div class="placeholder-block-7a book-hero-7a__placeholder">
+      <span class="placeholder-label-7a">BOOK COVER<br>{{ page.title }}</span>
+    </div>
+  </div>
+  <div>
+    {% if page.category %}<div class="eyebrow-7a eyebrow-7a--lav" style="margin-bottom:18px">{{ page.category }}</div>{% endif %}
+    <h1 class="book-hero-7a__title">{{ page.title }}</h1>
+    {% if page.meta %}<div class="book-hero-7a__meta">{{ page.meta }}</div>{% endif %}
+    <p class="book-hero-7a__desc">{{ page.description }}</p>
+    <div class="hero-7a__actions">
+      {% if page.amazon_url %}<a class="btn-7a btn-7a-primary" href="{{ page.amazon_url }}">Buy on Amazon</a>{% endif %}
+      {% if page.bookshop_url %}<a class="btn-7a btn-7a-outline btn-7a-outline--teal" href="{{ page.bookshop_url }}">Bookshop.org</a>{% endif %}
+      {% if page.bn_url %}<a class="btn-7a btn-7a-outline btn-7a-outline--blue" href="{{ page.bn_url }}">Barnes &amp; Noble</a>{% endif %}
+    </div>
+    {% if page.formats %}
+    <div class="book-hero-7a__formats">
+      {% for format in page.formats %}<span class="format-tag-7a">{{ format }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    <div class="hero-7a__note">Affiliate links — see disclosure below</div>
+  </div>
+</section>
+
+<section class="section-7a wrap-7a">
+  <h2 class="section-7a-title">About This Book</h2>
+  <div class="prose-7a">{{ content }}</div>
+</section>
+
+{% if page.press %}
+<section class="section-7a wrap-7a">
+  <h2 class="section-7a-title" style="margin-bottom:24px">Praise for the Book</h2>
+  <div class="press-grid-7a">
+    {% for item in page.press %}
+    <div class="press-card-7a press-card-7a--{% cycle 'lav', 'amber', 'blue' %}">
+      <div class="press-card-7a__quote">&ldquo;{{ item.quote }}&rdquo;</div>
+      <div class="press-card-7a__source">&mdash; {{ item.source }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section-7a wrap-7a">
+  <div class="discuss-7a">
+    <div>
+      <div class="discuss-7a__title">Free Discussion Guide</div>
+      <div class="discuss-7a__desc">For book clubs, retreats, and congregational study groups.</div>
+    </div>
+    <a class="btn-7a btn-7a-primary" href="#">Download PDF</a>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "description": {{ page.description | jsonify }}
+  {% if page.date %}, "datePublished": "{{ page.date | date: '%Y-%m-%d' }}"{% endif %}
+  {% if page.formats %}, "bookFormat": {{ page.formats | jsonify }}{% endif %}
+}
+</script>

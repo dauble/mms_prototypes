@@ -1,6 +1,6 @@
 ---
 layout: default-3a
-title: "Option 3a — Soft Rounded"
+title: "Option 3 — Soft Rounded"
 description: >-
   Marcia Mount Shoop writes and speaks at the intersection of theology,
   embodiment, and justice. Explore her books, writing, sermons, and

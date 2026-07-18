@@ -1,6 +1,6 @@
 ---
 layout: default-2a
-title: "Option 4 — Navy Classic"
+title: "Option 2 — Navy Classic"
 description: >-
   Marcia Mount Shoop writes and speaks at the intersection of theology,
   embodiment, and justice. Explore her books, writing, sermons, and

@@ -1,6 +1,6 @@
 ---
 layout: default-1a
-title: "Books — Option 1a"
+title: "Books — Option 1"
 description: >-
   Browse all of Marcia Mount Shoop's books on theology, embodiment,
   trauma, healing, sports, and justice.

@@ -1,6 +1,6 @@
 ---
 layout: default-2a
-title: "Contact — Option 4"
+title: "Contact — Option 2"
 description: >-
   Get in touch with Marcia Mount Shoop for speaking inquiries, media
   requests, or general questions.

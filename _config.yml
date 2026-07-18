@@ -52,6 +52,12 @@ collections:
   writing_2a:
     output: true
     permalink: /options/2a/writing-and-talks/:path/
+  books_7a:
+    output: true
+    permalink: /options/7a/books/:path/
+  writing_7a:
+    output: true
+    permalink: /options/7a/writing-and-talks/:path/
 
 defaults:
   - scope:
@@ -108,6 +114,24 @@ defaults:
     values:
       layout: "writing-entry-2a"
       variant: "2a"
+  - scope:
+      path: "options/7a"
+      type: "pages"
+    values:
+      layout: "default-7a"
+      variant: "7a"
+  - scope:
+      path: ""
+      type: "books_7a"
+    values:
+      layout: "book-7a"
+      variant: "7a"
+  - scope:
+      path: ""
+      type: "writing_7a"
+    values:
+      layout: "writing-entry-7a"
+      variant: "7a"
 
 plugins:
   - jekyll-seo-tag

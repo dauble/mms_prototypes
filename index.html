@@ -34,7 +34,7 @@ title: "Marcia Mount Shoop — Site Prototypes"
     {% for opt in site.data.options %}
     <a class="option-card" href="{{ opt.path | relative_url }}" style="--card-accent: {{ opt.accent }}; --card-bg: {{ opt.bg }}; --card-fg: {{ opt.fg }};">
       <div class="option-card__preview">
-        <span class="option-card__id">{{ opt.id }}</span>
+        <span class="option-card__id">{{ opt.label }}</span>
       </div>
       <div class="option-card__body">
         <div class="option-card__name">{{ opt.name }}</div>

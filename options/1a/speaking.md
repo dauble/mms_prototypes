@@ -1,6 +1,6 @@
 ---
 layout: default-1a
-title: "Speaking — Option 1a"
+title: "Speaking — Option 1"
 description: >-
   Book Marcia Mount Shoop to speak on sports reform, race and power,
   embodiment and trauma, and congregational consulting.
