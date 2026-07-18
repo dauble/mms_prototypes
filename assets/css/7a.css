@@ -186,6 +186,26 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--ink); margin: 0; }
   color: var(--muted-3);
 }
 
+/* ---------- Intro strip (homepage only) ---------- */
+
+.intro-7a {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px 56px 0;
+}
+.intro-7a__photo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  flex: none;
+}
+.intro-7a__hi { font: 600 17px var(--font-serif); color: var(--ink); margin-bottom: 4px; }
+.intro-7a__desc { font: 400 14px/1.5 var(--font-sans); color: var(--muted); max-width: 560px; }
+.intro-7a__link { color: var(--lav-fg); font-weight: 600; }
+
 /* ---------- Home hero ---------- */
 
 .hero-7a {
@@ -561,7 +581,7 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--ink); margin: 0; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
-  .wrap-7a, .site-nav-7a, .breadcrumb-7a, .section-7a, .section-7a--flush,
+  .wrap-7a, .site-nav-7a, .breadcrumb-7a, .intro-7a, .section-7a, .section-7a--flush,
   .hero-7a, .talks-7a, .triptych-7a, .book-hero-7a, .follow-7a,
   .inquiry-7a, .site-footer-7a, .page-hero-7a, .writing-hero-7a,
   .entry-grid-7a, .speaking-hero-7a, .programs-grid-7a { padding-left: 24px; padding-right: 24px; }
