@@ -10,6 +10,8 @@ permalink: /options/7a/
 {% assign featured_book = site.books_7a | where: "featured", true | first %}
 {% unless featured_book %}{% assign featured_book = site.books_7a | first %}{% endunless %}
 
+{% include 7a/intro.html %}
+
 <section class="hero-7a">
   <div class="hero-7a__inner">
     <div>
