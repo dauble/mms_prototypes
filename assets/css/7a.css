@@ -200,6 +200,7 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--ink); margin: 0; }
   width: 76px;
   height: 76px;
   border-radius: 50%;
+  overflow: hidden;
   flex: none;
 }
 .intro-7a__hi { font: 600 17px var(--font-serif); color: var(--ink); margin-bottom: 4px; }
