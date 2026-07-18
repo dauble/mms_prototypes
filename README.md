@@ -13,6 +13,10 @@ sharing the same content but a different visual direction.
 - **`/options/1a/`** — "Editorial Plum": asymmetric hero, warm cream,
   sage-green accent, confident serif (Lora), near-square corners,
   restrained hairline-rule cards.
+- **`/options/2a/`** — "Navy Classic": navy/teal/coral/green palette,
+  sharp corners, hover-lift shadows, full-bleed photo-textured bands,
+  underline nav. The un-rounded original the 3a/3b navy family was
+  derived from.
 - **`/options/3a/`** — "Soft Rounded": navy/teal/coral/green palette,
   pill buttons, rounded cards & covers, circular icons.
 

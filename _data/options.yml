@@ -5,6 +5,13 @@
   accent: "#5f7d5c"
   bg: "#f8f9f5"
   fg: "#2c2620"
+- id: 2a
+  name: "Navy Classic"
+  tagline: "Navy/teal/coral/green, sharp corners, hover-lift shadows, full-bleed photo bands"
+  path: /options/2a/
+  accent: "oklch(28% 0.07 258)"
+  bg: "oklch(99% 0.002 240)"
+  fg: "oklch(18% 0.01 260)"
 - id: 3a
   name: "Soft Rounded"
   tagline: "Navy/teal/coral/green, pill buttons, rounded cards & covers"
