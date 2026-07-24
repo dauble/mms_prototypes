@@ -526,9 +526,8 @@ section { position: relative; }
   background: var(--bg-soft);
   color: var(--navy);
 }
-.affiliate-note { font: 12px var(--font-sans); color: var(--muted-2); }
-
 .press-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.press-cards--compact { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .press-card {
   background: #fff;
   border: 1px solid var(--border);
@@ -592,6 +591,7 @@ section { position: relative; }
 /* ---------- Speaking ---------- */
 
 .programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.programs-grid--3 { grid-template-columns: repeat(3, 1fr); }
 .program-card {
   background: #fff;
   border-top: 4px solid var(--coral);

@@ -2,7 +2,7 @@
 layout: default-2a
 title: "About — Option 2"
 description: >-
-  About Marcia Mount Shoop — pastor, author, and speaker working at the
+  About Marcia W. Mount Shoop — pastor, author, and speaker working at the
   intersection of theology, embodiment, and justice.
 permalink: /options/2a/about/
 ---
@@ -14,20 +14,21 @@ permalink: /options/2a/about/
 <section class="section--tight wrap">
   <div class="about-split">
     <div class="about-split__photo placeholder-block">
-      <span class="placeholder-label">AUTHOR PHOTO</span>
+      <span class="placeholder-label">HEADSHOT</span>
     </div>
     <div class="about-split__copy">
       <div class="eyebrow" style="margin-bottom:14px">About Marcia</div>
-      <p class="about-split__quote">Healing is the heart of the work I do — pastoring, writing, and teaching at the intersection of theology, embodiment, and justice.</p>
+      <p class="about-split__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
     </div>
   </div>
 </section>
 
 <section class="section--tight wrap">
   <div class="prose">
-    <p>[Marcia's full biography goes here — her pastoral background, education, and the throughline connecting her books, sermons, and speaking work. This is the place for career highlights, formative experiences, and the "why" behind her focus on embodiment, trauma, and justice.]</p>
-    <p>[A second paragraph can cover her current roles — congregation, teaching appointments, consulting work — and any ongoing projects readers should know about.]</p>
-    <p>[Optional: a short list of credentials, degrees, or affiliations.]</p>
+    <p>Marcia W. Mount Shoop is the Pastor and Head of Staff at Grace Covenant Presbyterian Church in Asheville, North Carolina (PCUSA), an emergent congregation centering the work of mutual liberation. Her leadership in community at GCPC after Hurricane Helene was featured in the Washington Post and on NPR's Marketplace Report. She was awarded the Space Shifter of the Year Award by the Reparations Stakeholders Authority of Asheville (RSAA) in 2025.</p>
+    <p>She is the author of <em>Let the Bones Dance: Embodiment and the Body of Christ</em> and <em>Touchdowns for Jesus and Other Signs of Apocalypse: Lifting the Veil on Big-Time Sports</em>. She is also the co-author, with Mary McClintock Fulkerson, of <em>A Body Broken, A Body Betrayed: Race, Memory, and Eucharist in White-Dominant Churches</em>.</p>
+    <p>Marcia has her PhD in Religious Studies from Emory University in Atlanta, Georgia, and her Master of Divinity from Vanderbilt Divinity School. She writes about and engages with communities around the country on the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
+    <p>She lives on a small farm outside of Asheville with animals of all shapes and sizes and a beautiful view of the ancient Blue Ridge Mountains from her front porch.</p>
   </div>
 </section>
 

@@ -14,7 +14,7 @@ permalink: /options/2a/books/
 <section class="section wrap">
   <div class="book-grid">
     {% assign featured_books = site.books_2a | where: "featured", true %}
-    {% assign other_books = site.books_2a | where_exp: "b", "b.featured != true" | sort: "date" | reverse %}
+    {% assign other_books = site.books_2a | where_exp: "b", "b.featured != true" | sort: "order" %}
     {% assign all_books = featured_books | concat: other_books %}
     {% for book in all_books %}
     <a class="book-card" href="{{ book.url | relative_url }}">
