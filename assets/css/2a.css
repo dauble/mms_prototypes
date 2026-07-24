@@ -527,7 +527,6 @@ section { position: relative; }
   color: var(--navy);
 }
 .press-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.press-cards--compact { grid-template-columns: repeat(auto-fit, minmax(260px, 440px)); }
 .press-card {
   background: #fff;
   border: 1px solid var(--border);

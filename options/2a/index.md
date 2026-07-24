@@ -29,17 +29,13 @@ permalink: /options/2a/
 </section>
 
 {% if featured_book.press %}
-<section class="section--tight wrap">
-  <div class="press-cards press-cards--compact">
-    {% for item in featured_book.press %}
-    <div class="press-card">
-      <div class="press-card__mark" style="color:{% cycle 'var(--teal)', 'var(--coral)', 'var(--green)' %}">&ldquo;</div>
-      <div class="press-card__quote">{{ item.quote }}</div>
-      <div class="press-card__source">&mdash; {{ item.source }}</div>
-    </div>
-    {% endfor %}
-  </div>
+{% for item in featured_book.press %}
+<section class="testimonial wrap">
+  <div class="testimonial__mark">&ldquo;</div>
+  <div class="testimonial__quote">{{ item.quote }}</div>
+  <div class="testimonial__source">&mdash; {{ item.source }}</div>
 </section>
+{% endfor %}
 {% endif %}
 
 <section class="press-strip">
