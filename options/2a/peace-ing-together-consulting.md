@@ -1,17 +1,18 @@
 ---
 layout: default-2a
-title: "Speaking — Option 2"
+title: "Peace-ing Together Consulting — Option 2"
 description: >-
-  Book Marcia Mount Shoop to speak on sports reform, race and power,
-  embodiment and trauma, and congregational consulting.
-permalink: /options/2a/speaking/
+  Peace-ing Together Consulting — book Marcia W. Mount Shoop to speak on
+  sports reform, race and power, embodiment and trauma, and congregational
+  consulting.
+permalink: /options/2a/peace-ing-together-consulting/
 ---
 <section>
   <div class="hero-photo">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
     <div class="hero-photo__label">PHOTO: full-bleed, royalty-free</div>
     <div class="hero-photo__content">
-      <div class="eyebrow" style="color:oklch(75% 0.12 175);margin-bottom:16px">Speaking &amp; Consulting</div>
+      <div class="eyebrow" style="color:oklch(75% 0.12 175);margin-bottom:16px">Peace-ing Together Consulting</div>
       <h1 style="font:700 42px/1.15 var(--font-serif);color:#fff;margin:0 auto 18px;max-width:640px">Sports, faith, and the body as a mirror for the issues of our time</h1>
       <p style="font:400 16px/1.7 var(--font-sans);color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 30px">Marcia visits campuses, congregations, and community contexts to unpack how race, gender, higher education, and religion shape American life.</p>
       <a class="btn btn-light" href="#inquire" style="box-shadow:0 10px 26px rgba(0,0,0,.35)">Book Marcia to Speak</a>

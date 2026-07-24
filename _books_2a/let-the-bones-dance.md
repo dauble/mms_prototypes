@@ -2,7 +2,8 @@
 title: Let the Bones Dance
 date: 2026-04-01
 category: "Theology · Embodiment · Memoir"
-featured: true
+featured: false
+order: 1
 quote: "Resurrection is not counter to human experience — it is counter to the experiences we are taught to see."
 formats: [Hardcover, Paperback, eBook, Audiobook]
 amazon_url: "#"

@@ -14,8 +14,8 @@ permalink: /options/2a/contact/
 <section class="section--tight wrap">
   <div class="contact-methods">
     <div class="contact-method">
-      <div class="contact-method__title">Speaking &amp; Events</div>
-      <div class="contact-method__desc">Booking a talk, retreat, or consulting engagement? See the <a class="section-link" href="{{ '/options/2a/speaking/' | relative_url }}">Speaking page</a> for programs and the inquiry form.</div>
+      <div class="contact-method__title">Peace-ing Together Consulting</div>
+      <div class="contact-method__desc">Booking a talk, retreat, or consulting engagement? See the <a class="section-link" href="{{ '/options/2a/peace-ing-together-consulting/' | relative_url }}">Peace-ing Together Consulting page</a> for programs and the inquiry form.</div>
     </div>
     <div class="contact-method">
       <div class="contact-method__title">Media &amp; Press</div>
