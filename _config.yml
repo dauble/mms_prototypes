@@ -22,6 +22,12 @@ affiliate_disclosure: >-
   As an Amazon Associate and Bookshop.org affiliate, Marcia earns from
   qualifying purchases.
 
+# Cloudflare Turnstile site key for the contact/inquiry forms. This is
+# the public *test* key (always passes) — swap for the real Site Key
+# from the Cloudflare dashboard once cf-worker is deployed. See
+# cf-worker/README.md.
+turnstile_site_key: "1x00000000000000000000AA"
+
 # jekyll-seo-tag / jekyll-sitemap read these
 twitter:
   card: summary_large_image
@@ -144,3 +150,4 @@ exclude:
   - README.md
   - node_modules
   - vendor
+  - cf-worker
