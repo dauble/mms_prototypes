@@ -1,0 +1,21 @@
+name = "mms-contact-worker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Intercepts POSTs to /mms_prototypes/api/* on the zone that already
+# fronts GitHub Pages; everything else on the zone keeps hitting the
+# static site untouched.
+routes = [
+  { pattern = "davidauble.com/mms_prototypes/api/*", zone_name = "davidauble.com" }
+]
+
+[vars]
+# Where notification emails are sent from/to. FROM_EMAIL's domain must
+# be verified in Resend before mail will actually send.
+FROM_EMAIL = "forms@davidauble.com"
+TO_EMAIL = "CHANGE_ME@example.com"
+SITE_ORIGIN = "https://davidauble.com"
+
+# Secrets (do NOT put these here — set via `wrangler secret put <NAME>`):
+#   TURNSTILE_SECRET_KEY
+#   RESEND_API_KEY

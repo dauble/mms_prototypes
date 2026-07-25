@@ -59,10 +59,12 @@ permalink: /options/2a/peace-ing-together-consulting/
   </div>
 </section>
 
-<section class="testimonial wrap">
-  <div class="testimonial__mark">&ldquo;</div>
-  <div class="testimonial__quote">[A testimonial about Marcia's speaking or facilitation goes here.]</div>
-  <div class="testimonial__source">&mdash; [Name, Organization]</div>
+<section class="testimonial-band">
+  <div class="testimonial">
+    <div class="testimonial__mark">&ldquo;</div>
+    <div class="testimonial__quote">[A testimonial about Marcia's speaking or facilitation goes here.]</div>
+    <div class="testimonial__source">&mdash; [Name, Organization]</div>
+  </div>
 </section>
 
 <section class="inquiry wrap" id="inquire">
@@ -70,12 +72,18 @@ permalink: /options/2a/peace-ing-together-consulting/
     <h2 class="inquiry__title">Bring Marcia to Your Community</h2>
     <p class="inquiry__desc">Share a few details about your event and Marcia will follow up to discuss fit, format, and availability.</p>
   </div>
-  <form class="inquiry__form" name="speaking-inquiry-2a" method="POST" data-netlify="true" netlify-honeypot="company">
+  <div class="form-status form-status--success" hidden data-form-status="sent">Thanks — your inquiry is on its way to Marcia's team.</div>
+  <div class="form-status form-status--error" hidden data-form-status="error">Something went wrong sending that. Please try again, or email directly.</div>
+  <form class="inquiry__form" name="speaking-inquiry-2a" method="POST" action="{{ '/api/contact' | relative_url }}">
     <input type="hidden" name="form-name" value="speaking-inquiry-2a">
+    <input type="hidden" name="redirect" value="{{ '/options/2a/peace-ing-together-consulting/' | relative_url }}#inquire">
     <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
     <input type="text" name="name" placeholder="Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="details" placeholder="Organization &amp; event details" rows="3" required></textarea>
+    <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}"></div>
     <button type="submit">Send Inquiry</button>
   </form>
 </section>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="{{ '/assets/js/form-status.js' | relative_url }}" defer></script>

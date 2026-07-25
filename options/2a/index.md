@@ -7,6 +7,7 @@ description: >-
   engagements.
 permalink: /options/2a/
 ---
+
 {% assign featured_book = site.books_2a | where: "featured", true | first %}
 {% unless featured_book %}{% assign featured_book = site.books_2a | first %}{% endunless %}
 
@@ -30,10 +31,13 @@ permalink: /options/2a/
 
 {% if featured_book.press %}
 {% for item in featured_book.press %}
-<section class="testimonial wrap">
-  <div class="testimonial__mark">&ldquo;</div>
-  <div class="testimonial__quote">{{ item.quote }}</div>
-  <div class="testimonial__source">&mdash; {{ item.source }}</div>
+
+<section class="testimonial-band">
+  <div class="testimonial">
+    <div class="testimonial__mark">&ldquo;</div>
+    <div class="testimonial__quote">{{ item.quote }}</div>
+    <div class="testimonial__source">&mdash; {{ item.source }}</div>
+  </div>
 </section>
 {% endfor %}
 {% endif %}
@@ -81,7 +85,7 @@ permalink: /options/2a/
       <div class="program-card__title">Podcasts</div>
       <div class="program-card__desc">
         <a class="section-link" href="#">GCPC Podcast &#8594;</a><br><br>
-        <a class="section-link" href="#">Going Deep, Blue Ridge Public Radio &#8594;</a>
+        <a class="section-link" href="https://shoopsgoingdeep.com/" target="_blank">Going Deep, Blue Ridge Public Radio &#8594;</a>
       </div>
     </div>
     <a class="program-card program-card--green" href="{{ '/options/2a/press/' | relative_url }}">
