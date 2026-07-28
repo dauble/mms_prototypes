@@ -6,6 +6,7 @@ description: >-
   trauma, healing, sports, and justice.
 permalink: /options/2a/books/
 ---
+
 <section class="page-hero">
   <h1 class="page-hero__title">Books</h1>
   <p class="page-hero__desc">Theology, embodiment, and justice — explored through memoir, cultural critique, and pastoral reflection.</p>
@@ -26,3 +27,6 @@ permalink: /options/2a/books/
     {% endfor %}
   </div>
 </section>
+
+{% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}

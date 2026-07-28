@@ -645,6 +645,7 @@ section { position: relative; }
 
 .testimonial-band { background: var(--bg-softer); padding: 72px 56px; }
 .testimonial { max-width: 720px; margin: 0 auto; background: #fff; border: 1px solid var(--border); padding: 44px 56px; text-align: center; }
+.testimonial + .testimonial { margin-top: 28px; }
 .testimonial__mark { font: 700 40px var(--font-serif); color: var(--green); line-height: .3; margin-bottom: 8px; }
 .testimonial__quote { font: 400 18px/1.6 var(--font-serif); color: oklch(20% 0.01 260); max-width: 640px; margin: 0 auto 14px; }
 .testimonial__source { font: 600 13px var(--font-sans); color: var(--muted); }

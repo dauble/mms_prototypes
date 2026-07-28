@@ -6,6 +6,7 @@ description: >-
   in one place — sortable by type.
 permalink: /options/2a/writing-and-talks/
 ---
+
 <section class="section wrap" style="padding-bottom:30px">
   <h1 style="font:700 40px var(--font-serif);color:var(--navy-deep);margin:0 0 12px">Writing &amp; Talks</h1>
   <p style="font:400 15.5px/1.7 var(--font-sans);color:var(--muted);max-width:560px;margin:0 0 26px">Blog reflections, sermons, and press mentions in one place — sortable by type.</p>
@@ -48,3 +49,6 @@ permalink: /options/2a/writing-and-talks/
     {% endfor %}
   </div>
 </section>
+
+{% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}

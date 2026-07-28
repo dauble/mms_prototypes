@@ -6,6 +6,7 @@ description: >-
   requests, or general questions.
 permalink: /options/2a/contact/
 ---
+
 <section class="page-hero">
   <h1 class="page-hero__title">Get in Touch</h1>
   <p class="page-hero__desc">For speaking engagements, media requests, or general questions — send a note and Marcia's team will follow up.</p>
@@ -42,3 +43,4 @@ permalink: /options/2a/contact/
 <script src="{{ '/assets/js/form-status.js' | relative_url }}" defer></script>
 
 {% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}
