@@ -6,6 +6,7 @@ description: >-
   intersection of theology, embodiment, and justice.
 permalink: /options/2a/about/
 ---
+
 <section class="page-hero">
   <h1 class="page-hero__title">About Marcia</h1>
   <p class="page-hero__desc">Pastor, author, and speaker working at the intersection of theology, embodiment, and justice.</p>
@@ -32,4 +33,5 @@ permalink: /options/2a/about/
   </div>
 </section>
 
+{% include 2a/follow-along.html %}
 {% include 2a/cta-band.html %}

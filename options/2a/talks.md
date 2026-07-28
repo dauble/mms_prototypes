@@ -6,6 +6,7 @@ description: >-
   Church — watch her sermons on YouTube.
 permalink: /options/2a/talks/
 ---
+
 <section class="page-hero">
   <h1 class="page-hero__title">Talks</h1>
   <p class="page-hero__desc">Marcia preaches and teaches as Pastor and Head of Staff at Grace Covenant Presbyterian Church.</p>
@@ -18,3 +19,6 @@ permalink: /options/2a/talks/
   </div>
   <a class="btn btn-primary" href="{{ site.social_links.youtube }}" style="margin-top:24px">Watch Sermons on YouTube</a>
 </section>
+
+{% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}

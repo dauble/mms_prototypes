@@ -2,6 +2,18 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first.
 
+## 2026-07-27 — Book detail quote styling & page consistency (Option 2 / "2a")
+
+### Book detail page (`_layouts/book-2a.html`)
+- "Press & Praise" book quotes now use the shared `.testimonial-band` / `.testimonial` component (same styling as the homepage and consulting page quote) instead of the separate `.press-card` grid, for a consistent look across the site.
+- Added a `.testimonial + .testimonial` spacing rule in `assets/css/2a.css` so multiple stacked book quotes don't run together.
+- Replaced the FB/X/email text-abbreviation share links with inline SVG icons, matching the footer's icon treatment.
+- "More by Marcia" switched from the `.shelf` layout to the `.book-grid` layout (matching the Books page), capped at 4 titles.
+- Added a new "Explore" section (Talks / Podcasts / Press cards), plus the follow-along and CTA-band includes, to the bottom of every book detail page.
+
+### Page consistency
+- Added the follow-along subscribe prompt and/or CTA band to the bottom of About, Books, Press, Talks, Writing & Talks, and the Peace-ing Together Consulting page, so every page ends with the same subscribe/contact prompts.
+
 ## 2026-07-24 — First round of feedback (Option 2 / "2a")
 
 ### Contact & inquiry forms

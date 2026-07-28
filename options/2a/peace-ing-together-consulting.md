@@ -7,6 +7,7 @@ description: >-
   consulting.
 permalink: /options/2a/peace-ing-together-consulting/
 ---
+
 <section>
   <div class="hero-photo">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
@@ -85,5 +86,9 @@ permalink: /options/2a/peace-ing-together-consulting/
     <button type="submit">Send Inquiry</button>
   </form>
 </section>
+
+{% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}
+
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="{{ '/assets/js/form-status.js' | relative_url }}" defer></script>

@@ -6,6 +6,7 @@ description: >-
   Church, and her books.
 permalink: /options/2a/press/
 ---
+
 <section class="page-hero">
   <h1 class="page-hero__title">Press</h1>
   <p class="page-hero__desc">Coverage of Marcia's work, writing, and community leadership.</p>
@@ -47,3 +48,6 @@ permalink: /options/2a/press/
     </a>
   </div>
 </section>
+
+{% include 2a/follow-along.html %}
+{% include 2a/cta-band.html %}
