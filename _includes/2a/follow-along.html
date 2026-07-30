@@ -2,13 +2,13 @@
   <h2 class="follow__title">Follow Along</h2>
   <p class="follow__desc">Reflections on Substack and Threads, sermons and podcast episodes on YouTube, and day-to-day updates on Instagram &amp; Facebook.</p>
   <div class="follow__links">
-    <a class="follow__link follow__link--substack" href="{{ site.social_links.substack }}">Substack &#8599;</a>
-    <a class="follow__link" href="{{ site.social_links.youtube }}">YouTube &#8599;</a>
-    <a class="follow__link" href="{{ site.social_links.instagram }}">Instagram &#8599;</a>
-    <a class="follow__link" href="{{ site.social_links.facebook }}">Facebook &#8599;</a>
-    <a class="follow__link" href="{{ site.social_links.threads }}">Threads &#8599;</a>
+    <a class="follow__link follow__link--substack" href="{{ site.social_links.substack }}" target="_blank" rel="noopener">Substack &#8599;</a>
+    <a class="follow__link" href="{{ site.social_links.youtube }}" target="_blank" rel="noopener">YouTube &#8599;</a>
+    <a class="follow__link" href="{{ site.social_links.instagram }}" target="_blank" rel="noopener">Instagram &#8599;</a>
+    <a class="follow__link" href="{{ site.social_links.facebook }}" target="_blank" rel="noopener">Facebook &#8599;</a>
+    <a class="follow__link" href="{{ site.social_links.threads }}" target="_blank" rel="noopener">Threads &#8599;</a>
   </div>
-  <form class="follow__form" action="{{ site.social_links.substack | append: 'subscribe' }}" method="get">
+  <form class="follow__form" action="{{ site.social_links.substack | append: 'subscribe' }}" method="get" target="_blank">
     <input class="follow__input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
     <button class="btn btn-teal" type="submit">Subscribe on Substack</button>
   </form>

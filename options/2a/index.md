@@ -18,7 +18,7 @@ permalink: /options/2a/
     <p class="hero__desc">{{ featured_book.excerpt | default: featured_book.description }}</p>
     <div class="hero__actions">
       {% for vendor in featured_book.vendors %}
-      <a class="btn {% if vendor.primary %}btn-primary{% else %}btn-outline{% endif %}" href="{{ vendor.url }}">{{ vendor.name }}</a>
+      <a class="btn {% if vendor.primary %}btn-primary{% else %}btn-outline{% endif %}" href="{{ vendor.url }}" target="_blank" rel="noopener">{{ vendor.name }}</a>
       {% endfor %}
     </div>
     <a class="hero__link" href="{{ featured_book.url | relative_url }}">Learn more about this book &#8594;</a>
@@ -51,10 +51,10 @@ permalink: /options/2a/
 <section class="press-strip">
   <span class="press-strip__label">As Seen In</span>
   <div class="press-strip__names">
-    <a href="https://www.washingtonpost.com/climate-environment/2024/11/29/hurricane-helene-evictions-north-carolina/" target="_blank" rel="noopener">The Washington Post</a>
-    <a href="https://www.marketplace.org/story/2024/12/02/asheville-workers-rent-relief-hurricane-helene" target="_blank" rel="noopener">NPR's Marketplace</a>
-    <a href="https://religionnews.com/2025/01/23/after-helene-one-asheville-church-finds-a-way-to-step-it-up/" target="_blank" rel="noopener">Religion News Service</a>
-    <a href="https://pres-outlook.org/2024/10/what-we-should-know-about-the-culture-of-sports/" target="_blank" rel="noopener">Presbyterian Outlook</a>
+    <a href="https://www.washingtonpost.com/climate-environment/2024/11/29/hurricane-helene-evictions-north-carolina/" target="_blank" rel="noopener">The Washington Post &#8599;</a>
+    <a href="https://www.marketplace.org/story/2024/12/02/asheville-workers-rent-relief-hurricane-helene" target="_blank" rel="noopener">NPR's Marketplace &#8599;</a>
+    <a href="https://religionnews.com/2025/01/23/after-helene-one-asheville-church-finds-a-way-to-step-it-up/" target="_blank" rel="noopener">Religion News Service &#8599;</a>
+    <a href="https://pres-outlook.org/2024/10/what-we-should-know-about-the-culture-of-sports/" target="_blank" rel="noopener">Presbyterian Outlook &#8599;</a>
     <a href="{{ '/options/2a/press/' | relative_url }}">More press &#8594;</a>
   </div>
 </section>
@@ -89,6 +89,7 @@ permalink: /options/2a/
       <div class="book-card__cover placeholder-block"></div>
       {% endif %}
       <div class="book-card__title">{{ book.title }}</div>
+      <div class="book-card__link">View more <svg class="book-card__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     {% endfor %}
   </div>
@@ -100,6 +101,7 @@ permalink: /options/2a/
     <a class="program-card" href="{{ '/options/2a/talks/' | relative_url }}">
       <div class="program-card__title">Talks</div>
       <div class="program-card__desc">About Grace Covenant Presbyterian Church and where to find Marcia's sermons on YouTube.</div>
+      <div class="contact-method__link">Learn more <svg class="contact-method__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <div class="program-card program-card--teal">
       <div class="program-card__title">Podcasts</div>
@@ -111,6 +113,7 @@ permalink: /options/2a/
     <a class="program-card program-card--green" href="{{ '/options/2a/press/' | relative_url }}">
       <div class="program-card__title">Press</div>
       <div class="program-card__desc">Coverage from the Washington Post, New York Times, NPR, and more.</div>
+      <div class="contact-method__link">Learn more <svg class="contact-method__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
   </div>
 </section>

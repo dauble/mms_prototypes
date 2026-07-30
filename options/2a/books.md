@@ -30,6 +30,7 @@ permalink: /options/2a/books/
       </div>
       {% endif %}
       <div class="book-card__title">{{ book.title }}</div>
+      <div class="book-card__link">View more <svg class="book-card__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     {% endfor %}
   </div>
