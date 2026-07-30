@@ -1,0 +1,12 @@
+{% assign endorsements = site.data.endorsements_2a[include.slug] %}
+{% if endorsements and endorsements.size > 0 %}
+<section class="testimonial-band">
+  {% for item in endorsements %}
+  <div class="testimonial">
+    <div class="testimonial__mark">&ldquo;</div>
+    <div class="testimonial__quote">{{ item.quote }}</div>
+    <div class="testimonial__source">&mdash; {{ item.source }}</div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}

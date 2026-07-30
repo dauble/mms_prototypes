@@ -16,9 +16,19 @@ layout: default-2a
 
 <section class="book-detail wrap">
   <div>
+    {% if page.cover %}
+    <div class="book-detail__cover">
+      <img
+        src="{{ page.cover | relative_url }}"
+        alt="Book cover of &ldquo;{{ page.title }}&rdquo;{% if page.co_author %} by {{ site.author.name }} and {{ page.co_author }}{% endif %}"
+        loading="lazy"
+      />
+    </div>
+    {% else %}
     <div class="book-detail__cover placeholder-block">
       <span class="placeholder-label">BOOK COVER<br />{{ page.title }}</span>
     </div>
+    {% endif %}
     <div class="book-detail__social">
       <a
         class="social-icon"
@@ -102,13 +112,21 @@ layout: default-2a
 </section>
 {% endif %}
 
+{% include 2a/endorsements.html slug=page.slug %}
+
 <section class="section wrap">
   <h2 class="section-title">More by Marcia</h2>
   <div class="book-grid">
     {% assign other_books = site.books_2a | where_exp: "b", "b.url !=
     featured_book.url" | sort: "order" %} {% for book in other_books limit: 4 %}
     <a class="book-card" href="{{ book.url | relative_url }}">
+      {% if book.cover %}
+      <div class="book-card__cover">
+        <img src="{{ book.cover | relative_url }}" alt="Book cover of &ldquo;{{ book.title }}&rdquo;" loading="lazy" />
+      </div>
+      {% else %}
       <div class="book-card__cover placeholder-block"></div>
+      {% endif %}
       <div class="book-card__title">{{ book.title }}</div>
     </a>
     {% endfor %}
@@ -128,7 +146,7 @@ layout: default-2a
     <div class="program-card program-card--teal">
       <div class="program-card__title">Podcasts</div>
       <div class="program-card__desc">
-        <a class="section-link" href="#">GCPC Podcast &#8594;</a><br /><br />
+        <a class="section-link" href="{{ site.social_links.youtube }}">GCPC Podcast &#8594;</a><br /><br />
         <a
           class="section-link"
           href="https://shoopsgoingdeep.com/"

@@ -5,7 +5,10 @@ category: "Theology · Race · Eucharist"
 featured: false
 order: 3
 co_author: "Mary McClintock Fulkerson"
+cover: /assets/images/books/body-broken.png
 formats: [Paperback, eBook]
+# TODO: affiliate links pending from client — Amazon Associates,
+# Bookshop.org, and B&N URLs still need to be supplied.
 amazon_url: "#"
 bookshop_url: "#"
 bn_url: "#"

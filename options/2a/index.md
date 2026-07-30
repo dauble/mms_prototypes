@@ -23,10 +23,16 @@ permalink: /options/2a/
     </div>
     <a class="hero__link" href="{{ featured_book.url | relative_url }}">Learn more about this book &#8594;</a>
   </div>
+  {% if featured_book.cover %}
+  <div class="hero__cover">
+    <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" loading="lazy">
+  </div>
+  {% else %}
   <div class="hero__cover placeholder-block">
     {% if featured_book.cover_pending %}<span class="hero__cover-badge">Cover Coming Soon</span>{% endif %}
     <span class="placeholder-label">BOOK COVER<br>{{ featured_book.title }}</span>
   </div>
+  {% endif %}
 </section>
 
 {% if featured_book.press %}
@@ -45,10 +51,18 @@ permalink: /options/2a/
 <section class="press-strip">
   <span class="press-strip__label">As Seen In</span>
   <div class="press-strip__names">
-    <span>The Washington Post</span><span>NPR's Marketplace</span><span>Religion News Service</span><span>Presbyterian Outlook</span>
+    <a href="https://www.washingtonpost.com/climate-environment/2024/11/29/hurricane-helene-evictions-north-carolina/" target="_blank" rel="noopener">The Washington Post</a>
+    <a href="https://www.marketplace.org/story/2024/12/02/asheville-workers-rent-relief-hurricane-helene" target="_blank" rel="noopener">NPR's Marketplace</a>
+    <a href="https://religionnews.com/2025/01/23/after-helene-one-asheville-church-finds-a-way-to-step-it-up/" target="_blank" rel="noopener">Religion News Service</a>
+    <a href="https://pres-outlook.org/2024/10/what-we-should-know-about-the-culture-of-sports/" target="_blank" rel="noopener">Presbyterian Outlook</a>
+    <a href="{{ '/options/2a/press/' | relative_url }}">More press &#8594;</a>
   </div>
 </section>
 
+<!-- TODO: pending client input — waiting to hear from Marcia whether this wide
+     "About Marcia" band should be a landscape photo of her, or a
+     background/textured image (no photo). Leaving the striped placeholder
+     in place until she decides. -->
 <section style="margin-bottom:60px">
   <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,0) 35%,rgba(8,16,34,.88) 100%)"></div>
@@ -67,7 +81,13 @@ permalink: /options/2a/
     {% assign other_books = site.books_2a | where_exp: "b", "b.url != featured_book.url" | sort: "order" %}
     {% for book in other_books limit: 4 %}
     <a class="book-card" href="{{ book.url | relative_url }}">
+      {% if book.cover %}
+      <div class="book-card__cover">
+        <img src="{{ book.cover | relative_url }}" alt="Book cover of &ldquo;{{ book.title }}&rdquo;" loading="lazy">
+      </div>
+      {% else %}
       <div class="book-card__cover placeholder-block"></div>
+      {% endif %}
       <div class="book-card__title">{{ book.title }}</div>
     </a>
     {% endfor %}
@@ -84,7 +104,7 @@ permalink: /options/2a/
     <div class="program-card program-card--teal">
       <div class="program-card__title">Podcasts</div>
       <div class="program-card__desc">
-        <a class="section-link" href="#">GCPC Podcast &#8594;</a><br><br>
+        <a class="section-link" href="{{ site.social_links.youtube }}">GCPC Podcast &#8594;</a><br><br>
         <a class="section-link" href="https://shoopsgoingdeep.com/" target="_blank">Going Deep, Blue Ridge Public Radio &#8594;</a>
       </div>
     </div>

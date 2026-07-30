@@ -1,6 +1,34 @@
 # Changelog
 
-All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first.
+All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
+
+## 2026-07-30 — Social links, book covers, press, and endorsements scaffold (Option 2 / "2a")
+
+### Social links
+- `_config.yml` `social_links`: real URLs for Facebook, Instagram, Threads, and Substack (note the Substack handle changed domains, to `marciawhitneymountshoop.substack.com`); `youtube` now points at GCPC's YouTube podcasts page (`youtube.com/@GCPCUSA/podcasts`) since no separate general YouTube URL was supplied — this also fixes the "GCPC Podcast" placeholder `#` links on the homepage and book detail pages, and the Substack subscribe form's hardcoded old domain in `_includes/2a/follow-along.html`.
+- `x` placeholder left as-is in `_config.yml` — still referenced by Options 1a/3a/7a; Option 2a itself never linked to it.
+- `social.links` (used by `jekyll-seo-tag`) updated to match, X dropped.
+
+### Book cover images
+- Added a `cover:` front-matter field to the three books with supplied artwork (`a-body-broken-a-body-betrayed.md`, `let-the-bones-dance.md`, `touchdowns-for-jesus.md`), pointing at `assets/images/books/`.
+- `_layouts/book-2a.html`, `options/2a/index.md`, `options/2a/books.md`: cover-bearing books now render a real `<img>` (with alt text) in place of the `BOOK COVER` placeholder block; books without a `cover` field still fall back to the striped placeholder, so `liberating-bodies` (cover pending) and `anthologies` are unaffected.
+- `assets/css/2a.css`: added `object-fit: cover` sizing rules so cover images fill the existing `.hero__cover` / `.book-card__cover` / `.book-detail__cover` boxes responsively.
+- **Note:** the actual image files (`body-broken.png`, `Let_the_Bones_Dance_COVER_IMAGE.jpg`, `Touchdowns_for_Jesus_COVER_IMAGE.jpg`) still need to be dropped into `assets/images/books/` — see the README left there. They weren't committed in this round because they arrived as chat attachments, not as files this environment could read from disk.
+
+### Affiliate links
+- Added `# TODO` comments above `amazon_url` / `bookshop_url` / `bn_url` on the three backlist books noting these are still pending from the client. Left values as `#`, unchanged.
+- `liberating-bodies.md` flagged distinctly: forthcoming (expected Spring 2027), no retail links yet — publisher/indie-store vendor links are real, only the Amazon fallback is a placeholder.
+
+### Press
+- `options/2a/press.md`: replaced the placeholder `#` press-card list with the real, currently-available coverage (Washington Post, NPR Marketplace, Religion News Service, StoryCorps, Blue Ridge Public Radio, three Asheville Citizen Times stories, Presbyterian News, Presbyterian Outlook, New York Times), each linking out (`target="_blank"`).
+- `options/2a/index.md`: the homepage "As Seen In" full-width press-strip band now links each outlet name out to its story, plus a "More press" link to the Press page.
+
+### Endorsements (scaffolded, empty)
+- Added `_data/endorsements_2a.yml`, keyed by book slug, all lists intentionally empty — new-book (Liberating Bodies) endorsements are expected mid-October 2026, and endorsements for backlist titles are pending client confirmation on scope. No placeholder quotes were fabricated.
+- Added `_includes/2a/endorsements.html`, which renders a `.testimonial-band` (matching the existing press-quote styling) per book when its list is non-empty, and no-ops otherwise. Wired into `_layouts/book-2a.html`.
+
+### About page
+- `options/2a/index.md`: added a `TODO` comment on the full-bleed "About Marcia" band noting we're waiting on the client to decide between a landscape photo of her or a background/textured image for that section. The striped placeholder is left in place.
 
 ## 2026-07-27 — Book detail quote styling & page consistency (Option 2 / "2a")
 

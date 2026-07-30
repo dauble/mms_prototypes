@@ -1,0 +1,23 @@
+# Endorsements — SCAFFOLDED, intentionally empty for now.
+#
+# - New-book (Liberating Bodies) endorsements are expected from the client
+#   mid-October 2026.
+# - Endorsements for backlist titles (Let the Bones Dance, Touchdowns for
+#   Jesus, A Body Broken A Body Betrayed) are pending client confirmation
+#   on scope (which books, how many quotes, where they should appear).
+#
+# Do not fabricate placeholder quotes here — leave a book's list empty
+# until real copy comes in. Rendered via _includes/2a/endorsements.html,
+# which no-ops for any book with an empty (or missing) list.
+#
+# Structure once populated, keyed by the book's slug (its filename stem
+# in _books_2a/):
+#
+# liberating-bodies:
+#   - quote: "..."
+#     source: "Name, Title/Organization"
+
+liberating-bodies: []
+let-the-bones-dance: []
+touchdowns-for-jesus: []
+a-body-broken-a-body-betrayed: []

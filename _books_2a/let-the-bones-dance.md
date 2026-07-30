@@ -5,7 +5,10 @@ category: "Theology · Embodiment · Memoir"
 featured: false
 order: 1
 quote: "Resurrection is not counter to human experience — it is counter to the experiences we are taught to see."
+cover: /assets/images/books/Let_the_Bones_Dance_COVER_IMAGE.jpg
 formats: [Hardcover, Paperback, eBook, Audiobook]
+# TODO: affiliate links pending from client — Amazon Associates,
+# Bookshop.org, and B&N URLs still need to be supplied.
 amazon_url: "#"
 bookshop_url: "#"
 bn_url: "#"

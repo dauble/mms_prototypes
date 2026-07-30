@@ -8,7 +8,7 @@
     <a class="follow__link" href="{{ site.social_links.facebook }}">Facebook &#8599;</a>
     <a class="follow__link" href="{{ site.social_links.threads }}">Threads &#8599;</a>
   </div>
-  <form class="follow__form" action="https://marciamountshoop.substack.com/subscribe" method="get">
+  <form class="follow__form" action="{{ site.social_links.substack | append: 'subscribe' }}" method="get">
     <input class="follow__input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
     <button class="btn btn-teal" type="submit">Subscribe on Substack</button>
   </form>

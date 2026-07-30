@@ -4,7 +4,10 @@ date: 2015-09-01
 category: "Sports · Religion · Culture"
 featured: false
 order: 2
+cover: /assets/images/books/Touchdowns_for_Jesus_COVER_IMAGE.jpg
 formats: [Paperback, eBook]
+# TODO: affiliate links pending from client — Amazon Associates,
+# Bookshop.org, and B&N URLs still need to be supplied.
 amazon_url: "#"
 bookshop_url: "#"
 bn_url: "#"
