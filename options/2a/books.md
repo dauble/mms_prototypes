@@ -19,10 +19,18 @@ permalink: /options/2a/books/
     {% assign all_books = featured_books | concat: other_books %}
     {% for book in all_books %}
     <a class="book-card" href="{{ book.url | relative_url }}">
+      {% if book.cover %}
+      <div class="book-card__cover">
+        {% if book.featured %}<span class="hero__cover-badge">Featured</span>{% endif %}
+        <img src="{{ book.cover | relative_url }}" alt="Book cover of &ldquo;{{ book.title }}&rdquo;" loading="lazy">
+      </div>
+      {% else %}
       <div class="book-card__cover placeholder-block">
         {% if book.featured %}<span class="hero__cover-badge">Featured</span>{% endif %}
       </div>
+      {% endif %}
       <div class="book-card__title">{{ book.title }}</div>
+      <div class="book-card__link">View more <svg class="book-card__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     {% endfor %}
   </div>

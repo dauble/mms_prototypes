@@ -17,7 +17,7 @@ permalink: /options/2a/talks/
     <p>Grace Covenant Presbyterian Church (GCPC) in Asheville, North Carolina, is an emergent PCUSA congregation centering the work of mutual liberation. Marcia's sermons and teaching there explore the intersection of theology, embodiment, race, and justice.</p>
     <p>[Additional context on GCPC and Marcia's role there goes here.]</p>
   </div>
-  <a class="btn btn-primary" href="{{ site.social_links.youtube }}" style="margin-top:24px">Watch Sermons on YouTube</a>
+  <a class="btn btn-primary" href="{{ site.social_links.youtube }}" target="_blank" rel="noopener" style="margin-top:24px">Watch Sermons on YouTube &#8599;</a>
 </section>
 
 {% include 2a/follow-along.html %}

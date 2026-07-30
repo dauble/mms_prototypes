@@ -5,6 +5,9 @@ category: "Theology · Collective Liberation"
 featured: true
 new_release: true
 cover_pending: true
+# TODO: forthcoming book, expected Spring 2027 — flagged distinctly since it
+# has no retail links yet (publisher/indie-store links above are real; only
+# the Amazon fallback below is a placeholder pending client confirmation).
 formats: [Paperback, eBook]
 vendors:
   - name: "North Atlantic Books"

@@ -11,12 +11,16 @@ author:
   name: Marcia Mount Shoop
 
 social_links:
-  facebook: "https://facebook.com/"
-  instagram: "https://instagram.com/"
+  facebook: "https://www.facebook.com/TheRev.MarciaMountShoopPhD"
+  instagram: "https://www.instagram.com/mountshoop/"
+  # Still a placeholder — kept in place because options 1a/3a/7a still
+  # link to it. Option 2a no longer references social_links.x anywhere.
   x: "https://x.com/"
-  youtube: "https://youtube.com/"
-  substack: "https://marciamountshoop.substack.com/"
-  threads: "https://threads.net/"
+  # GCPC's YouTube channel/podcasts tab — used for the general "YouTube"
+  # link (footer, follow-along, Talks page) as well as the "GCPC Podcast" link.
+  youtube: "https://www.youtube.com/@GCPCUSA/podcasts"
+  substack: "https://marciawhitneymountshoop.substack.com/"
+  threads: "https://www.threads.net/@mountshoop"
 
 affiliate_disclosure: >-
   As an Amazon Associate and Bookshop.org affiliate, Marcia earns from
@@ -35,10 +39,10 @@ twitter:
 social:
   name: Marcia Mount Shoop
   links:
-    - "https://facebook.com/"
-    - "https://instagram.com/"
-    - "https://x.com/"
-    - "https://youtube.com/"
+    - "https://www.facebook.com/TheRev.MarciaMountShoopPhD"
+    - "https://www.instagram.com/mountshoop/"
+    - "https://www.youtube.com/@GCPCUSA/podcasts"
+    - "https://www.threads.net/@mountshoop"
 
 collections:
   books_3a:

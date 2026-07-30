@@ -1,6 +1,54 @@
 # Changelog
 
-All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first.
+All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
+
+## 2026-07-29 — Cover art, Amazon links, external-link affordances (Option 2 / "2a")
+
+### Book cover images
+- Added the actual cover image files to `assets/images/books/` (`body-broken.png`, `let-the-bones-dance.jpg`, `touchdowns-for-jesus.jpg`), fulfilling the note left in the previous entry. Updated the `cover:` paths in `let-the-bones-dance.md` and `touchdowns-for-jesus.md` to match the committed filenames (previously pointed at the original chat-attachment filenames).
+- `assets/css/2a.css`: book-card and book-detail cover boxes now size via `aspect-ratio: 2 / 3` (was a fixed pixel height) with a `--bg-softer` background and `object-fit: contain` instead of `cover`, so the real cover art displays uncropped; the hero cover keeps `object-fit: cover` with `object-position: top`.
+
+### Amazon affiliate links
+- Added real Amazon URLs for all three backlist books (`a-body-broken-a-body-betrayed.md`, `let-the-bones-dance.md`, `touchdowns-for-jesus.md`), replacing the `#` placeholders.
+- `bookshop_url` / `bn_url` removed (not offered for these titles on the live marciamountshoop.com site) and the `# TODO` comments replaced with a note explaining why, dated 2026-07-29.
+
+### External links open in a new tab
+- Added `target="_blank" rel="noopener"` to outbound links sitewide: footer social icons, the follow-along social links and Substack subscribe form (`_includes/2a/footer.html`, `_includes/2a/follow-along.html`), book vendor/Amazon buttons (`_layouts/book-2a.html`, `options/2a/index.md`), the Talks page's "Watch Sermons on YouTube" button, and the homepage press-strip links (which also gained a trailing &#8599; arrow).
+
+### "View more" / "Read article" link affordances
+- Added a small uppercase link label with an animated arrow icon (`.book-card__link`, `.contact-method__link`) to book cards (homepage, Books page), press cards (Press page), and the Talks/Press program cards on the homepage, so these clickable cards signal they're links.
+- `options/2a/books.md`, `options/2a/index.md`, `options/2a/press.md`, `assets/css/2a.css`: markup and styling for the above.
+
+### Consulting page inquiry section
+- `options/2a/peace-ing-together-consulting.md`: restructured the `.inquiry` section so the navy background spans full width with content constrained to the page's `.wrap` inside a new `.inquiry__inner` grid, matching the full-bleed band pattern used elsewhere on the site (testimonials, CTA band). `assets/css/2a.css` updated accordingly, including the mobile breakpoint.
+
+## 2026-07-30 — Social links, book covers, press, and endorsements scaffold (Option 2 / "2a")
+
+### Social links
+- `_config.yml` `social_links`: real URLs for Facebook, Instagram, Threads, and Substack (note the Substack handle changed domains, to `marciawhitneymountshoop.substack.com`); `youtube` now points at GCPC's YouTube podcasts page (`youtube.com/@GCPCUSA/podcasts`) since no separate general YouTube URL was supplied — this also fixes the "GCPC Podcast" placeholder `#` links on the homepage and book detail pages, and the Substack subscribe form's hardcoded old domain in `_includes/2a/follow-along.html`.
+- `x` placeholder left as-is in `_config.yml` — still referenced by Options 1a/3a/7a; Option 2a itself never linked to it.
+- `social.links` (used by `jekyll-seo-tag`) updated to match, X dropped.
+
+### Book cover images
+- Added a `cover:` front-matter field to the three books with supplied artwork (`a-body-broken-a-body-betrayed.md`, `let-the-bones-dance.md`, `touchdowns-for-jesus.md`), pointing at `assets/images/books/`.
+- `_layouts/book-2a.html`, `options/2a/index.md`, `options/2a/books.md`: cover-bearing books now render a real `<img>` (with alt text) in place of the `BOOK COVER` placeholder block; books without a `cover` field still fall back to the striped placeholder, so `liberating-bodies` (cover pending) and `anthologies` are unaffected.
+- `assets/css/2a.css`: added `object-fit: cover` sizing rules so cover images fill the existing `.hero__cover` / `.book-card__cover` / `.book-detail__cover` boxes responsively.
+- **Note:** the actual image files (`body-broken.png`, `Let_the_Bones_Dance_COVER_IMAGE.jpg`, `Touchdowns_for_Jesus_COVER_IMAGE.jpg`) still need to be dropped into `assets/images/books/` — see the README left there. They weren't committed in this round because they arrived as chat attachments, not as files this environment could read from disk.
+
+### Affiliate links
+- Added `# TODO` comments above `amazon_url` / `bookshop_url` / `bn_url` on the three backlist books noting these are still pending from the client. Left values as `#`, unchanged.
+- `liberating-bodies.md` flagged distinctly: forthcoming (expected Spring 2027), no retail links yet — publisher/indie-store vendor links are real, only the Amazon fallback is a placeholder.
+
+### Press
+- `options/2a/press.md`: replaced the placeholder `#` press-card list with the real, currently-available coverage (Washington Post, NPR Marketplace, Religion News Service, StoryCorps, Blue Ridge Public Radio, three Asheville Citizen Times stories, Presbyterian News, Presbyterian Outlook, New York Times), each linking out (`target="_blank"`).
+- `options/2a/index.md`: the homepage "As Seen In" full-width press-strip band now links each outlet name out to its story, plus a "More press" link to the Press page.
+
+### Endorsements (scaffolded, empty)
+- Added `_data/endorsements_2a.yml`, keyed by book slug, all lists intentionally empty — new-book (Liberating Bodies) endorsements are expected mid-October 2026, and endorsements for backlist titles are pending client confirmation on scope. No placeholder quotes were fabricated.
+- Added `_includes/2a/endorsements.html`, which renders a `.testimonial-band` (matching the existing press-quote styling) per book when its list is non-empty, and no-ops otherwise. Wired into `_layouts/book-2a.html`.
+
+### About page
+- `options/2a/index.md`: added a `TODO` comment on the full-bleed "About Marcia" band noting we're waiting on the client to decide between a landscape photo of her or a background/textured image for that section. The striped placeholder is left in place.
 
 ## 2026-07-27 — Book detail quote styling & page consistency (Option 2 / "2a")
 
