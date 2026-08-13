@@ -14,6 +14,11 @@ permalink: /options/2a/about/
 
 <section class="section--tight wrap">
   <div class="about-split">
+    <!-- Client confirmed 2026-08-13: use a current portrait headshot
+         ("marcia-headshot"). File arrived as a chat attachment and
+         couldn't be committed — see assets/images/author/README.md.
+         Once dropped in, replace this placeholder block with:
+         <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia W. Mount Shoop"> -->
     <div class="about-split__photo placeholder-block">
       <span class="placeholder-label">HEADSHOT</span>
     </div>

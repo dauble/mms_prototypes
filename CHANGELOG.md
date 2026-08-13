@@ -2,6 +2,27 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-13 — Anthologies, endorsements, forthcoming book date (Option 2 / "2a")
+
+### Anthology / contributed-chapter entries
+- Replaced the generic `anthologies.md` stub with ten individual book entries in `_books_2a/`, one per title the client listed, each with its own detail page (matching the site's existing per-book format): *The Routledge Handbook of Religion and the Body*, *Companion to Sacraments and Sacramentality*, *Erotic Faith: Desire, Transformation, and Beloved Community in the Incarnational Theology of Wendy Farley*, *Trauma and Transcendence: Suffering and the Limits of Theory*, *Parenting as Spiritual Practice and Source for Theology*, *Encountering the Sacred: Feminist Reflections on Women's Lives*, *Faithfully Feminist: Jewish, Christian, & Muslim Feminists on Why We Stay*, *Wide Open Spaces*, *Women, Writing, Theology: Transforming a Tradition of Exclusion*, *Feasting on the Word: Preaching the Revised Common Lectionary, Year B, Volume 1*.
+- Ordered via the `order` field (5–14) to match the chronological (newest-first) sequence the client gave.
+- Editor/foreword/afterword credits are populated for the four titles whose cover art was visible in chat (read directly off the cover images — *Erotic Faith*, *Encountering the Sacred*, *Faithfully Feminist*, *Feasting on the Word*); everything else (chapter topic, publisher, date, retail link) is left as a bracketed placeholder or `# TODO` comment pending client confirmation. No facts were fabricated.
+- Two title collisions with the earlier placeholder-content prototypes ("Faithfully Feminist", "Trauma and Transcendence") were avoided with distinct slugs (`faithfully-feminist-anthology`, `trauma-and-transcendence-suffering-and-limits-of-theory`) — those earlier titles were fictional stand-ins from the original comparison-prototype phase and aren't part of Option 2's real content.
+
+### Cover images — still pending
+- Four of the ten anthology covers (Erotic Faith, Encountering the Sacred, Faithfully Feminist, Feasting on the Word) plus the author headshot arrived as chat attachments 2026-08-13 but could not be committed — same limitation noted in the 2026-07-30 entry below (this environment can't read chat attachments from disk). `assets/images/books/README.md` and the new `assets/images/author/README.md` document the expected filenames and the exact `cover:` / `<img>` line to uncomment once each file is dropped in.
+
+### Endorsements
+- Populated `_data/endorsements_2a.yml` for the three backlist titles (previously scaffolded empty) with real client-supplied quotes: two for *Let the Bones Dance* (Bonnie J. Miller-McLemore, Mary McClintock-Fulkerson), two for *Touchdowns for Jesus and Other Signs of Apocalypse* (Joseph Price/The Christian Century with the original review link, Robert Orr), and two for *A Body Broken, A Body Betrayed* (Willie James Jennings, Ellen T. Armour). `liberating-bodies` left empty per the existing note (expected mid-October 2026). No template changes needed — this data file was already wired up.
+
+### Forthcoming book (Liberating Bodies)
+- Added a confirmed on-sale date, May 11, 2027 (previously "expected Spring 2027" in a comment only, not shown on the page). New `on_sale_date` / `badge_label` front-matter fields drive a "Coming May 11, 2027" hero badge (replacing the hardcoded "New Release" text, which still applies by default to any other featured book) and an "On sale beginning May 11, 2027" note on both the homepage hero and the book detail page (`options/2a/index.md`, `_layouts/book-2a.html`, new `.hero__note` style in `assets/css/2a.css`).
+- Pre-order system is still TBD, pending a same-day meeting between Marcia and her publisher's marketing team — left a `# TODO` in `liberating-bodies.md` rather than guessing at a pre-order CTA.
+
+### Author headshot
+- Client resolved the open "photo vs. background image" question left in the 2026-07-30 entry: the homepage's full-bleed "About Marcia" band and the About page's headshot slot should both use a current portrait headshot. Both `options/2a/index.md` and `options/2a/about.md` have their placeholder comments updated with the exact markup to swap in once the file (`marcia-headshot.jpg`) is committed to the new `assets/images/author/` folder.
+
 ## 2026-07-29 — Cover art, Amazon links, external-link affordances (Option 2 / "2a")
 
 ### Book cover images
