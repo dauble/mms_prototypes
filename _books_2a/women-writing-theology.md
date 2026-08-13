@@ -3,14 +3,17 @@ title: "Women, Writing, Theology: Transforming a Tradition of Exclusion"
 order: 13
 category: "Contributed Chapter · Feminist Theology"
 featured: false
-# TODO: cover art, chapter title/topic, publisher, and retail link all
-# pending — this entry arrived as a title-only request (2026-08-13); no
-# cover image was supplied for it.
-amazon_url: "#"
+publisher: "Baylor University Press"
+cover: /assets/images/books/women-writing-theology.jpg
+amazon_url: "https://www.amazon.com/Women-Writing-Theology-Transforming-Tradition/dp/1602583765/"
 description: >-
-  [Description of Marcia's contributed chapter in this volume goes
-  here, once details are confirmed.]
+  Twelve constructive theologians investigate the conditions under which
+  women enter a written theological tradition — what has allowed and
+  inhibited women's writing practices, and what it means to enter a
+  tradition built on their exclusion. Published by Baylor University Press.
 excerpt: >-
-  [One-sentence teaser pending — Marcia's contribution to this volume.]
+  Marcia contributes to this collection examining the conditions of women's
+  theological writing, published by Baylor University Press.
 ---
-[Fuller description of Marcia's chapter goes here once confirmed.]
+
+In this collection, twelve constructive theologians investigate the conditions under which women enter a written theological tradition. How have women historically justified their writing practices? What constraints shape their capacity to write theology? What does it mean for women to enter a written tradition built on their exclusion? Published by Baylor University Press.

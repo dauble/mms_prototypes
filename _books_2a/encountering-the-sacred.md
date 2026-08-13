@@ -1,22 +1,20 @@
 ---
-title: "Encountering the Sacred: Feminist Reflections on Women's Lives"
+title: "Encountering the Sacred: A Theological Exploration of Women's Lives"
+date: 2018-10-01
 order: 10
 category: "Contributed Chapter · Feminist Theology"
 featured: false
-# TODO: cover image supplied as a chat attachment on 2026-08-13 but not yet
-# committed — this environment can't read chat attachments from disk.
-# Drop the file in as `encountering-the-sacred.jpg` in
-# assets/images/books/, then uncomment the line below.
-# cover: /assets/images/books/encountering-the-sacred.jpg
-# Publication date and retail link still pending.
-amazon_url: "#"
+chapter: "Remembering Rape: Descending, Surfacing, Dwelling"
+publisher: "T & T Clark"
+cover: /assets/images/books/encountering-the-sacred.jpeg
+amazon_url: "https://www.amazon.com/Encountering-Sacred-Feminist-Reflections-Womens-ebook/dp/B07JGTQZ64/"
 description: >-
-  An edited collection of feminist theological reflections on women's
-  lives, edited by Rebecca Todd Peters and Grace Y. Kao. [Description
-  of Marcia's chapter contribution goes here once confirmed.]
+  A theological exploration of women's lives, edited by Rebecca Todd Peters
+  and Grace Y. Kao, published by T &amp; T Clark (Fall 2018). Marcia
+  contributes the chapter "Remembering Rape: Descending, Surfacing, Dwelling."
 excerpt: >-
-  Marcia contributes a chapter to this collection of feminist
-  theological reflections, edited by Rebecca Todd Peters and Grace Y.
-  Kao.
+  Marcia contributes "Remembering Rape: Descending, Surfacing, Dwelling" to
+  this edited collection, published by T &amp; T Clark.
 ---
-[Fuller description of Marcia's chapter goes here once confirmed.]
+
+"Remembering Rape: Descending, Surfacing, Dwelling" is Marcia's chapter in this anthology edited by Rebecca Todd Peters and Grace Y. Kao, published by T &amp; T Clark in Fall 2018.

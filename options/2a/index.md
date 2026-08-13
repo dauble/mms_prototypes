@@ -60,17 +60,9 @@ permalink: /options/2a/
   </div>
 </section>
 
-<!-- RESOLVED 2026-08-13: client confirmed this band should use a current
-     portrait headshot ("marcia-headshot"), not a background/textured
-     image. The file arrived as a chat attachment and couldn't be
-     committed — this environment can't read chat attachments from disk.
-     Drop it in as `assets/images/author/marcia-headshot.jpg` (see the
-     README in that folder) and swap the placeholder block below for:
-     <img class="hero-photo__img" src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia W. Mount Shoop"> -->
 <section style="margin-bottom:60px">
-  <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end">
+  <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end;background-image:url('{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}');background-size:cover;background-position:right center">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,0) 35%,rgba(8,16,34,.88) 100%)"></div>
-    <div class="hero-photo__label" style="top:20px">PHOTO: Marcia headshot — full-bleed, royalty-free</div>
     <div style="position:relative;z-index:1;padding:48px 56px;max-width:560px">
       <div class="eyebrow" style="color:oklch(72% 0.11 175);margin-bottom:14px">About Marcia</div>
       <p style="font:400 21px/1.6 var(--font-serif);color:#fff;margin:0 0 18px">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>

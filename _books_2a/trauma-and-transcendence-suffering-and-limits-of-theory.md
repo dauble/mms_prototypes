@@ -1,18 +1,22 @@
 ---
 title: "Trauma and Transcendence: Suffering and the Limits of Theory"
 order: 8
-category: "Contributed Chapter"
+category: "Contributed Chapter · Interdisciplinary Theology"
 featured: false
-# TODO: cover art, chapter title/topic, publisher, and retail link all
-# pending — this entry arrived as a title-only request (2026-08-13); no
-# cover image was supplied for it. Note: distinct from any book Marcia
-# authored herself — this is an edited academic volume she contributed
-# a chapter to.
+editors: "Eric Boynton and Peter Capretto"
 amazon_url: "#"
+bn_url: "https://www.barnesandnoble.com/w/trauma-and-transcendence-eric-boynton/1127173629"
+cover: /assets/images/books/trauma-and-transcendence.jpg
 description: >-
-  [Description of Marcia's contributed chapter in this volume goes
-  here, once details are confirmed.]
+  An interdisciplinary volume edited by Eric Boynton and Peter Capretto,
+  with an afterword by Mary-Jane Rubenstein. Scholars in philosophy,
+  theology, psychoanalysis, and social theory engage the limits and
+  prospects of trauma's transcendence — asking whether trauma's
+  unassimilable quality defends traumatic experience against reductionism
+  or risks obscurantism.
 excerpt: >-
-  [One-sentence teaser pending — Marcia's contribution to this volume.]
+  Marcia contributes to this interdisciplinary collection on trauma theory,
+  edited by Eric Boynton and Peter Capretto.
 ---
-[Fuller description of Marcia's chapter goes here once confirmed.]
+
+Trauma theory has become a burgeoning site of research in recent decades, often demanding interdisciplinary reflections on trauma as a phenomenon that defies disciplinary ownership. _Trauma and Transcendence_ gathers scholars in philosophy, theology, psychoanalysis, and social theory to engage the limits and prospects of trauma's transcendence. Edited by Eric Boynton and Peter Capretto, with an afterword by Mary-Jane Rubenstein.
