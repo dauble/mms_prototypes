@@ -13,7 +13,7 @@ permalink: /options/2a/
 
 <section class="hero">
   <div class="hero__copy">
-    <div class="hero__badge">New Release</div>
+    <div class="hero__badge">{{ featured_book.badge_label | default: "New Release" }}</div>
     <h1 class="hero__title">{{ featured_book.title }}</h1>
     <p class="hero__desc">{{ featured_book.excerpt | default: featured_book.description }}</p>
     <div class="hero__actions">
@@ -21,6 +21,7 @@ permalink: /options/2a/
       <a class="btn {% if vendor.primary %}btn-primary{% else %}btn-outline{% endif %}" href="{{ vendor.url }}" target="_blank" rel="noopener">{{ vendor.name }}</a>
       {% endfor %}
     </div>
+    {% if featured_book.on_sale_date %}<div class="hero__note">On sale beginning {{ featured_book.on_sale_date }}</div>{% endif %}
     <a class="hero__link" href="{{ featured_book.url | relative_url }}">Learn more about this book &#8594;</a>
   </div>
   {% if featured_book.cover %}
@@ -59,14 +60,9 @@ permalink: /options/2a/
   </div>
 </section>
 
-<!-- TODO: pending client input — waiting to hear from Marcia whether this wide
-     "About Marcia" band should be a landscape photo of her, or a
-     background/textured image (no photo). Leaving the striped placeholder
-     in place until she decides. -->
 <section style="margin-bottom:60px">
-  <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end">
+  <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end;background-image:url('{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}');background-size:cover;background-position:right center">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,0) 35%,rgba(8,16,34,.88) 100%)"></div>
-    <div class="hero-photo__label" style="top:20px">PHOTO: Marcia headshot — full-bleed, royalty-free</div>
     <div style="position:relative;z-index:1;padding:48px 56px;max-width:560px">
       <div class="eyebrow" style="color:oklch(72% 0.11 175);margin-bottom:14px">About Marcia</div>
       <p style="font:400 21px/1.6 var(--font-serif);color:#fff;margin:0 0 18px">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>

@@ -91,6 +91,7 @@ layout: default-2a
         >Barnes &amp; Noble</a
       >{% endif %} {% endif %}
     </div>
+    {% if page.on_sale_date %}<div class="hero__note">On sale beginning {{ page.on_sale_date }}</div>{% endif %}
     {% endif %} {% if page.formats %}
     <div class="book-detail__formats">
       {% for format in page.formats %}<span class="format-pill"

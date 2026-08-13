@@ -214,6 +214,12 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--navy-deep); margin: 0;
   width: fit-content;
 }
 
+.hero__note {
+  font: 600 13px var(--font-sans);
+  color: var(--muted-2);
+  margin-top: 10px;
+}
+
 .hero__title {
   font: 700 56px/1.05 var(--font-serif);
   color: var(--navy-deep);

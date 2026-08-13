@@ -15,13 +15,6 @@ description: >-
   A theology of embodiment, trauma, and healing. Marcia's most personal
   book explores what it means to live in — and listen to — a body that
   carries memory, wound, and the possibility of resurrection.
-press:
-  - quote: "[Pull-quote from a reviewer or endorsing author goes here.]"
-    source: "Reviewer Name, Publication"
-  - quote: "[Pull-quote from a reviewer or endorsing author goes here.]"
-    source: "Reviewer Name, Publication"
-  - quote: "[Pull-quote from a reviewer or endorsing author goes here.]"
-    source: "Reviewer Name, Publication"
 excerpt: >-
   A theology of embodiment, trauma, and healing — Marcia's most personal
   work on how our bodies carry and release the stories we live.

@@ -1,23 +1,31 @@
-# Endorsements — SCAFFOLDED, intentionally empty for now.
-#
-# - New-book (Liberating Bodies) endorsements are expected from the client
-#   mid-October 2026.
-# - Endorsements for backlist titles (Let the Bones Dance, Touchdowns for
-#   Jesus, A Body Broken A Body Betrayed) are pending client confirmation
-#   on scope (which books, how many quotes, where they should appear).
+# Endorsements, keyed by the book's slug (its filename stem in _books_2a/).
+# Rendered via _includes/2a/endorsements.html, which no-ops for any book
+# with an empty (or missing) list.
 #
 # Do not fabricate placeholder quotes here — leave a book's list empty
-# until real copy comes in. Rendered via _includes/2a/endorsements.html,
-# which no-ops for any book with an empty (or missing) list.
+# until real copy comes in.
 #
-# Structure once populated, keyed by the book's slug (its filename stem
-# in _books_2a/):
-#
-# liberating-bodies:
-#   - quote: "..."
-#     source: "Name, Title/Organization"
+# - Backlist endorsements (Let the Bones Dance, Touchdowns for Jesus,
+#   A Body Broken A Body Betrayed) received from the client 2026-08-13.
+# - Liberating Bodies endorsements still expected mid-October 2026 —
+#   left empty.
 
 liberating-bodies: []
-let-the-bones-dance: []
-touchdowns-for-jesus: []
-a-body-broken-a-body-betrayed: []
+
+let-the-bones-dance:
+  - quote: "Beautifully written and deeply felt. This work offers a vivid theology relocated in the flesh and blood of life's utter physicality. Finally a book to recommend when people ask about resources on bodies and theology."
+    source: "Bonnie J. Miller-McLemore, E. Rhodes and Leona B. Carpenter Professor of Religion, Psychology, and Culture, Emerita, Vanderbilt University Divinity School"
+  - quote: "An incredibly compelling theological work... It is groundbreaking."
+    source: "Mary McClintock-Fulkerson, Professor Emerita of Theology, Duke Divinity School"
+
+touchdowns-for-jesus:
+  - quote: "Mount Shoop prophetically decries the institutional distortions and abuses of big-time football, drawing on sociological data and personal experience to support her argument."
+    source: 'Joseph Price, <a href="https://www.christiancentury.org/reviews/2014-10/touchdowns-jesus-and-other-signs-apocalypse-marcia-w-mount-shoop" target="_blank" rel="noopener">The Christian Century</a>'
+  - quote: "Throw out the playbook. This is not a conventional play — and certainly not a conventional book about big-time sports and theology. Reading this book will help all of us in examining our faith and how it plays out in our day-to-day devotion to big-time sports in our society."
+    source: "Robert Orr, Former North Carolina Supreme Court Justice"
+
+a-body-broken-a-body-betrayed:
+  - quote: "A prayer request is being answered with this book by two of this country's premier feminist theologians."
+    source: "Willie James Jennings, Andrew W. Mellon Professor of Systematic Theology and Africana Studies, Yale Divinity School"
+  - quote: "Clergy, scholars, and laity have much to gain from this insightful and accessible blend of trenchant academic analysis, theological wisdom, and genuine compassion."
+    source: "Ellen T. Armour, E. Rhodes and Leona B. Carpenter Professor of Feminist Theology, Vanderbilt University Divinity School"

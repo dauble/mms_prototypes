@@ -5,9 +5,14 @@ category: "Theology · Collective Liberation"
 featured: true
 new_release: true
 cover_pending: true
-# TODO: forthcoming book, expected Spring 2027 — flagged distinctly since it
-# has no retail links yet (publisher/indie-store links above are real; only
-# the Amazon fallback below is a placeholder pending client confirmation).
+badge_label: "Coming May 11, 2027"
+on_sale_date: "May 11, 2027"
+# On-sale date confirmed by the client 2026-08-13. Pre-order system is
+# still TBD — Marcia is meeting with her publisher's marketing team at
+# 3pm today (2026-08-13) and will have more info on whether/how
+# pre-orders work. Update the vendor list / add a dedicated pre-order
+# CTA once that's confirmed; leave the Amazon "#" placeholder as-is
+# until then.
 formats: [Paperback, eBook]
 vendors:
   - name: "North Atlantic Books"
@@ -25,9 +30,6 @@ description: >-
   You were built for the work of collective transformation and you have a
   life-giving role to play. Find your place in the story of liberation and
   explore how we can heal the human family together.
-press:
-  - quote: "[Advance endorsement goes here — ask Marcia for 1–2 quotes from readers or colleagues who've seen early copies.]"
-    source: "[Name, Title/Organization]"
 excerpt: >-
   You were built for the work of collective transformation and you have a
   life-giving role to play. Find your place in the story of liberation and
