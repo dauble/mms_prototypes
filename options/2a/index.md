@@ -61,12 +61,12 @@ permalink: /options/2a/
 </section>
 
 <section class="section wrap">
-  <div class="about-split about-split--navy">
-    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-split__photo">
-    <div class="about-split__copy">
-      <div class="eyebrow">About Marcia</div>
-      <p class="about-split__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
-      <a class="about-split__link" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
+  <div class="about-teaser">
+    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-teaser__photo">
+    <div class="about-teaser__panel">
+      <div class="eyebrow about-teaser__eyebrow">About Marcia</div>
+      <p class="about-teaser__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
+      <a class="about-teaser__link" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
     </div>
   </div>
 </section>

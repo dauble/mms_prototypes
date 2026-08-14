@@ -2,6 +2,13 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-14 — "About Marcia" section: layered overlap treatment (Option 2 / "2a")
+
+### Client feedback on the design-ref-5b section
+- Client feedback on the initial 5b build (below): wanted the navy panel taller than the photo, with the photo overlapping in front of it for a layered look, rather than the flush edge-to-edge box.
+- Replaced the `.about-split`/`.about-split--navy` reuse with a dedicated `.about-teaser` component in `assets/css/2a.css` (used only by `options/2a/index.md`) — the navy panel is taller than the photo and vertically centers it via CSS Grid `align-items: center`, and the photo overlaps ~64px into the panel with a drop shadow for depth. Overflow is intentionally not clipped (unlike `.about-split`'s bordered box) so the overlap can render. The About page's own flush `.about-split` block is untouched.
+- Square corners kept throughout, per the earlier intentional deviation from the reference's rounded corners.
+
 ## 2026-08-14 — Homepage "About Marcia" editorial section, design ref 5b (Option 2 / "2a")
 
 ### Two-column photo/navy-panel section

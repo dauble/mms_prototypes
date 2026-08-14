@@ -409,25 +409,48 @@ section { position: relative; }
 }
 .about-split__link:hover { opacity: .8; }
 
-.about-split--navy { min-height: 440px; }
-.about-split--navy .about-split__copy {
+/* Homepage "About Marcia" teaser: the navy panel runs taller than the
+   photo and the photo overlaps in front of it for a layered look, so this
+   is a distinct layout from .about-split's flush, bordered box. */
+.about-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  align-items: center;
+}
+.about-teaser__photo {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+  width: calc(100% + 64px);
+  height: 380px;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 28px 55px -20px rgba(10, 20, 40, .45);
+}
+.about-teaser__panel {
+  position: relative;
   background: var(--navy);
-  padding: 56px;
+  min-height: 460px;
+  padding: 56px 56px 56px 112px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.about-split--navy .eyebrow { color: var(--teal); margin-bottom: 14px; }
-.about-split--navy .about-split__quote {
+.about-teaser__eyebrow { color: var(--teal); margin-bottom: 14px; }
+.about-teaser__quote {
   font: 400 21px/1.6 var(--font-serif);
   color: #fff;
-  max-width: 460px;
+  margin: 0 0 20px;
+  max-width: 420px;
 }
-.about-split--navy .about-split__link {
+.about-teaser__link {
   font: 700 13px var(--font-sans);
   color: #fff;
+  text-decoration: underline;
   width: fit-content;
+  transition: opacity .15s ease;
 }
+.about-teaser__link:hover { opacity: .8; }
 
 .talk-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .talk-card {
@@ -852,9 +875,9 @@ section { position: relative; }
   }
   .book-detail { grid-template-columns: 1fr; }
   .about-split { grid-template-columns: 1fr; }
-  .about-split--navy { min-height: 0; }
-  .about-split--navy .about-split__photo { height: 280px; }
-  .about-split--navy .about-split__copy { padding: 36px 24px; }
+  .about-teaser { grid-template-columns: 1fr; }
+  .about-teaser__photo { max-width: 100%; width: 100%; height: 280px; }
+  .about-teaser__panel { min-height: 0; padding: 36px 24px; }
   .featured-entry { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: repeat(2, 1fr); }
   .book-grid--3 { grid-template-columns: 1fr; }
