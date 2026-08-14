@@ -60,13 +60,13 @@ permalink: /options/2a/
   </div>
 </section>
 
-<section style="margin-bottom:60px">
-  <div class="hero-photo" style="min-height:440px;display:flex;align-items:flex-end;background-image:url('{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}');background-size:cover;background-position:right center">
-    <div class="hero-photo__scrim hero-photo__scrim--about"></div>
-    <div style="position:relative;z-index:1;padding:48px 56px;max-width:560px">
-      <div class="eyebrow" style="color:oklch(72% 0.11 175);margin-bottom:14px">About Marcia</div>
-      <p style="font:400 21px/1.6 var(--font-serif);color:#fff;margin:0 0 18px">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
-      <a class="hero__link" style="color:#fff;border-bottom-color:rgba(255,255,255,.6)" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
+<section class="section wrap">
+  <div class="about-split about-split--navy">
+    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-split__photo">
+    <div class="about-split__copy">
+      <div class="eyebrow">About Marcia</div>
+      <p class="about-split__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
+      <a class="about-split__link" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
     </div>
   </div>
 </section>
