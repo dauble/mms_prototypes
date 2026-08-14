@@ -12,6 +12,7 @@ permalink: /options/2a/
 {% unless featured_book %}{% assign featured_book = site.books_2a | first %}{% endunless %}
 
 <section class="hero">
+  <canvas class="hero__bubbles" aria-hidden="true"></canvas>
   <div class="hero__copy">
     <div class="hero__badge">{{ featured_book.badge_label | default: "New Release" }}</div>
     <h1 class="hero__title">{{ featured_book.title }}</h1>

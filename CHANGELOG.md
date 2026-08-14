@@ -2,6 +2,15 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-14 — Floating bubble background on the homepage hero (Option 2 / "2a")
+
+### Ambient hero animation
+- Added a subtle canvas-based particle layer to the homepage hero (`options/2a/index.md`), behind the existing "Featured Book" copy/cover content: ~24 small circles (radius 2–20px, weighted toward smaller) drift slowly in random directions, wrap around the section edges, and gently part when the cursor comes within ~90px, easing back to their resting position once the cursor leaves.
+- New `assets/js/hero-bubbles.js`, following the site's existing vanilla-JS conventions (`DOMContentLoaded` + guard clauses, like `nav.js`/`carousel.js`); registered in `_layouts/default-2a.html` alongside the other deferred scripts.
+- Colors are read at runtime from the existing `--navy`/`--teal`/`--green`/`--coral` custom properties in `assets/css/2a.css` (at low alpha) rather than hardcoded, so the palette stays in sync with the design system automatically.
+- Respects `prefers-reduced-motion: reduce` (skips the animation entirely) and is scaled for `devicePixelRatio` so circles stay crisp on retina displays.
+- New `.hero__bubbles` canvas styling in `assets/css/2a.css`: absolutely positioned to fill `.hero`, `z-index: 0` so it sits behind the existing hero content, `pointer-events: none` so it never intercepts clicks.
+
 ## 2026-08-14 — "About Marcia" section: layered overlap treatment (Option 2 / "2a")
 
 ### Client feedback on the design-ref-5b section
