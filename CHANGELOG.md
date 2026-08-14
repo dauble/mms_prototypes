@@ -2,6 +2,16 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-14 — Homepage "About Marcia" editorial section, design ref 5b (Option 2 / "2a")
+
+### Two-column photo/navy-panel section
+- Rebuilt the homepage's "About Marcia" band (`options/2a/index.md`) to match design reference 5b: a two-column editorial section with the headshot flush against a solid navy panel (eyebrow label, serif pull-quote, "Read full bio" link), replacing the previous full-bleed photo-with-scrim treatment.
+- Reused the existing `.about-split` component (already powering the About page's photo/copy block) rather than inventing new markup, adding an `.about-split--navy` modifier in `assets/css/2a.css` for the dark panel variant (navy background via the existing `--navy` token, teal eyebrow, white serif quote, white bold underlined link with a hover state). The About page's own (white-panel) usage of `.about-split` is unaffected.
+- `.about-split__photo` gained `width/height: 100%` + `object-fit: cover` so the image reliably fills its grid column edge-to-edge and stays flush against the panel with no gap, on both variants.
+- **Intentional deviation from reference 5b:** the reference shows rounded corners on the photo/panel; kept square corners throughout (no `border-radius` added) to stay consistent with Option 2a's existing sharp-edged design language (cards, buttons, book covers, etc. all use `--radius: 0`).
+- Uses the real headshot at `assets/images/author/marcia-headshot.jpg` (already committed and already referenced by the About page) with descriptive alt text ("Marcia Mount Shoop"), not a placeholder.
+- Responsive: stacks to a single column at the existing `900px` breakpoint, with a fixed photo height on mobile since the desktop grid-stretch technique doesn't apply once the columns collapse.
+
 ## 2026-08-13 — Anthologies, endorsements, forthcoming book date (Option 2 / "2a")
 
 ### Anthology / contributed-chapter entries
