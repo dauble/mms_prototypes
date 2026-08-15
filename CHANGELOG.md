@@ -2,6 +2,11 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Removed duplicate GitHub Pages deploy pipeline
+
+- The repo's GitHub Pages source was still set to the legacy "deploy from a branch" mode (`build_type: legacy`, branch `main`), which auto-builds and deploys via GitHub's own Jekyll build on every push — running in parallel with (and redundant to) the custom `.github/workflows/deploy.yml` Actions workflow that already handles the build/deploy correctly (proper `--baseurl`, `JEKYLL_ENV=production`). Run history showed both `pages-build-deployment` and `Deploy Jekyll site to GitHub Pages` firing on every merge to `main`.
+- Switched the Pages source to `build_type: workflow` via the GitHub API (`PUT /repos/dauble/mms_prototypes/pages`), so `deploy.yml` is now the sole deploy path. This is a repo-level setting, not a branch-scoped file change.
+
 ## 2026-08-15 — Image optimization: WebP everywhere, further compression (Option 2 / "2a")
 
 ### WebP copies for every real image
