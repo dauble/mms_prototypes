@@ -1,17 +1,36 @@
-const ALLOWED_FORMS = new Set(["contact-2a", "speaking-inquiry-2a"]);
+const FORM_CONFIG = {
+  "contact-2a": { action: "contact" },
+  "speaking-inquiry-2a": { action: "speaking-inquiry" },
+};
+
+function getExpectedHostnames(env) {
+  return new Set(
+    (env.TURNSTILE_HOSTNAMES ?? "")
+      .split(",")
+      .map((hostname) => hostname.trim())
+      .filter(Boolean)
+  );
+}
 
 async function verifyTurnstile(token, ip, secret) {
-  if (!token) return false;
+  if (typeof token !== "string" || token.length === 0 || token.length > 2048 || !secret) {
+    return null;
+  }
   const body = new URLSearchParams({ secret, response: token });
   if (ip) body.set("remoteip", ip);
 
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body,
-  });
-  const data = await res.json();
-  return data.success === true;
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      signal: AbortSignal.timeout(10_000),
+      body,
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
 
 function safeRedirectPath(env, path) {
@@ -49,8 +68,9 @@ export default {
       return new Response("Bad request", { status: 400 });
     }
 
-    const formName = formData.get("form-name") || "";
-    if (!ALLOWED_FORMS.has(formName)) {
+    const formName = (formData.get("form-name") || "").toString();
+    const formConfig = FORM_CONFIG[formName];
+    if (!formConfig) {
       return new Response("Unknown form", { status: 400 });
     }
 
@@ -62,12 +82,17 @@ export default {
     }
 
     const ip = request.headers.get("CF-Connecting-IP");
-    const verified = await verifyTurnstile(
+    const verification = await verifyTurnstile(
       formData.get("cf-turnstile-response"),
       ip,
-      env.TURNSTILE_SECRET_KEY
+      env.TURNSTILE_SECRET ?? env.TURNSTILE_SECRET_KEY
     );
-    if (!verified) {
+    const expectedHostnames = getExpectedHostnames(env);
+    if (
+      !verification?.success ||
+      verification.action !== formConfig.action ||
+      !expectedHostnames.has(verification.hostname)
+    ) {
       return Response.redirect(withParam(redirectBase, "error", "verification"), 303);
     }
 

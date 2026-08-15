@@ -4,6 +4,8 @@ All notable changes made during feedback/iteration sessions on this prototype si
 
 ## 2026-08-15 — Turnstile live with real credentials
 
+- Hardened the existing Turnstile integration to match Cloudflare's canonical existing-widget flow: each protected form now sends an explicit `data-action` (`contact`, `speaking-inquiry`), and `cf-worker/src/index.js` now requires `success === true`, the expected action, and an allowed hostname from `TURNSTILE_HOSTNAMES` before mail delivery continues.
+- `cf-worker/wrangler.toml` now documents `TURNSTILE_HOSTNAMES` (`davidauble.com` in production) and the Worker accepts `TURNSTILE_SECRET` as the preferred secret binding while keeping `TURNSTILE_SECRET_KEY` as a backward-compatible fallback; `cf-worker/README.md`, `README.md`, `CLAUDE.md`, and `_config.yml` were updated to match.
 - `turnstile_site_key` in `_config.yml` swapped from Cloudflare's always-pass test key to the real Site Key from the Cloudflare dashboard; the matching `TURNSTILE_SECRET_KEY` was set on `cf-worker` via `wrangler secret put` and the Worker redeployed (`npx wrangler deploy`), so the Contact and Peace-ing Together Consulting forms now run a real Turnstile challenge instead of an always-pass one.
 - `RESEND_API_KEY` and the placeholder `TO_EMAIL` in `cf-worker/wrangler.toml` are still outstanding — Turnstile verification will succeed but the notification email won't send until those are set.
 - `README.md`/`CLAUDE.md` updated to drop the now-stale "still the test key" notes.

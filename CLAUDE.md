@@ -52,11 +52,11 @@ npx wrangler deploy    # deploy — registers the route in wrangler.toml
 
 ## Forms / backend
 
-GitHub Pages (the deploy target) serves static files only, so server-side form handling runs on a separate Cloudflare Worker (`cf-worker/`), fronting `davidauble.com` and intercepting `/mms_prototypes/api/*`: verifies a Cloudflare Turnstile challenge, checks a honeypot field, emails the submission via Resend, then redirects back with a `?sent=`/`?error=` status that `form-status.js` displays. See `cf-worker/README.md` for one-time setup (Turnstile widget, Resend domain, `wrangler secret put`).
+GitHub Pages (the deploy target) serves static files only, so server-side form handling runs on a separate Cloudflare Worker (`cf-worker/`), fronting `davidauble.com` and intercepting `/mms_prototypes/api/*`: verifies a Cloudflare Turnstile challenge, checks a honeypot field, validates the expected Turnstile action + hostname, emails the submission via Resend, then redirects back with a `?sent=`/`?error=` status that `form-status.js` displays. See `cf-worker/README.md` for one-time setup (Turnstile widget, hostname allowlist, Resend domain, `wrangler secret put`).
 
 The Contact and Peace-ing Together Consulting forms use `form-name` values `contact-2a` and `speaking-inquiry-2a` (matched against `cf-worker/src/index.js`'s `ALLOWED_FORMS`) — these are internal identifiers left over from when this design was "Option 2a"; harmless to leave as-is, but if you rename them, update both the form markup and the deployed Worker together (the Worker isn't deployed by CI, see below).
 
-`turnstile_site_key` in `_config.yml` is now the real Site Key, paired with `TURNSTILE_SECRET_KEY` set on the deployed Worker via `wrangler secret put`.
+`turnstile_site_key` in `_config.yml` is now the real Site Key; the deployed Worker should store the matching secret as `TURNSTILE_SECRET` (preferred) or `TURNSTILE_SECRET_KEY` (legacy fallback) and validate `TURNSTILE_HOSTNAMES` against the hostname returned by Siteverify.
 
 ## CI/CD
 

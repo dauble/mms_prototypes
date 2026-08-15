@@ -31,11 +31,13 @@ Everything else on the domain still serves from GitHub Pages untouched.
    and set `FROM_EMAIL` in `wrangler.toml` to an address on that
    domain. Create an API key.
 
-5. **Set the two secrets** (never commit these):
+5. **Set the Turnstile and Resend secrets** (never commit these):
    ```
-   npx wrangler secret put TURNSTILE_SECRET_KEY
+   npx wrangler secret put TURNSTILE_SECRET
    npx wrangler secret put RESEND_API_KEY
    ```
+   `TURNSTILE_SECRET_KEY` still works as a backward-compatible fallback,
+   but new setups should use `TURNSTILE_SECRET`.
 
 6. **Set the real destination email** — edit `TO_EMAIL` in
    `wrangler.toml` (currently a placeholder) to Marcia's actual inbox.
@@ -47,12 +49,17 @@ Everything else on the domain still serves from GitHub Pages untouched.
    This registers the route from `wrangler.toml`, so Cloudflare starts
    sending matching requests to the Worker instead of GitHub Pages.
 
-8. **Put the Turnstile Site Key into the Jekyll site** — set
+8. **Set the hostname allowlist** — production deploys should leave
+   `TURNSTILE_HOSTNAMES` in `wrangler.toml` at `davidauble.com`. For
+   local `wrangler dev`, set `TURNSTILE_HOSTNAMES=localhost,127.0.0.1`
+   in `.dev.vars` instead; do not allow local hostnames in production.
+
+9. **Put the Turnstile Site Key into the Jekyll site** — set
    `turnstile_site_key` in `_config.yml` (repo root, not this folder)
    to the Site Key from step 3, then commit/push so the site rebuilds
    with the real widget instead of Cloudflare's always-pass test key.
 
-9. **Test**: submit both forms on the live site and confirm the email
+10. **Test**: submit both forms on the live site and confirm the email
    arrives, then submit again with a browser extension or curl that
    skips the Turnstile widget to confirm it's actually rejected.
 
@@ -63,4 +70,5 @@ and the Resend call both need real values in `.dev.vars` (see
 Wrangler's docs for `wrangler secret` vs `.dev.vars`) — the always-pass
 Turnstile test keys (sitekey `1x00000000000000000000AA`, secret
 `1x0000000000000000000000000000000AA`) are useful here so you're not
-solving a live CAPTCHA in dev.
+solving a live CAPTCHA in dev. Set `TURNSTILE_HOSTNAMES` there to
+`localhost,127.0.0.1` so local tokens pass the Worker's hostname check.
