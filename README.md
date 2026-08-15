@@ -1,45 +1,30 @@
-# marciamountshoop.com — prototype hub
+# marciamountshoop.com — prototype site
 
-An internal, client-facing Jekyll site for reviewing design directions
-for Marcia Mount Shoop's author website. This is **not** the live
-site — every page is `noindex`/`nofollow` and `robots.txt` disallows
-all crawling. `/` is a gallery that links out to each fully built
-prototype; each prototype is a complete, click-through mini-site
-(Home, Books, Book Detail, Writing & Talks, Speaking, About, Contact)
-sharing the same content but a different visual direction.
+An internal, client-facing Jekyll site for reviewing design directions for
+Marcia Mount Shoop's author website. This is **not** the live site — every
+page is `noindex`/`nofollow` and `robots.txt` disallows all crawling. It's
+a complete, click-through site (Home, Books, Book Detail, Writing & Talks,
+Speaking, About, Contact) built around "Navy Classic," the design
+direction the client has chosen.
 
 ## What's been built
 
-The project started as a single design direction and grew into a
-multi-prototype comparison hub, then had its first content/feedback
-pass once a direction was chosen:
-
-1. **Initial build (direction 3a)** — stood up the whole site as a
-   real, buildable Jekyll site: book/writing collections, SEO
-   (`jekyll-seo-tag`, `jekyll-sitemap`, `schema.org` JSON-LD, `llms.txt`
-   for AEO), FTC affiliate disclosure, Netlify-backed forms, and a
-   responsive layout with mobile nav + a Writing & Talks type filter.
+1. **Initial build** — stood up the whole site as a real, buildable Jekyll
+   site: book/writing collections, SEO (`jekyll-seo-tag`, `schema.org`
+   JSON-LD), FTC affiliate disclosure, and a responsive layout with mobile
+   nav + a Writing & Talks type filter.
 2. **GitHub Pages deployment** — CI build/deploy workflow, plus a
-   Cloudflare cache-purge workflow (several iterations: curl-based →
-   third-party action → pinned SHA → `jakejarvis/cloudflare-purge-action`)
-   that busts the CDN cache whenever a PR merges to `main`.
-3. **Restructure into a multi-prototype hub** — root `/` became a
-   gallery (`_data/options.yml`) linking to independent design
-   directions living under `/options/<id>/`, each with its own
-   collections, layouts, includes, and CSS, plus a shared "you are
-   viewing prototype X" bar for jumping between them. The original 3a
-   site moved to `/options/3a/`.
-4. **Additional directions added** — Option 1a "Editorial Plum"
-   (asymmetric hero, warm cream, sage-green, Lora serif), and later
-   Option 7a "Light & Airy Gradient" (soft multi-hue gradients, pill
-   buttons, "Hi, I'm Marcia" intro block), bringing the total to four
-   built directions, later relabeled Option 1–4 for client review.
-5. **Option 2 ("Navy Classic") chosen and rebuilt with real content** —
-   once a direction was selected, `/options/2a/` was reworked with
-   Marcia's actual book copy, a new Press page, a renamed Talks page,
-   updated nav/footer, and endorsement-card layout fixes.
-6. **First round of client feedback** (2026-07-24, see
-   [CHANGELOG.md](CHANGELOG.md) for full detail) — applied to Option 2:
+   Cloudflare cache-purge workflow that busts the CDN cache whenever a PR
+   merges to `main`.
+3. **Multiple design directions explored** — several additional visual
+   directions were built and compared client-side before "Navy Classic"
+   was chosen; those comparison variants (and the gallery page that linked
+   between them) have since been removed from the repo.
+4. **"Navy Classic" chosen and rebuilt with real content** — Marcia's
+   actual book copy, a Press page, a Talks page, nav/footer, and
+   endorsement-card layout.
+5. **First round of client feedback** (2026-07-24, see
+   [CHANGELOG.md](CHANGELOG.md) for full detail):
    - Swapped Netlify Forms for a custom **Cloudflare Worker** backend
      (`cf-worker/`) since GitHub Pages can't run server-side code —
      verifies Cloudflare Turnstile, checks a honeypot, emails
@@ -54,46 +39,20 @@ pass once a direction was chosen:
 Ongoing feedback and iteration is logged chronologically in
 [CHANGELOG.md](CHANGELOG.md).
 
-## Prototypes
-
-- **`/options/1a/`** — "Editorial Plum": asymmetric hero, warm cream,
-  sage-green accent, confident serif (Lora), near-square corners,
-  restrained hairline-rule cards.
-- **`/options/2a/`** — "Navy Classic" — **the chosen direction**,
-  rebuilt with Marcia's real content and the first round of feedback
-  applied: navy/teal/coral/green palette, sharp corners, hover-lift
-  shadows, full-bleed photo-textured bands, underline nav.
-- **`/options/3a/`** — "Soft Rounded": navy/teal/coral/green palette,
-  pill buttons, rounded cards & covers, circular icons.
-- **`/options/7a/`** — "Light & Airy Gradient": traditional nav, soft
-  multi-hue gradient washes, pill buttons, calm editorial feel.
-
-Adding another direction from the design doc means: duplicate an
-`options/<id>/` folder + its `_books_<id>`/`_writing_<id>` collections +
-`assets/css/<id>.css` + `_layouts/*-<id>.html` + `_includes/<id>/`, then
-add an entry to `_data/options.yml` so it shows up on the landing page.
-
 ## Structure
 
-- `index.html` — the landing gallery (`_data/options.yml` drives the
-  card list), `assets/css/gallery.css`
-- `_includes/proto-bar.html` + `assets/css/proto-bar.css` — the neutral
-  "you are viewing prototype X, switch to Y" bar shown on every
-  prototype page
-- `options/<variant>/*.md` — top-level pages for that variant
-  (permalinks under `/options/<variant>/...`)
-- `_books_<variant>/`, `_writing_<variant>/` — per-variant collections
-  (same content across variants, styled differently)
-- `_layouts/default-<variant>.html`, `book-<variant>.html`,
-  `writing-entry-<variant>.html` — per-variant page shells
-- `_includes/<variant>/` — per-variant nav, footer, and modules
-- `assets/css/<variant>.css` — per-variant design system
-- `assets/js/nav.js` — shared mobile nav toggle + Writing & Talks type
-  filter (attribute-selector based, works across variants)
+- `*.md` at the repo root (`index.md`, `about.md`, `books.md`,
+  `contact.md`, `peace-ing-together-consulting.md`, `press.md`,
+  `talks.md`, `writing-and-talks.md`) — top-level pages
+- `_books/`, `_writing/` — Jekyll collections
+- `_layouts/default.html`, `book.html`, `writing-entry.html` — page shells
+- `_includes/` — nav, footer, and content modules
+- `assets/css/main.css` — the design system
+- `assets/js/nav.js` — mobile nav toggle + Writing & Talks type filter
 - `assets/js/form-status.js` — reads `?sent=`/`?error=` from the URL
-  and reveals the matching success/error banner (used by Option 2's
+  and reveals the matching success/error banner (used by the
   Cloudflare Worker-backed forms)
-- `cf-worker/` — Cloudflare Worker that handles Option 2's Contact and
+- `cf-worker/` — Cloudflare Worker that handles the Contact and
   consulting-inquiry form submissions (Turnstile verification, honeypot
   check, email via Resend); excluded from the Jekyll build. See
   `cf-worker/README.md` for one-time setup.
@@ -109,35 +68,28 @@ bundle exec jekyll serve
 
 Visit `http://localhost:4000`.
 
-## Before launch (whichever direction is chosen) — placeholders to replace
+## Before launch — placeholders to replace
 
 - **Book covers & author photos**: currently CSS placeholder blocks
-  labeled `BOOK COVER` / `AUTHOR PHOTO`. Drop real images into
-  `assets/images/` and swap the placeholder markup for `<img>` tags.
+  labeled `BOOK COVER` / `AUTHOR PHOTO` for the couple of entries still
+  missing real art. Drop real images into `assets/images/` and swap the
+  placeholder markup for `<img>` tags.
 - **Affiliate links**: `amazon_url` / `bookshop_url` / `bn_url` in each
-  `_books_<variant>/*.md` file are `#` — fill in real Amazon Associates /
-  Bookshop.org / B&N affiliate links.
+  `_books/*.md` file — fill in any remaining `#` placeholders with real
+  Amazon Associates / Bookshop.org / B&N affiliate links.
 - **Bracketed copy**: text like `[Marcia's fuller description goes
-  here…]` throughout the collections and `about`/`speaking` pages marks
-  real content Marcia still needs to supply (largely resolved on
-  Option 2, still outstanding on 1a/3a/7a).
+  here…]` throughout the collections marks real content Marcia still
+  needs to supply.
 - **Social URLs**: update `social_links` in `_config.yml`.
-- **Forms**: Option 2's Contact/consulting forms run on the Cloudflare
-  Worker in `cf-worker/` (Turnstile + Resend); other variants are still
-  wired for [Netlify Forms](https://docs.netlify.com/forms/setup/)
-  (`data-netlify` attributes). Swap for your form backend if not on
-  Netlify/Cloudflare.
 - **Turnstile key**: `turnstile_site_key` in `_config.yml` is currently
   Cloudflare's always-pass test key — swap for a real site key before
   launch.
-- **Before going live**: drop the gallery/proto-bar chrome, pick one
-  `options/<variant>/` to promote to site root, delete the rest, remove
-  the `noindex` meta tag, and re-enable `jekyll-sitemap` + a real
-  `llms.txt` (both were removed here since this hub isn't meant to be
-  indexed).
+- **Before going live**: remove the `noindex` meta tag, and re-enable
+  `jekyll-sitemap` + a real `llms.txt` (both were removed here since this
+  hub isn't meant to be indexed).
 - **`site.url`** in `_config.yml` should match the live domain.
 
-## SEO / AEO / social sharing (per prototype)
+## SEO / AEO / social sharing
 
 - `jekyll-seo-tag` generates `<title>`, meta description, canonical, and
   Open Graph / Twitter Card tags from each page's front matter.
@@ -145,4 +97,4 @@ Visit `http://localhost:4000`.
   adds `schema.org/Book` JSON-LD.
 - Every page footer carries an FTC-compliant affiliate disclosure.
 - Sitemap generation and `llms.txt` are intentionally disabled while
-  this is a review-only hub — see "Before launch" above.
+  this is a review-only site — see "Before launch" above.

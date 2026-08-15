@@ -1,8 +1,8 @@
-title: "Marcia Mount Shoop — Site Prototypes"
+title: "Marcia Mount Shoop — Site Prototype"
 tagline: Author, theologian, and speaker on embodiment, trauma, and healing
 description: >-
-  Internal prototype hub for the marciamountshoop.com redesign. Not the
-  live site — for client review of design directions only.
+  Internal prototype for the marciamountshoop.com redesign. Not the
+  live site — for client review only.
 url: "https://davidauble.com"
 baseurl: "/mms_prototypes"
 lang: en-US
@@ -13,8 +13,7 @@ author:
 social_links:
   facebook: "https://www.facebook.com/TheRev.MarciaMountShoopPhD"
   instagram: "https://www.instagram.com/mountshoop/"
-  # Still a placeholder — kept in place because options 1a/3a/7a still
-  # link to it. Option 2a no longer references social_links.x anywhere.
+  # Still a placeholder — used in schema-person.html's sameAs list.
   x: "https://x.com/"
   # GCPC's YouTube channel/podcasts tab — used for the general "YouTube"
   # link (footer, follow-along, Talks page) as well as the "GCPC Podcast" link.
@@ -45,104 +44,29 @@ social:
     - "https://www.threads.net/@mountshoop"
 
 collections:
-  books_3a:
+  books:
     output: true
-    permalink: /options/3a/books/:path/
-  writing_3a:
+    permalink: /books/:path/
+  writing:
     output: true
-    permalink: /options/3a/writing-and-talks/:path/
-  books_1a:
-    output: true
-    permalink: /options/1a/books/:path/
-  writing_1a:
-    output: true
-    permalink: /options/1a/writing-and-talks/:path/
-  books_2a:
-    output: true
-    permalink: /options/2a/books/:path/
-  writing_2a:
-    output: true
-    permalink: /options/2a/writing-and-talks/:path/
-  books_7a:
-    output: true
-    permalink: /options/7a/books/:path/
-  writing_7a:
-    output: true
-    permalink: /options/7a/writing-and-talks/:path/
+    permalink: /writing-and-talks/:path/
 
 defaults:
   - scope:
-      path: "options/3a"
+      path: ""
       type: "pages"
     values:
-      layout: "default-3a"
-      variant: "3a"
+      layout: "default"
   - scope:
       path: ""
-      type: "books_3a"
+      type: "books"
     values:
-      layout: "book-3a"
-      variant: "3a"
+      layout: "book"
   - scope:
       path: ""
-      type: "writing_3a"
+      type: "writing"
     values:
-      layout: "writing-entry-3a"
-      variant: "3a"
-  - scope:
-      path: "options/1a"
-      type: "pages"
-    values:
-      layout: "default-1a"
-      variant: "1a"
-  - scope:
-      path: ""
-      type: "books_1a"
-    values:
-      layout: "book-1a"
-      variant: "1a"
-  - scope:
-      path: ""
-      type: "writing_1a"
-    values:
-      layout: "writing-entry-1a"
-      variant: "1a"
-  - scope:
-      path: "options/2a"
-      type: "pages"
-    values:
-      layout: "default-2a"
-      variant: "2a"
-  - scope:
-      path: ""
-      type: "books_2a"
-    values:
-      layout: "book-2a"
-      variant: "2a"
-  - scope:
-      path: ""
-      type: "writing_2a"
-    values:
-      layout: "writing-entry-2a"
-      variant: "2a"
-  - scope:
-      path: "options/7a"
-      type: "pages"
-    values:
-      layout: "default-7a"
-      variant: "7a"
-  - scope:
-      path: ""
-      type: "books_7a"
-    values:
-      layout: "book-7a"
-      variant: "7a"
-  - scope:
-      path: ""
-      type: "writing_7a"
-    values:
-      layout: "writing-entry-7a"
-      variant: "7a"
+      layout: "writing-entry"
 
 plugins:
   - jekyll-seo-tag

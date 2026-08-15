@@ -1,0 +1,50 @@
+{% if include.slug %}
+{% assign items = site.data.endorsements[include.slug] %}
+{% assign title = include.title | default: "Endorsements" %}
+{% assign item_label = include.item_label | default: "endorsement" %}
+{% else %}
+{% assign items = include.list %}
+{% assign title = include.title %}
+{% assign item_label = include.item_label | default: "testimonial" %}
+{% endif %}
+{% if items and items.size > 0 %}
+<section class="testimonial-band">
+  {% if title %}<h2 class="section-title testimonial-band__title">{{ title }}</h2>{% endif %}
+  {% if items.size > 1 %}
+  <div class="carousel" data-carousel>
+    <div class="carousel__track" data-carousel-track>
+      {% for item in items %}
+      <div class="carousel__slide" data-carousel-slide>
+        <div class="testimonial">
+          <div class="testimonial__mark">&ldquo;</div>
+          <div class="testimonial__quote">{{ item.quote }}</div>
+          <div class="testimonial__source">&mdash; {{ item.source }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="carousel__controls">
+      <button type="button" class="carousel__arrow carousel__arrow--prev" data-carousel-prev aria-label="Previous {{ item_label }}">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12.5 8H3.5M3.5 8L7.5 4M3.5 8L7.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel__dots" data-carousel-dots role="tablist" aria-label="{{ title | default: item_label | capitalize }}">
+        {% for item in items %}
+        <button type="button" class="carousel__dot" data-carousel-dot role="tab" aria-label="Show {{ item_label }} {{ forloop.index }}"></button>
+        {% endfor %}
+      </div>
+      <button type="button" class="carousel__arrow carousel__arrow--next" data-carousel-next aria-label="Next {{ item_label }}">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  {% else %}
+  {% for item in items %}
+  <div class="testimonial">
+    <div class="testimonial__mark">&ldquo;</div>
+    <div class="testimonial__quote">{{ item.quote }}</div>
+    <div class="testimonial__source">&mdash; {{ item.source }}</div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</section>
+{% endif %}
