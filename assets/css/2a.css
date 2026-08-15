@@ -188,9 +188,7 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--navy-deep); margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 540px;
-  background-image: radial-gradient(var(--navy-pale) 1px, transparent 1px);
-  background-size: 16px 16px;
-  background-color: oklch(98% 0.003 240);
+  background: radial-gradient(140% 100% at 10% 0%, var(--bg-softer) 0%, var(--bg-soft) 35%, var(--bg) 70%);
 }
 
 .hero__bubbles {

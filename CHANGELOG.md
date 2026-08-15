@@ -2,6 +2,12 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Hero background: smooth gradient instead of dot grid (Option 2 / "2a")
+
+### Client feedback on the hero bubble background
+- Client feedback: the hero's background was still showing the old fine dot-grid texture instead of a smooth gradient wash, so the floating bubbles didn't read cleanly against it.
+- Replaced `.hero`'s `background-image: radial-gradient(var(--navy-pale) 1px, transparent 1px)` dot-grid pattern in `assets/css/2a.css` with a single soft radial gradient (`var(--bg-softer)` → `var(--bg-soft)` → `var(--bg)`, anchored upper-left) using existing background tokens — no new colors introduced. The floating bubble canvas (`hero-bubbles.js`, added previously) is unaffected and still renders on top.
+
 ## 2026-08-14 — Floating bubble background on the homepage hero (Option 2 / "2a")
 
 ### Ambient hero animation
