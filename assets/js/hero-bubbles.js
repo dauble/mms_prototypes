@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var canvas = hero && hero.querySelector('.hero__bubbles');
   if (!hero || !canvas) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia && window.matchMedia('(max-width: 900px)').matches) return;
 
   var ctx = canvas.getContext('2d');
   if (!ctx) return;

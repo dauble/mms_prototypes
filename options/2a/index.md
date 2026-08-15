@@ -27,7 +27,7 @@ permalink: /options/2a/
   </div>
   {% if featured_book.cover %}
   <div class="hero__cover">
-    <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" loading="lazy">
+    <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" fetchpriority="high" decoding="async">
   </div>
   {% else %}
   <div class="hero__cover placeholder-block">
@@ -63,7 +63,7 @@ permalink: /options/2a/
 
 <section class="about-teaser-section">
   <div class="about-teaser wrap">
-    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-teaser__photo">
+    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-teaser__photo" loading="lazy" decoding="async">
     <div class="about-teaser__panel">
       <div class="eyebrow about-teaser__eyebrow">About Marcia</div>
       <p class="about-teaser__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
