@@ -32,9 +32,9 @@ permalink: /options/2a/contact/
     <input type="hidden" name="form-name" value="contact-2a">
     <input type="hidden" name="redirect" value="{{ '/options/2a/contact/' | relative_url }}">
     <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
-    <input type="text" name="name" placeholder="Name" required style="background:var(--bg-soft)">
-    <input type="email" name="email" placeholder="Email" required style="background:var(--bg-soft)">
-    <textarea name="message" placeholder="Message" rows="4" required style="background:var(--bg-soft)"></textarea>
+    <input type="text" name="name" placeholder="Name" aria-label="Name" required style="background:var(--bg-soft)">
+    <input type="email" name="email" placeholder="Email" aria-label="Email" required style="background:var(--bg-soft)">
+    <textarea name="message" placeholder="Message" aria-label="Message" rows="4" required style="background:var(--bg-soft)"></textarea>
     <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}"></div>
     <button type="submit" style="background:var(--navy);color:#fff">Send Message</button>
   </form>

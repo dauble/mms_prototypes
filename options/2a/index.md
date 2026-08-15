@@ -61,8 +61,8 @@ permalink: /options/2a/
   </div>
 </section>
 
-<section class="section wrap">
-  <div class="about-teaser">
+<section class="about-teaser-section">
+  <div class="about-teaser wrap">
     <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-teaser__photo">
     <div class="about-teaser__panel">
       <div class="eyebrow about-teaser__eyebrow">About Marcia</div>

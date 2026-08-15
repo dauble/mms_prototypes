@@ -2,6 +2,26 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Speaking page video/testimonials, accessibility pass, bubble lifecycle (Option 2 / "2a")
+
+### Speaking / consulting page ("Peace-ing Together Consulting")
+- Real hero photo committed (`assets/images/consulting/peace-ing-together-consult.png`), replacing the "PHOTO: full-bleed, royalty-free" placeholder label on `options/2a/peace-ing-together-consulting.md`'s hero.
+- Added a theater-style video modal: the speaking-reel block now plays a real YouTube video (`youtube-nocookie.com` embed, id `E85S4bQ2wYc`) in a centered, darkened overlay on click, instead of a non-functional play button over a striped placeholder. New `_includes/2a/video-modal.html` + `assets/js/video-modal.js` (registered in `_layouts/default-2a.html`); closes on Escape/backdrop click and restores focus to the trigger. The video block itself now shows a real YouTube thumbnail behind the play button.
+- Testimonials: generalized `_includes/2a/endorsements.html` so it can render either a book's endorsements by slug (existing behavior, unchanged) or an arbitrary `list=` with custom `title=`/`item_label=` params. New `_data/speaking_testimonials_2a.yml` (placeholder quote, same `{quote, source}` shape as `endorsements_2a.yml`) now drives the speaking page's testimonial section instead of a single hardcoded bracketed quote.
+
+### Accessibility pass (site-wide, Option 2a)
+- Fixed `_config.yml`'s `lang: en_US` → `lang: en-US` — `en_US` was never valid for the `<html lang>` attribute (needs BCP-47 hyphen form).
+- Added a "Skip to main content" link (`_layouts/default-2a.html` + `.skip-link` in `assets/css/2a.css`), visually hidden until keyboard-focused, targeting a new `id="main-content"` on `<main>`.
+- `--muted`/`--muted-2` text-color alpha raised from `.55`/`.45` to `.68`/`.55` in `assets/css/2a.css` so both meet WCAG AA's 4.5:1 contrast minimum on white (the old values fell short).
+- Contact and speaking-inquiry form fields (`options/2a/contact.md`, `peace-ing-together-consulting.md`) gained `aria-label`s matching their placeholders, so screen readers announce field purpose independent of placeholder text.
+- Internal review-only labels (e.g. the "PHOTO: ..." placeholder captions in `cta-band.html`) marked `aria-hidden="true"` where they're not meant to be user-facing content.
+
+### Hero bubble background: continuous spawn/despawn
+- `assets/js/hero-bubbles.js`: bubbles now continuously spawn and despawn (drifting between 16–32 on screen) with an elastic grow-in/shrink-out animation on birth/death, replacing the previous fixed set of 24 bubbles for the page's lifetime.
+
+### About Marcia teaser section
+- Wrapped `.about-teaser` in a new `.about-teaser-section` (soft background fill, dedicated vertical padding) on the homepage, replacing the generic `.section wrap` wrapper it was using.
+
 ## 2026-08-15 — Hero background: smooth gradient instead of dot grid (Option 2 / "2a")
 
 ### Client feedback on the hero bubble background

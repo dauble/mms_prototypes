@@ -10,8 +10,8 @@ permalink: /options/2a/peace-ing-together-consulting/
 
 <section>
   <div class="hero-photo">
+    <img src="{{ '/assets/images/consulting/peace-ing-together-consult.png' | relative_url }}" alt="" class="hero-photo__img">
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
-    <div class="hero-photo__label">PHOTO: full-bleed, royalty-free</div>
     <div class="hero-photo__content">
       <div class="eyebrow" style="color:oklch(75% 0.12 175);margin-bottom:16px">Peace-ing Together Consulting</div>
       <h1 style="font:700 42px/1.15 var(--font-serif);color:#fff;margin:0 auto 18px;max-width:640px">Sports, faith, and the body as a mirror for the issues of our time</h1>
@@ -45,10 +45,14 @@ permalink: /options/2a/peace-ing-together-consulting/
 
 <section class="section--tight wrap">
   <h2 class="section-title">Watch Marcia Speak</h2>
-  <div class="video-block">
-    <button class="play-button" type="button" aria-label="Play speaking reel"></button>
-  </div>
+  <button type="button" class="video-block" data-video-trigger data-youtube-id="E85S4bQ2wYc" aria-haspopup="dialog">
+    <img src="https://img.youtube.com/vi/E85S4bQ2wYc/hq2.jpg" alt="" class="video-block__thumb" loading="lazy">
+    <span class="play-button" aria-hidden="true"></span>
+    <span class="sr-only">Play speaking reel</span>
+  </button>
 </section>
+
+{% include 2a/video-modal.html %}
 
 <section class="section--tight wrap">
   <div class="past-engagements">
@@ -60,13 +64,7 @@ permalink: /options/2a/peace-ing-together-consulting/
   </div>
 </section>
 
-<section class="testimonial-band">
-  <div class="testimonial">
-    <div class="testimonial__mark">&ldquo;</div>
-    <div class="testimonial__quote">[A testimonial about Marcia's speaking or facilitation goes here.]</div>
-    <div class="testimonial__source">&mdash; [Name, Organization]</div>
-  </div>
-</section>
+{% include 2a/endorsements.html list=site.data.speaking_testimonials_2a %}
 
 <section class="inquiry" id="inquire">
   <div class="wrap inquiry__inner">
@@ -80,9 +78,9 @@ permalink: /options/2a/peace-ing-together-consulting/
       <input type="hidden" name="form-name" value="speaking-inquiry-2a">
       <input type="hidden" name="redirect" value="{{ '/options/2a/peace-ing-together-consulting/' | relative_url }}#inquire">
       <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="details" placeholder="Organization &amp; event details" rows="3" required></textarea>
+      <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+      <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+      <textarea name="details" placeholder="Organization &amp; event details" aria-label="Organization &amp; event details" rows="3" required></textarea>
       <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}"></div>
       <button type="submit">Send Inquiry</button>
     </form>

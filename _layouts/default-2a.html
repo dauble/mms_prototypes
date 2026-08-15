@@ -13,14 +13,16 @@
 {% include schema-person.html %}
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 {% include proto-bar.html %}
 {% include 2a/nav.html %}
-<main>
+<main id="main-content">
 {{ content }}
 </main>
 {% include 2a/footer.html %}
 <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/video-modal.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/hero-bubbles.js' | relative_url }}" defer></script>
 </body>
 </html>

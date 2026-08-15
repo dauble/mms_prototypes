@@ -5,7 +5,7 @@ description: >-
   live site — for client review of design directions only.
 url: "https://davidauble.com"
 baseurl: "/mms_prototypes"
-lang: en_US
+lang: en-US
 locale: en_US
 author:
   name: Marcia Mount Shoop
