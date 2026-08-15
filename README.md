@@ -81,9 +81,6 @@ Visit `http://localhost:4000`.
   here…]` throughout the collections marks real content Marcia still
   needs to supply.
 - **Social URLs**: update `social_links` in `_config.yml`.
-- **Turnstile key**: `turnstile_site_key` in `_config.yml` is currently
-  Cloudflare's always-pass test key — swap for a real site key before
-  launch.
 - **Before going live**: remove the `noindex` meta tag, and re-enable
   `jekyll-sitemap` + a real `llms.txt` (both were removed here since this
   hub isn't meant to be indexed).
