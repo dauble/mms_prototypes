@@ -7,15 +7,9 @@ Marcia, referred to as "marcia-headshot" — resolving the earlier open
 question about whether that homepage band should be a photo or a
 background/textured image.
 
-## Still pending (2026-08-13)
+## Committed
 
-The file arrived as a chat attachment and couldn't be committed — this
-environment can't read chat attachments from disk. Drop it in here as:
+- `marcia-headshot.jpg` — real photo, in use on both `options/2a/index.md` (`.about-teaser__photo`) and `options/2a/about.md` (`.about-split__photo`).
+- `marcia-headshot.webp` — WebP copy served via `<picture>`/`<source>` ahead of the `.jpg` fallback on both pages.
 
-- `marcia-headshot.jpg`
-
-Both `options/2a/index.md` and `options/2a/about.md` have a comment in
-place showing the exact `<img>` markup to swap in for the striped
-placeholder once the file lands here.
-
-Delete this README once the real file is in place.
+Nothing pending here — delete this README once no longer useful as a reference.

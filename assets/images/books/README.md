@@ -1,43 +1,30 @@
 # Book cover images
 
 `_books_2a/*.md` front matter points at real cover images here (see the
-`cover:` field in each book's front matter). The template code and CSS are
-wired up to render them, but the binary image files themselves need to be
-dropped into this folder before the `cover:` field is uncommented/added —
-they arrive as chat attachments, which this environment can't read from
-disk.
+`cover:` field in each book's front matter). All covers have now arrived
+and are committed, each as a JPEG/PNG original plus a `.webp` copy — the
+`<picture>` markup in `options/2a/index.md` and `_layouts/book-2a.html`
+serves the `.webp` version where supported (derived from the `cover:`
+path via a Liquid `replace` filter) and falls back to the original.
 
-## Already committed
+## Committed
 
-- `body-broken.png` — *A Body Broken, A Body Betrayed*
-- `let-the-bones-dance.jpg` — *Let the Bones Dance*
-- `touchdowns-for-jesus.jpg` — *Touchdowns for Jesus and Other Signs of Apocalypse*
+- `body-broken.png` / `.webp` — *A Body Broken, A Body Betrayed*
+- `let-the-bones-dance.jpg` / `.webp` — *Let the Bones Dance*
+- `touchdowns-for-jesus.jpg` / `.webp` — *Touchdowns for Jesus and Other Signs of Apocalypse*
+- `erotic-faith.jpeg` / `.webp` — *Erotic Faith: Desire, Transformation, and Beloved Community in the Incarnational Theology of Wendy Farley*
+- `encountering-the-sacred.jpeg` / `.webp` — *Encountering the Sacred: Feminist Reflections on Women's Lives*
+- `faithfully-feminist.jpg` / `.webp` — *Faithfully Feminist: Jewish, Christian, & Muslim Feminists on Why We Stay*
+- `feasting-on-the-word.jpeg` / `.webp` — *Feasting on the Word: Preaching the Revised Common Lectionary, Year B, Volume 1*
+- `routledge-handbook.jpeg` / `.webp` — *The Routledge Handbook of Religion and the Body*
+- `sacraments-and-sacramentality.jpg` / `.webp` — *Companion to Sacraments and Sacramentality*
+- `trauma-and-transcendence.jpg` / `.webp` — *Trauma and Transcendence: Suffering and the Limits of Theory*
+- `parenting-as-spiritual-practice.jpg` / `.webp` — *Parenting as Spiritual Practice and Source for Theology*
+- `wide-open-spaces.jpg` / `.webp` — *Wide Open Spaces*
+- `women-writing-theology.jpg` / `.webp` — *Women, Writing, Theology: Transforming a Tradition of Exclusion*
 
-## Still pending (2026-08-13)
+## Still pending
 
-Covers for these four were shared as chat attachments but couldn't be
-committed. `_books_2a/*.md` for each has a commented-out `cover:` line
-ready to uncomment once the file lands at the path shown:
+- *Liberating Bodies* (forthcoming, on sale May 11, 2027) — no cover art yet; `_books_2a/liberating-bodies.md` has no `cover:` field, so its `hero__cover`/`book-card__cover` slots render the `placeholder-block` ("BOOK COVER") treatment by default.
 
-- `erotic-faith.jpg` — *Erotic Faith: Desire, Transformation, and Beloved
-  Community in the Incarnational Theology of Wendy Farley*
-- `encountering-the-sacred.jpg` — *Encountering the Sacred: Feminist
-  Reflections on Women's Lives*
-- `faithfully-feminist-anthology.jpg` — *Faithfully Feminist: Jewish,
-  Christian, & Muslim Feminists on Why We Stay*
-- `feasting-on-the-word.jpg` — *Feasting on the Word: Preaching the
-  Revised Common Lectionary, Year B, Volume 1*
-
-No cover art at all has been supplied yet for six other anthology/chapter
-entries added 2026-08-13 (*The Routledge Handbook of Religion and the
-Body*, *Companion to Sacraments and Sacramentality*, *Trauma and
-Transcendence: Suffering and the Limits of Theory*, *Parenting as
-Spiritual Practice and Source for Theology*, *Wide Open Spaces*, *Women,
-Writing, Theology: Transforming a Tradition of Exclusion*) — these were
-title-only requests with no image attached.
-
-Once a file is added (e.g. via the GitHub web UI's "Add file" on this
-branch/PR, or a follow-up commit) and its `cover:` line is uncommented,
-the placeholder `BOOK COVER` blocks on the homepage hero, book grids, and
-book detail pages automatically switch to the real `<img>` — no further
-template changes needed.
+Delete this README once *Liberating Bodies*' cover lands and every book has one.
