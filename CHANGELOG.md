@@ -2,6 +2,11 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Fix homepage About Marcia section layout regression (Option 2 / "2a")
+
+- The 2026-08-15 PageSpeed pass (`38b94f5`) wrapped `<img>`s in `<picture><source type="image/webp">…</picture>` and added `picture { display: contents; }` to `assets/css/2a.css` so the wrapper wouldn't affect layout. That combination triggers a Chromium quirk: a `<source>` inside a `display: contents` `<picture>` still generates an (empty) box and participates in layout, so it consumed a cell in the homepage About Marcia section's two-column CSS grid (`.about-teaser`) and pushed the photo and navy bio panel onto opposite corners instead of side-by-side.
+- Fixed by adding `source { display: none; }` next to the existing `picture`/`img` reset rules in `assets/css/2a.css`, restoring the intended photo/panel layout from `6e27c40`. Only `2a.css` uses `display: contents` on `picture`, so other options were unaffected.
+
 ## 2026-08-15 — Removed duplicate GitHub Pages deploy pipeline
 
 - The repo's GitHub Pages source was still set to the legacy "deploy from a branch" mode (`build_type: legacy`, branch `main`), which auto-builds and deploys via GitHub's own Jekyll build on every push — running in parallel with (and redundant to) the custom `.github/workflows/deploy.yml` Actions workflow that already handles the build/deploy correctly (proper `--baseurl`, `JEKYLL_ENV=production`). Run history showed both `pages-build-deployment` and `Deploy Jekyll site to GitHub Pages` firing on every merge to `main`.
