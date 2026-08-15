@@ -2,6 +2,13 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Eliminate render-blocking requests (Option 2 / "2a")
+
+- PageSpeed Insights (mobile) flagged three render-blocking requests on `/options/2a/` for an estimated 1,510ms of savings: `assets/css/2a.css` (7.6 KiB, ~500ms), `assets/css/proto-bar.css` (1.8 KiB, ~170ms), and the Google Fonts stylesheet (~780ms).
+- Both first-party stylesheets are now inlined directly into `<head>` instead of linked, removing those network round-trips entirely. Since Jekyll's built-in `include_relative` tag disallows `../` paths (both files live outside `_includes`), added a small custom Liquid tag (`_plugins/read_file_tag.rb`, `{% read_file %}`) that reads a file relative to the site source and prints its raw contents — used in `_layouts/default-2a.html` to inline `2a.css` and `proto-bar.css`.
+- The Google Fonts `<link>` now uses the standard preload/print-media-swap pattern (`rel="preload" as="style"` + `media="print" onload="this.media='all'"` + `<noscript>` fallback) so the font CSS loads asynchronously instead of blocking first paint.
+- Scoped to Option 2a only (the active/live variant); Options 1a/3a/7a are frozen comparison prototypes and still link their CSS/fonts normally.
+
 ## 2026-08-15 — Fix homepage About Marcia section layout regression (Option 2 / "2a")
 
 - The 2026-08-15 PageSpeed pass (`38b94f5`) wrapped `<img>`s in `<picture><source type="image/webp">…</picture>` and added `picture { display: contents; }` to `assets/css/2a.css` so the wrapper wouldn't affect layout. That combination triggers a Chromium quirk: a `<source>` inside a `display: contents` `<picture>` still generates an (empty) box and participates in layout, so it consumed a cell in the homepage About Marcia section's two-column CSS grid (`.about-teaser`) and pushed the photo and navy bio panel onto opposite corners instead of side-by-side.
