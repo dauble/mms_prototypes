@@ -27,9 +27,10 @@ direction the client has chosen.
    [CHANGELOG.md](CHANGELOG.md) for full detail):
    - Swapped Netlify Forms for a custom **Cloudflare Worker** backend
      (`cf-worker/`) since GitHub Pages can't run server-side code —
-     verifies Cloudflare Turnstile, checks a honeypot, emails
-     submissions via Resend, and redirects back with a success/error
-     status the page displays.
+     verifies Cloudflare Turnstile, checks a honeypot, validates the
+     expected Turnstile action + hostname, emails submissions via
+     Resend, and redirects back with a success/error status the page
+     displays.
    - Replaced text-abbreviation social icons with real inline SVG
      brand icons in the footer.
    - Gave testimonial quotes a contrasting full-width band background.

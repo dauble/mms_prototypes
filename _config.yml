@@ -26,9 +26,10 @@ affiliate_disclosure: >-
   qualifying purchases.
 
 # Cloudflare Turnstile site key for the contact/inquiry forms. Real
-# Site Key from the Cloudflare dashboard, paired with the
-# TURNSTILE_SECRET_KEY set on the cf-worker via `wrangler secret put`.
-# See cf-worker/README.md.
+# Site Key from the Cloudflare dashboard. The cf-worker validates the
+# returned action and hostname server-side and reads the matching Worker
+# secret from `TURNSTILE_SECRET` (preferred) or the legacy
+# `TURNSTILE_SECRET_KEY` binding. See cf-worker/README.md.
 turnstile_site_key: "0x4AAAAAAEQyGPxr98IJZP5r"
 
 # jekyll-seo-tag / jekyll-sitemap read these

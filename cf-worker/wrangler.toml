@@ -15,7 +15,9 @@ routes = [
 FROM_EMAIL = "forms@davidauble.com"
 TO_EMAIL = "CHANGE_ME@example.com"
 SITE_ORIGIN = "https://davidauble.com"
+TURNSTILE_HOSTNAMES = "davidauble.com"
 
 # Secrets (do NOT put these here — set via `wrangler secret put <NAME>`):
-#   TURNSTILE_SECRET_KEY
+#   TURNSTILE_SECRET (preferred)
+#   TURNSTILE_SECRET_KEY (legacy fallback)
 #   RESEND_API_KEY

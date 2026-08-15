@@ -84,7 +84,7 @@ permalink: /peace-ing-together-consulting/
       <input type="text" name="name" placeholder="Name" aria-label="Name" required>
       <input type="email" name="email" placeholder="Email" aria-label="Email" required>
       <textarea name="details" placeholder="Organization &amp; event details" aria-label="Organization &amp; event details" rows="3" required></textarea>
-      <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}"></div>
+      <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}" data-action="speaking-inquiry"></div>
       <button type="submit">Send Inquiry</button>
     </form>
   </div>
