@@ -18,11 +18,14 @@ layout: default-2a
   <div>
     {% if page.cover %}
     <div class="book-detail__cover">
-      <img src="{{ page.cover | relative_url }}"
-        alt="Book cover of &ldquo;{{ page.title }}&rdquo;{% if page.co_author %} by {{ site.author.name }} and {{ page.co_author }}{% endif %}"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <picture>
+        <source srcset="{{ page.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
+        <img src="{{ page.cover | relative_url }}"
+          alt="Book cover of &ldquo;{{ page.title }}&rdquo;{% if page.co_author %} by {{ site.author.name }} and {{ page.co_author }}{% endif %}"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
     </div>
     {% else %}
     <div class="book-detail__cover placeholder-block">
@@ -131,7 +134,10 @@ layout: default-2a
     <a class="book-card" href="{{ book.url | relative_url }}">
       {% if book.cover %}
       <div class="book-card__cover">
-        <img src="{{ book.cover | relative_url }}" alt="Book cover of &ldquo;{{ book.title }}&rdquo;" loading="lazy" />
+        <picture>
+          <source srcset="{{ book.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
+          <img src="{{ book.cover | relative_url }}" alt="Book cover of &ldquo;{{ book.title }}&rdquo;" loading="lazy" />
+        </picture>
       </div>
       {% else %}
       <div class="book-card__cover placeholder-block"></div>

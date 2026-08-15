@@ -14,7 +14,10 @@ permalink: /options/2a/about/
 
 <section class="section--tight wrap">
   <div class="about-split">
-    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia W. Mount Shoop" class="about-split__photo" fetchpriority="high" decoding="async">
+    <picture>
+      <source srcset="{{ '/assets/images/author/marcia-headshot.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia W. Mount Shoop" class="about-split__photo" fetchpriority="high" decoding="async">
+    </picture>
     <div class="about-split__copy">
       <div class="eyebrow" style="margin-bottom:14px">About Marcia</div>
       <p class="about-split__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>

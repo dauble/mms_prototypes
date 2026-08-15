@@ -2,6 +2,14 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Image optimization: WebP everywhere, further compression (Option 2 / "2a")
+
+### WebP copies for every real image
+- Every real photo/cover image now has a `.webp` sibling alongside its original: the author headshot (`assets/images/author/marcia-headshot.webp`), the consulting hero photo (`assets/images/consulting/peace-ing-together-consult.webp`), and all 12 book covers currently in `assets/images/books/` (including the four anthology covers — Erotic Faith, Encountering the Sacred, Faithfully Feminist, Feasting on the Word — that were still pending as of the 2026-08-13 entry below, plus the six previously cover-less anthology/chapter entries, which now all have art).
+- `<picture>`/`<source type="image/webp">` markup (added in the 2026-08-15 PageSpeed pass, `38b94f5`) already pointed at these paths via a Liquid `replace` filter on the `cover:` front-matter field (`.jpeg`/`.jpg`/`.png` → `.webp`) — those files are now actually present, so browsers that support WebP get it instead of falling back to the original.
+- Originals were compressed further in the same pass (e.g. the headshot JPEG dropped from ~1.2MB to ~189KB, the consulting PNG from ~640KB to ~554KB) on top of the initial compression pass from 2026-08-14.
+- `assets/images/books/README.md` and `assets/images/author/README.md` updated to drop the stale "still pending" lists (everything but *Liberating Bodies*' cover has now arrived) and note the new `.webp` files.
+
 ## 2026-08-15 — Speaking page video/testimonials, accessibility pass, bubble lifecycle (Option 2 / "2a")
 
 ### Speaking / consulting page ("Peace-ing Together Consulting")
