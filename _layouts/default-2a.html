@@ -6,6 +6,8 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/proto-bar.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/2a.css' | relative_url }}">
@@ -21,8 +23,8 @@
 </main>
 {% include 2a/footer.html %}
 <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/video-modal.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/hero-bubbles.js' | relative_url }}" defer></script>
+{% if page.layout == 'book-2a' or page.url == '/options/2a/peace-ing-together-consulting/' %}<script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>{% endif %}
+{% if page.url == '/options/2a/peace-ing-together-consulting/' %}<script src="{{ '/assets/js/video-modal.js' | relative_url }}" defer></script>{% endif %}
+{% if page.url == '/options/2a/' %}<script src="{{ '/assets/js/hero-bubbles.js' | relative_url }}" defer></script>{% endif %}
 </body>
 </html>

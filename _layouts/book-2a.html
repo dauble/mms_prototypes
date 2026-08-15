@@ -18,10 +18,10 @@ layout: default-2a
   <div>
     {% if page.cover %}
     <div class="book-detail__cover">
-      <img
-        src="{{ page.cover | relative_url }}"
+      <img src="{{ page.cover | relative_url }}"
         alt="Book cover of &ldquo;{{ page.title }}&rdquo;{% if page.co_author %} by {{ site.author.name }} and {{ page.co_author }}{% endif %}"
-        loading="lazy"
+        fetchpriority="high"
+        decoding="async"
       />
     </div>
     {% else %}
