@@ -2,6 +2,13 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Removed comparison prototypes, promoted "Navy Classic" to site root
+
+- The client has chosen "Navy Classic" (formerly "Option 2" / `2a`) as the final direction. The other three comparison prototypes (formerly "Option 1" / `1a` "Editorial Plum", "Option 3" / `3a` "Soft Rounded", "Option 4" / `7a` "Light & Airy Gradient") and the `/` gallery page that linked between them have been deleted entirely: `_books_1a`/`_books_3a`/`_books_7a`, `_writing_1a`/`_writing_3a`/`_writing_7a`, `options/1a`/`options/3a`/`options/7a`, `_includes/1a`/`_includes/3a`/`_includes/7a`, `_layouts/*-1a.html`/`*-3a.html`/`*-7a.html`, `assets/css/1a.css`/`3a.css`/`7a.css`, `index.html`, `assets/css/gallery.css`, `_data/options.yml`, and the shared "you are viewing prototype X" `_includes/proto-bar.html` + `assets/css/proto-bar.css` (no longer meaningful with only one design left).
+- Navy Classic's pages, collections, layouts, includes, and CSS were promoted from `/options/2a/...` to the site root: `options/2a/*.md` → root-level `*.md` (`/options/2a/books/` → `/books/`, etc.), `_books_2a`/`_writing_2a` → `_books`/`_writing` (collection permalinks updated to match), `_includes/2a/` → `_includes/`, `_layouts/{default,book,writing-entry}-2a.html` → `_layouts/{default,book,writing-entry}.html`, `assets/css/2a.css` → `assets/css/main.css`, and `_data/{endorsements,speaking_testimonials}_2a.yml` → `_data/{endorsements,speaking_testimonials}.yml`. `_config.yml`'s `collections:`/`defaults:` blocks collapsed to a single set (no more per-variant scoping).
+- Page titles that referenced the old comparison labeling (e.g. "Contact — Option 2") were cleaned up to just their plain names; the homepage's `<title>` changed from "Option 2 — Navy Classic" to "Marcia W. Mount Shoop".
+- Left as-is (out of scope for this pass): the Contact/consulting forms' internal `form-name` values (`contact-2a`, `speaking-inquiry-2a`) still carry the old `-2a` suffix since they're matched against `cf-worker/src/index.js`'s `ALLOWED_FORMS`, which isn't redeployed by CI — renaming them would need to be coordinated with a manual `wrangler deploy`. The site remains `noindex`/`nofollow` pending real launch.
+
 ## 2026-08-15 — Eliminate render-blocking requests (Option 2 / "2a")
 
 - PageSpeed Insights (mobile) flagged three render-blocking requests on `/options/2a/` for an estimated 1,510ms of savings: `assets/css/2a.css` (7.6 KiB, ~500ms), `assets/css/proto-bar.css` (1.8 KiB, ~170ms), and the Google Fonts stylesheet (~780ms).

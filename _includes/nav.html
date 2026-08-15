@@ -1,0 +1,12 @@
+<nav class="site-nav">
+  <a href="{{ '/' | relative_url }}" class="site-nav__brand">Marcia W. Mount Shoop</a>
+  <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" id="site-nav-toggle">Menu</button>
+  <div class="site-nav__links" id="site-nav-links">
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+    <a href="{{ '/books/' | relative_url }}" {% if page.url == '/books/' %}aria-current="page"{% endif %}>Books</a>
+    <a href="{{ '/peace-ing-together-consulting/' | relative_url }}" {% if page.url == '/peace-ing-together-consulting/' %}aria-current="page"{% endif %}>Peace-ing Together Consulting</a>
+    <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+  </div>
+  <a href="{{ '/books/liberating-bodies/' | relative_url }}" class="btn btn-light site-nav__cta">Get the New Book</a>
+</nav>

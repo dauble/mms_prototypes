@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="breadcrumb"><a href="{{ '/writing-and-talks/' | relative_url }}">Writing &amp; Talks</a> / {{ page.title }}</div>
+
+<section class="section wrap" style="max-width:760px">
+  <div class="talk-card__tag tag-{{ page.type }}" style="display:inline-block;margin-bottom:16px">{{ page.type_label }}</div>
+  <h1 style="font:700 36px/1.2 var(--font-serif);color:var(--navy-deep);margin:0 0 12px">{{ page.title }}</h1>
+  <div class="talk-card__meta" style="margin-bottom:26px">{{ page.meta }}</div>
+  <div class="prose">{{ content }}</div>
+</section>

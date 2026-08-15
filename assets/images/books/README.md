@@ -1,9 +1,9 @@
 # Book cover images
 
-`_books_2a/*.md` front matter points at real cover images here (see the
+`_books/*.md` front matter points at real cover images here (see the
 `cover:` field in each book's front matter). All covers have now arrived
 and are committed, each as a JPEG/PNG original plus a `.webp` copy — the
-`<picture>` markup in `options/2a/index.md` and `_layouts/book-2a.html`
+`<picture>` markup in `index.md` and `_layouts/book.html`
 serves the `.webp` version where supported (derived from the `cover:`
 path via a Liquid `replace` filter) and falls back to the original.
 
@@ -25,6 +25,6 @@ path via a Liquid `replace` filter) and falls back to the original.
 
 ## Still pending
 
-- *Liberating Bodies* (forthcoming, on sale May 11, 2027) — no cover art yet; `_books_2a/liberating-bodies.md` has no `cover:` field, so its `hero__cover`/`book-card__cover` slots render the `placeholder-block` ("BOOK COVER") treatment by default.
+- *Liberating Bodies* (forthcoming, on sale May 11, 2027) — no cover art yet; `_books/liberating-bodies.md` has no `cover:` field, so its `hero__cover`/`book-card__cover` slots render the `placeholder-block` ("BOOK COVER") treatment by default.
 
 Delete this README once *Liberating Bodies*' cover lands and every book has one.
