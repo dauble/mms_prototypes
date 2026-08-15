@@ -66,7 +66,7 @@ Options 1a/3a/7a still use Netlify Forms (`data-netlify` attributes) instead.
 
 ## CI/CD
 
-- `.github/workflows/deploy.yml` — builds with Jekyll (`JEKYLL_ENV=production`, baseurl from `actions/configure-pages`) and deploys to GitHub Pages on push to `main`
+- `.github/workflows/deploy.yml` — builds with Jekyll (`JEKYLL_ENV=production`, baseurl from `actions/configure-pages`) and deploys to GitHub Pages on push to `main`. This is the **only** thing that builds/deploys the site — the repo's Pages source is set to `"GitHub Actions"` (`build_type: workflow`), not the legacy "deploy from a branch" mode, so there's no second, competing build happening outside this workflow.
 - `.github/workflows/cloudflare-cache-purge.yml` — purges the Cloudflare CDN cache on merge to `main` (site is Cloudflare-proxied in front of GitHub Pages)
 - The Cloudflare Worker (`cf-worker/`) is **not** deployed by CI — it's deployed manually via `npx wrangler deploy` per `cf-worker/README.md`
 
