@@ -2,6 +2,12 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Turnstile live with real credentials
+
+- `turnstile_site_key` in `_config.yml` swapped from Cloudflare's always-pass test key to the real Site Key from the Cloudflare dashboard; the matching `TURNSTILE_SECRET_KEY` was set on `cf-worker` via `wrangler secret put` and the Worker redeployed (`npx wrangler deploy`), so the Contact and Peace-ing Together Consulting forms now run a real Turnstile challenge instead of an always-pass one.
+- `RESEND_API_KEY` and the placeholder `TO_EMAIL` in `cf-worker/wrangler.toml` are still outstanding — Turnstile verification will succeed but the notification email won't send until those are set.
+- `README.md`/`CLAUDE.md` updated to drop the now-stale "still the test key" notes.
+
 ## 2026-08-15 — Removed comparison prototypes, promoted "Navy Classic" to site root
 
 - The client has chosen "Navy Classic" (formerly "Option 2" / `2a`) as the final direction. The other three comparison prototypes (formerly "Option 1" / `1a` "Editorial Plum", "Option 3" / `3a` "Soft Rounded", "Option 4" / `7a` "Light & Airy Gradient") and the `/` gallery page that linked between them have been deleted entirely: `_books_1a`/`_books_3a`/`_books_7a`, `_writing_1a`/`_writing_3a`/`_writing_7a`, `options/1a`/`options/3a`/`options/7a`, `_includes/1a`/`_includes/3a`/`_includes/7a`, `_layouts/*-1a.html`/`*-3a.html`/`*-7a.html`, `assets/css/1a.css`/`3a.css`/`7a.css`, `index.html`, `assets/css/gallery.css`, `_data/options.yml`, and the shared "you are viewing prototype X" `_includes/proto-bar.html` + `assets/css/proto-bar.css` (no longer meaningful with only one design left).

@@ -56,7 +56,7 @@ GitHub Pages (the deploy target) serves static files only, so server-side form h
 
 The Contact and Peace-ing Together Consulting forms use `form-name` values `contact-2a` and `speaking-inquiry-2a` (matched against `cf-worker/src/index.js`'s `ALLOWED_FORMS`) — these are internal identifiers left over from when this design was "Option 2a"; harmless to leave as-is, but if you rename them, update both the form markup and the deployed Worker together (the Worker isn't deployed by CI, see below).
 
-`turnstile_site_key` in `_config.yml` is currently Cloudflare's always-pass test key (`1x00000000000000000000AA`) — intentional until a real Worker is deployed with the matching secret.
+`turnstile_site_key` in `_config.yml` is now the real Site Key, paired with `TURNSTILE_SECRET_KEY` set on the deployed Worker via `wrangler secret put`.
 
 ## CI/CD
 
