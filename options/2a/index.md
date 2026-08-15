@@ -12,6 +12,7 @@ permalink: /options/2a/
 {% unless featured_book %}{% assign featured_book = site.books_2a | first %}{% endunless %}
 
 <section class="hero">
+  <canvas class="hero__bubbles" aria-hidden="true"></canvas>
   <div class="hero__copy">
     <div class="hero__badge">{{ featured_book.badge_label | default: "New Release" }}</div>
     <h1 class="hero__title">{{ featured_book.title }}</h1>
@@ -60,13 +61,13 @@ permalink: /options/2a/
   </div>
 </section>
 
-<section class="section wrap">
-  <div class="about-split about-split--navy">
-    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-split__photo">
-    <div class="about-split__copy">
-      <div class="eyebrow">About Marcia</div>
-      <p class="about-split__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
-      <a class="about-split__link" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
+<section class="about-teaser-section">
+  <div class="about-teaser wrap">
+    <img src="{{ '/assets/images/author/marcia-headshot.jpg' | relative_url }}" alt="Marcia Mount Shoop" class="about-teaser__photo">
+    <div class="about-teaser__panel">
+      <div class="eyebrow about-teaser__eyebrow">About Marcia</div>
+      <p class="about-teaser__quote">Marcia engages with communities and writes about the multigenerational trauma of white supremacy and the ways it shows up in our bodies, relationships, communities, and institutions.</p>
+      <a class="about-teaser__link" href="{{ '/options/2a/about/' | relative_url }}">Read full bio &#8594;</a>
     </div>
   </div>
 </section>

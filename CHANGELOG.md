@@ -2,6 +2,48 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-15 — Speaking page video/testimonials, accessibility pass, bubble lifecycle (Option 2 / "2a")
+
+### Speaking / consulting page ("Peace-ing Together Consulting")
+- Real hero photo committed (`assets/images/consulting/peace-ing-together-consult.png`), replacing the "PHOTO: full-bleed, royalty-free" placeholder label on `options/2a/peace-ing-together-consulting.md`'s hero.
+- Added a theater-style video modal: the speaking-reel block now plays a real YouTube video (`youtube-nocookie.com` embed, id `E85S4bQ2wYc`) in a centered, darkened overlay on click, instead of a non-functional play button over a striped placeholder. New `_includes/2a/video-modal.html` + `assets/js/video-modal.js` (registered in `_layouts/default-2a.html`); closes on Escape/backdrop click and restores focus to the trigger. The video block itself now shows a real YouTube thumbnail behind the play button.
+- Testimonials: generalized `_includes/2a/endorsements.html` so it can render either a book's endorsements by slug (existing behavior, unchanged) or an arbitrary `list=` with custom `title=`/`item_label=` params. New `_data/speaking_testimonials_2a.yml` (placeholder quote, same `{quote, source}` shape as `endorsements_2a.yml`) now drives the speaking page's testimonial section instead of a single hardcoded bracketed quote.
+
+### Accessibility pass (site-wide, Option 2a)
+- Fixed `_config.yml`'s `lang: en_US` → `lang: en-US` — `en_US` was never valid for the `<html lang>` attribute (needs BCP-47 hyphen form).
+- Added a "Skip to main content" link (`_layouts/default-2a.html` + `.skip-link` in `assets/css/2a.css`), visually hidden until keyboard-focused, targeting a new `id="main-content"` on `<main>`.
+- `--muted`/`--muted-2` text-color alpha raised from `.55`/`.45` to `.68`/`.55` in `assets/css/2a.css` so both meet WCAG AA's 4.5:1 contrast minimum on white (the old values fell short).
+- Contact and speaking-inquiry form fields (`options/2a/contact.md`, `peace-ing-together-consulting.md`) gained `aria-label`s matching their placeholders, so screen readers announce field purpose independent of placeholder text.
+- Internal review-only labels (e.g. the "PHOTO: ..." placeholder captions in `cta-band.html`) marked `aria-hidden="true"` where they're not meant to be user-facing content.
+
+### Hero bubble background: continuous spawn/despawn
+- `assets/js/hero-bubbles.js`: bubbles now continuously spawn and despawn (drifting between 16–32 on screen) with an elastic grow-in/shrink-out animation on birth/death, replacing the previous fixed set of 24 bubbles for the page's lifetime.
+
+### About Marcia teaser section
+- Wrapped `.about-teaser` in a new `.about-teaser-section` (soft background fill, dedicated vertical padding) on the homepage, replacing the generic `.section wrap` wrapper it was using.
+
+## 2026-08-15 — Hero background: smooth gradient instead of dot grid (Option 2 / "2a")
+
+### Client feedback on the hero bubble background
+- Client feedback: the hero's background was still showing the old fine dot-grid texture instead of a smooth gradient wash, so the floating bubbles didn't read cleanly against it.
+- Replaced `.hero`'s `background-image: radial-gradient(var(--navy-pale) 1px, transparent 1px)` dot-grid pattern in `assets/css/2a.css` with a single soft radial gradient (`var(--bg-softer)` → `var(--bg-soft)` → `var(--bg)`, anchored upper-left) using existing background tokens — no new colors introduced. The floating bubble canvas (`hero-bubbles.js`, added previously) is unaffected and still renders on top.
+
+## 2026-08-14 — Floating bubble background on the homepage hero (Option 2 / "2a")
+
+### Ambient hero animation
+- Added a subtle canvas-based particle layer to the homepage hero (`options/2a/index.md`), behind the existing "Featured Book" copy/cover content: ~24 small circles (radius 2–20px, weighted toward smaller) drift slowly in random directions, wrap around the section edges, and gently part when the cursor comes within ~90px, easing back to their resting position once the cursor leaves.
+- New `assets/js/hero-bubbles.js`, following the site's existing vanilla-JS conventions (`DOMContentLoaded` + guard clauses, like `nav.js`/`carousel.js`); registered in `_layouts/default-2a.html` alongside the other deferred scripts.
+- Colors are read at runtime from the existing `--navy`/`--teal`/`--green`/`--coral` custom properties in `assets/css/2a.css` (at low alpha) rather than hardcoded, so the palette stays in sync with the design system automatically.
+- Respects `prefers-reduced-motion: reduce` (skips the animation entirely) and is scaled for `devicePixelRatio` so circles stay crisp on retina displays.
+- New `.hero__bubbles` canvas styling in `assets/css/2a.css`: absolutely positioned to fill `.hero`, `z-index: 0` so it sits behind the existing hero content, `pointer-events: none` so it never intercepts clicks.
+
+## 2026-08-14 — "About Marcia" section: layered overlap treatment (Option 2 / "2a")
+
+### Client feedback on the design-ref-5b section
+- Client feedback on the initial 5b build (below): wanted the navy panel taller than the photo, with the photo overlapping in front of it for a layered look, rather than the flush edge-to-edge box.
+- Replaced the `.about-split`/`.about-split--navy` reuse with a dedicated `.about-teaser` component in `assets/css/2a.css` (used only by `options/2a/index.md`) — the navy panel is taller than the photo and vertically centers it via CSS Grid `align-items: center`, and the photo overlaps ~64px into the panel with a drop shadow for depth. Overflow is intentionally not clipped (unlike `.about-split`'s bordered box) so the overlap can render. The About page's own flush `.about-split` block is untouched.
+- Square corners kept throughout, per the earlier intentional deviation from the reference's rounded corners.
+
 ## 2026-08-14 — Homepage "About Marcia" editorial section, design ref 5b (Option 2 / "2a")
 
 ### Two-column photo/navy-panel section
