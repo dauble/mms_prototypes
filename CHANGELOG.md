@@ -2,6 +2,12 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-17 — Homepage hero spotlight layout
+
+- Removed the homepage's animated bubble layer from the markup, stylesheet, and default layout script includes, replacing the radial-gradient/motion treatment with a quieter static hero background.
+- Wrapped the featured-book cover (and its placeholder fallback) in a new `.hero__cover-panel` with the existing sage background token so the homepage hero now reads as a left-copy/right-cover spotlight layout without changing any content or links.
+- On mobile, the new panel drops its extra padding so the existing single-column hero stack and cover spacing keep working naturally.
+
 ## 2026-08-15 — Turnstile live with real credentials
 
 - Hardened the existing Turnstile integration to match Cloudflare's canonical existing-widget flow: each protected form now sends an explicit `data-action` (`contact`, `speaking-inquiry`), and `cf-worker/src/index.js` now requires `success === true`, the expected action, and an allowed hostname from `TURNSTILE_HOSTNAMES` before mail delivery continues.

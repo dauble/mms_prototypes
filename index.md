@@ -12,7 +12,6 @@ permalink: /
 {% unless featured_book %}{% assign featured_book = site.books | first %}{% endunless %}
 
 <section class="hero">
-  <canvas class="hero__bubbles" aria-hidden="true"></canvas>
   <div class="hero__copy">
     <div class="hero__badge">{{ featured_book.badge_label | default: "New Release" }}</div>
     <h1 class="hero__title">{{ featured_book.title }}</h1>
@@ -26,16 +25,20 @@ permalink: /
     <a class="hero__link" href="{{ featured_book.url | relative_url }}">Learn more about this book &#8594;</a>
   </div>
   {% if featured_book.cover %}
-  <div class="hero__cover">
-    <picture>
-      <source srcset="{{ featured_book.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
-      <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" fetchpriority="high" decoding="async">
-    </picture>
+  <div class="hero__cover-panel">
+    <div class="hero__cover">
+      <picture>
+        <source srcset="{{ featured_book.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
+        <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
   </div>
   {% else %}
-  <div class="hero__cover placeholder-block">
-    {% if featured_book.cover_pending %}<span class="hero__cover-badge">Cover Coming Soon</span>{% endif %}
-    <span class="placeholder-label">BOOK COVER<br>{{ featured_book.title }}</span>
+  <div class="hero__cover-panel">
+    <div class="hero__cover placeholder-block">
+      {% if featured_book.cover_pending %}<span class="hero__cover-badge">Cover Coming Soon</span>{% endif %}
+      <span class="placeholder-label">BOOK COVER<br>{{ featured_book.title }}</span>
+    </div>
   </div>
   {% endif %}
 </section>
