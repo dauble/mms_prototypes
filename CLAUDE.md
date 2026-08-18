@@ -37,7 +37,7 @@ npx wrangler deploy    # deploy — registers the route in wrangler.toml
 - `assets/css/main.css` — the design system (colors, type, spacing)
 - `assets/js/nav.js` — mobile nav toggle + the Writing & Talks type filter
 - `assets/js/form-status.js` — reads `?sent=`/`?error=` from the URL and reveals the matching success/error banner (Cloudflare Worker-backed forms)
-- `assets/js/hero-bubbles.js`, `carousel.js`, `video-modal.js` — homepage hero background, book/testimonial carousels, and the speaking-page video modal, respectively
+- `assets/js/carousel.js`, `video-modal.js` — book/testimonial carousels and the speaking-page video modal, respectively (the homepage hero background is static CSS, no JS)
 
 `_config.yml`'s `defaults:` block wires page/collection types to their layout via `scope.type` — check there when a page isn't picking up the layout you expect.
 
