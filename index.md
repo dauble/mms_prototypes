@@ -11,7 +11,7 @@ permalink: /
 {% assign featured_book = site.books | where: "featured", true | first %}
 {% unless featured_book %}{% assign featured_book = site.books | first %}{% endunless %}
 
-<section class="hero hero--banded">
+<section class="hero">
   <div class="hero__copy">
     <div class="hero__badge">{{ featured_book.badge_label | default: "New Release" }}</div>
     <h1 class="hero__title">{{ featured_book.title }}</h1>
