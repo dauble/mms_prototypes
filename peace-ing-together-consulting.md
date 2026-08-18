@@ -12,7 +12,7 @@ permalink: /peace-ing-together-consulting/
   <div class="hero-photo">
     <picture>
       <source srcset="{{ '/assets/images/consulting/peace-ing-together-consult.webp' | relative_url }}" type="image/webp">
-      <img src="{{ '/assets/images/consulting/peace-ing-together-consult.png' | relative_url }}" alt="" class="hero-photo__img" fetchpriority="high" decoding="async">
+      <img src="{{ '/assets/images/consulting/peace-ing-together-consult.jpg' | relative_url }}" alt="" class="hero-photo__img" style="object-position:center 0" fetchpriority="high" decoding="async">
     </picture>
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
     <div class="hero-photo__content">
