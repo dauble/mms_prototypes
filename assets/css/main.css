@@ -203,18 +203,21 @@ h1, h2, h3 { font-family: var(--font-serif); color: var(--navy-deep); margin: 0;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 540px;
-  background: radial-gradient(140% 100% at 10% 0%, var(--bg-softer) 0%, var(--bg-soft) 35%, var(--bg) 70%);
+  align-items: end;
+  min-height: 520px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 55%, var(--bg-softer) 100%);
 }
 
-.hero__bubbles {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+.hero--banded .hero__copy {
+  padding-bottom: 64px;
+}
+
+.hero--banded .hero__cover {
+  align-self: end;
+  width: 300px;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 64px;
+  justify-self: center;
 }
 
 .hero__copy {

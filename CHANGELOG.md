@@ -2,6 +2,12 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-08-17 — Hero: removed floating bubbles, added Banded Field layout
+
+- Removed the animated `<canvas class="hero__bubbles">` from `index.md`, its deferred script `assets/js/hero-bubbles.js` (deleted), and the corresponding `<script>` tag in `_layouts/default.html`. The homepage hero is now fully static.
+- `.hero`'s background changed from a radial dot-gradient to three still tonal bands (`linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 55%, var(--bg-softer) 100%)`), evoking sky-to-ground; `.hero` now uses `align-items: end` with `min-height: 520px` (was 540px).
+- New `.hero--banded` modifier class on `index.md`'s `.hero` section aligns the title/copy and book cover to the bottom of the hero (`padding-bottom`/`margin-bottom: 64px`) so the cover sits low and grounded on the right instead of vertically centered. No content, copy, or links changed.
+
 ## 2026-08-15 — Turnstile live with real credentials
 
 - Hardened the existing Turnstile integration to match Cloudflare's canonical existing-widget flow: each protected form now sends an explicit `data-action` (`contact`, `speaking-inquiry`), and `cf-worker/src/index.js` now requires `success === true`, the expected action, and an allowed hostname from `TURNSTILE_HOSTNAMES` before mail delivery continues.
