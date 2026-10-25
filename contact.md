@@ -20,7 +20,7 @@ permalink: /contact/
     </div>
     <div class="contact-method">
       <div class="contact-method__title">Media &amp; Press</div>
-      <div class="contact-method__desc">For interview requests or press materials, use the form below and note "Media" in your message.</div>
+      <div class="contact-method__desc">For interviews, book events, or press materials about <em>Embodying Antiracist Christianity</em>, use the form below and note "Media" or "Book Event" in your message.</div>
     </div>
   </div>
 </section>

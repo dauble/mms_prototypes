@@ -25,6 +25,6 @@ path via a Liquid `replace` filter) and falls back to the original.
 
 ## Still pending
 
-- *Liberating Bodies* (forthcoming, on sale May 11, 2027) — no cover art yet; `_books/liberating-bodies.md` has no `cover:` field, so its `hero__cover`/`book-card__cover` slots render the `placeholder-block` ("BOOK COVER") treatment by default.
+- *Embodying Antiracist Christianity* (forthcoming from Penguin Random House, preorder live, no on-sale date confirmed yet) — formerly titled *Liberating Bodies*. No cover art yet; the client's 2026-10-25 feedback said a cover image was attached but it didn't come through with the message. `_books/embodying-antiracist-christianity.md` has no `cover:` field, so its `hero__cover`/`book-card__cover` slots render the `placeholder-block` ("BOOK COVER") treatment by default.
 
-Delete this README once *Liberating Bodies*' cover lands and every book has one.
+Delete this README once *Embodying Antiracist Christianity*'s cover lands and every book has one.

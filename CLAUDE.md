@@ -48,7 +48,7 @@ npx wrangler deploy    # deploy — registers the route in wrangler.toml
 - Book front matter (`_books/*.md`) also supports a `press:` list (array of `{quote, source}`) rendered directly in `book.html`, separate from the `endorsements.yml` data file.
 - `amazon_url` / `bookshop_url` / `bn_url` in book front matter are affiliate links — keep real ones intact when editing.
 - Bracketed copy like `[Marcia's fuller description goes here…]` and `# TODO` comments throughout collections/pages mark real content still pending from the client — don't fill these in with invented copy.
-- `assets/images/books/README.md` and `assets/images/author/README.md` document expected image filenames and the exact markup to uncomment once a real asset is dropped in — cover art is still pending for a couple of entries (e.g. *Liberating Bodies*).
+- `assets/images/books/README.md` and `assets/images/author/README.md` document expected image filenames and the exact markup to uncomment once a real asset is dropped in — cover art is still pending for a couple of entries (e.g. *Embodying Antiracist Christianity*, formerly titled *Liberating Bodies*).
 
 ## Forms / backend
 

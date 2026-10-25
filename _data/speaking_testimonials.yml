@@ -3,5 +3,9 @@
 # as endorsements.yml. Add more entries here to turn on the carousel —
 # don't fabricate quotes; leave bracketed placeholders until real copy
 # arrives from the client.
-- quote: "[A testimonial about Marcia's speaking or facilitation goes here.]"
-  source: "[Name, Organization]"
+#
+# Per client feedback 2026-10-25: using a book endorsement (also in
+# endorsements.yml under embodying-antiracist-christianity) as the
+# testimonial here until a speaking/facilitation-specific one arrives.
+- quote: "Marcia Mount Shoop simultaneously inspires and challenges us to break free from harmful cultures and oppressive systems, including those that exist within our familiar Christian traditions, so that we may dream of and build a better world together."
+  source: "Dr. William Yoo, Columbia Presbyterian Seminary, Atlanta, GA"
