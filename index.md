@@ -25,16 +25,20 @@ permalink: /
     <a class="hero__link" href="{{ featured_book.url | relative_url }}">Learn more about this book &#8594;</a>
   </div>
   {% if featured_book.cover %}
-  <div class="hero__cover">
-    <picture>
-      <source srcset="{{ featured_book.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
-      <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" fetchpriority="high" decoding="async">
-    </picture>
+  <div class="hero__cover-panel">
+    <div class="hero__cover">
+      <picture>
+        <source srcset="{{ featured_book.cover | replace: '.jpeg', '.webp' | replace: '.jpg', '.webp' | replace: '.png', '.webp' | relative_url }}" type="image/webp">
+        <img src="{{ featured_book.cover | relative_url }}" alt="Book cover of &ldquo;{{ featured_book.title }}&rdquo;" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
   </div>
   {% else %}
-  <div class="hero__cover placeholder-block">
-    {% if featured_book.cover_pending %}<span class="hero__cover-badge">Cover Coming Soon</span>{% endif %}
-    <span class="placeholder-label">BOOK COVER<br>{{ featured_book.title }}</span>
+  <div class="hero__cover-panel">
+    <div class="hero__cover placeholder-block">
+      {% if featured_book.cover_pending %}<span class="hero__cover-badge">Cover Coming Soon</span>{% endif %}
+      <span class="placeholder-label">BOOK COVER<br>{{ featured_book.title }}</span>
+    </div>
   </div>
   {% endif %}
 </section>
