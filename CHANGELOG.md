@@ -12,6 +12,12 @@ All notable changes made during feedback/iteration sessions on this prototype si
 - **Peace-ing Together Consulting page**: hero headline and subhead reworded per client copy; "Sports Reform" program renamed "Sports and Culture Change"; "Congregational Consulting" renamed "Consulting" with new description; "Past Engagements" list replaced with Vanderbilt Divinity School, Wake Forest Divinity School, The Society of Christian Ethics, and The Presbytery of Denver Colorado; "Watch Marcia Speak" now embeds the client's supplied YouTube video (`eu9A8NLwhsY`) in place of the old placeholder reel.
 - **Contact page**: the "Media & Press" tile now explicitly mentions book events and interviews about the new title, answering the client's question about whether the page should call that out — flagged for their confirmation rather than added as a new third tile (the contact-methods grid is a fixed 2-column layout).
 
+## 2026-10-25 — Hero: Spotlight layout
+
+- Replaced the homepage hero's radial-gradient background with a plain background, and wrapped the featured-book cover (and its placeholder fallback) in a new `.hero__cover-panel` with a soft sage (`--bg-soft`) fill — content stays left, cover sits large and quiet on the right.
+- On mobile, the new panel drops its extra padding so the existing single-column hero stack and cover spacing keep working naturally.
+- No content, copy, or links changed; `.hero__copy`, `.hero__badge`, `.hero__title`, `.hero__desc`, `.hero__actions`, `.hero__note`, `.hero__link`, and `.hero__cover` sizing/shadow rules are untouched.
+
 ## 2026-08-17 — Hero: removed floating bubble animation
 
 - Removed the animated `<canvas class="hero__bubbles">` from `index.md`, its deferred script `assets/js/hero-bubbles.js` (deleted), and the corresponding `<script>` tag in `_layouts/default.html`. The homepage hero is now fully static.
