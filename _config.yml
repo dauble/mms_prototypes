@@ -19,7 +19,6 @@ social_links:
   # link (footer, follow-along, Talks page) as well as the "GCPC Podcast" link.
   youtube: "https://www.youtube.com/@GCPCUSA/podcasts"
   substack: "https://marciawhitneymountshoop.substack.com/"
-  threads: "https://www.threads.net/@mountshoop"
 
 affiliate_disclosure: >-
   As an Amazon Associate and Bookshop.org affiliate, Marcia earns from
@@ -42,7 +41,6 @@ social:
     - "https://www.facebook.com/TheRev.MarciaMountShoopPhD"
     - "https://www.instagram.com/mountshoop/"
     - "https://www.youtube.com/@GCPCUSA/podcasts"
-    - "https://www.threads.net/@mountshoop"
 
 collections:
   books:

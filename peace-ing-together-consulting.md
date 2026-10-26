@@ -17,8 +17,8 @@ permalink: /peace-ing-together-consulting/
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
     <div class="hero-photo__content">
       <div class="eyebrow" style="color:oklch(75% 0.12 175);margin-bottom:16px">Peace-ing Together Consulting</div>
-      <h1 style="font:700 42px/1.15 var(--font-serif);color:#fff;margin:0 auto 18px;max-width:640px">Sports, faith, and the body as a mirror for the issues of our time</h1>
-      <p style="font:400 16px/1.7 var(--font-sans);color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 30px">Marcia visits campuses, congregations, and community contexts to unpack how race, gender, higher education, and religion shape American life.</p>
+      <h1 style="font:700 42px/1.15 var(--font-serif);color:#fff;margin:0 auto 18px;max-width:640px">Bodies, trauma, faith, sports, and collective transformation as windows and mirrors for the most pressing issues of our time</h1>
+      <p style="font:400 16px/1.7 var(--font-sans);color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 30px">Marcia engages with campuses, congregations, and community contexts to explore how race, gender, culture, and religion shape American life.</p>
       <a class="btn btn-light" href="#inquire" style="box-shadow:0 10px 26px rgba(0,0,0,.35)">Book Marcia to Speak</a>
     </div>
   </div>
@@ -28,7 +28,7 @@ permalink: /peace-ing-together-consulting/
   <h2 class="section-title">Programs &amp; Topics</h2>
   <div class="programs-grid">
     <div class="program-card">
-      <div class="program-card__title">Sports Reform</div>
+      <div class="program-card__title">Sports and Culture Change</div>
       <div class="program-card__desc">How race, gender, and power play out on the field — and what that mirrors back to us as a society.</div>
     </div>
     <div class="program-card program-card--green">
@@ -40,16 +40,16 @@ permalink: /peace-ing-together-consulting/
       <div class="program-card__desc">Theological reflection on trauma, healing, and the wisdom carried in the body.</div>
     </div>
     <div class="program-card">
-      <div class="program-card__title">Congregational Consulting</div>
-      <div class="program-card__desc">Facilitation for churches working through difficult transitions and difference.</div>
+      <div class="program-card__title">Consulting</div>
+      <div class="program-card__desc">Facilitation for faith communities working through difficult transitions, challenging conversations, conflict and liberative visioning.</div>
     </div>
   </div>
 </section>
 
 <section class="section--tight wrap">
   <h2 class="section-title">Watch Marcia Speak</h2>
-  <button type="button" class="video-block" data-video-trigger data-youtube-id="E85S4bQ2wYc" aria-haspopup="dialog">
-    <img src="https://img.youtube.com/vi/E85S4bQ2wYc/hq2.jpg" alt="" class="video-block__thumb" loading="lazy">
+  <button type="button" class="video-block" data-video-trigger data-youtube-id="eu9A8NLwhsY" aria-haspopup="dialog">
+    <img src="https://img.youtube.com/vi/eu9A8NLwhsY/hq2.jpg" alt="" class="video-block__thumb" loading="lazy">
     <span class="play-button" aria-hidden="true"></span>
     <span class="sr-only">Play speaking reel</span>
   </button>
@@ -63,7 +63,7 @@ permalink: /peace-ing-together-consulting/
     <div class="past-engagements__rule"></div>
   </div>
   <div class="past-engagements__names">
-    <span>Union Presbyterian Seminary</span><span>Wake Forest University</span><span>Montreat Conference Center</span><span>Presbyterian Church (U.S.A.)</span>
+    <span>Vanderbilt Divinity School</span><span>Wake Forest Divinity School</span><span>The Society of Christian Ethics</span><span>The Presbytery of Denver Colorado</span>
   </div>
 </section>
 

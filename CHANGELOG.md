@@ -2,6 +2,16 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-10-25 — New book title, social links, and consulting-page copy
+
+- **Book retitled**: `_books/liberating-bodies.md` renamed to `_books/embodying-antiracist-christianity.md`. New title *Embodying Antiracist Christianity: Trauma, Transformation, and Liberation in the Church*, now published by Penguin Random House (was North Atlantic Books). Vendor buttons replaced with "Preorder now from Penguin Random House" (primary) and "Preorder on Amazon," linking to the client's supplied URLs. `formats`, `badge_label`, and `on_sale_date` were dropped rather than carried over or guessed — none are confirmed for the new title. `category` updated to "Theology · Antiracism & Liberation." The book's description/excerpt and body copy are left as bracketed pending-content placeholders (per this repo's convention) since no new blurb was supplied — only title/author/vendor info came in. Updated the "Get the New Book" nav link and `_data/endorsements.yml`'s key accordingly.
+  - **Cover image**: the client's message said one was attached, but it didn't come through — `cover_pending: true` stays set until it's resent.
+- **Endorsement added**: a quote from Dr. William Yoo (Columbia Presbyterian Seminary) added to `_data/endorsements.yml` under the new book slug, and also used as the testimonial on the Peace-ing Together Consulting page (`_data/speaking_testimonials.yml`), replacing its placeholder.
+- **Threads removed** from `_config.yml` (`social_links.threads`, `social.links`), the footer social-icon row, and the Follow Along section/copy — client doesn't plan to use it.
+- **About page** (via the shared `_includes/cta-band.html`, also used on Books/Press/Talks/Contact/Consulting): "Book-Related Events" description updated to "Retreats, readings, book signings, and discussion groups." and "Peace-ing Together Consulting" to "Facilitating, learning labs, and project work on race, embodiment, trauma, and collective transformation."
+- **Peace-ing Together Consulting page**: hero headline and subhead reworded per client copy; "Sports Reform" program renamed "Sports and Culture Change"; "Congregational Consulting" renamed "Consulting" with new description; "Past Engagements" list replaced with Vanderbilt Divinity School, Wake Forest Divinity School, The Society of Christian Ethics, and The Presbytery of Denver Colorado; "Watch Marcia Speak" now embeds the client's supplied YouTube video (`eu9A8NLwhsY`) in place of the old placeholder reel.
+- **Contact page**: the "Media & Press" tile now explicitly mentions book events and interviews about the new title, answering the client's question about whether the page should call that out — flagged for their confirmation rather than added as a new third tile (the contact-methods grid is a fixed 2-column layout).
+
 ## 2026-10-25 — Hero: Spotlight layout
 
 - Replaced the homepage hero's radial-gradient background with a plain background, and wrapped the featured-book cover (and its placeholder fallback) in a new `.hero__cover-panel` with a soft sage (`--bg-soft`) fill — content stays left, cover sits large and quiet on the right.

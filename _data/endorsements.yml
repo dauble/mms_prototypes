@@ -7,10 +7,15 @@
 #
 # - Backlist endorsements (Let the Bones Dance, Touchdowns for Jesus,
 #   A Body Broken A Body Betrayed) received from the client 2026-08-13.
-# - Liberating Bodies endorsements still expected mid-October 2026 —
-#   left empty.
+# - Liberating Bodies was retitled to Embodying Antiracist Christianity
+#   per client feedback 2026-10-25 (now with Penguin Random House);
+#   the one endorsement received so far (also used as the speaking-page
+#   testimonial, see speaking_testimonials.yml) is below. Add more as
+#   they come in.
 
-liberating-bodies: []
+embodying-antiracist-christianity:
+  - quote: "Marcia Mount Shoop simultaneously inspires and challenges us to break free from harmful cultures and oppressive systems, including those that exist within our familiar Christian traditions, so that we may dream of and build a better world together."
+    source: "Dr. William Yoo, Columbia Presbyterian Seminary, Atlanta, GA"
 
 let-the-bones-dance:
   - quote: "Beautifully written and deeply felt. This work offers a vivid theology relocated in the flesh and blood of life's utter physicality. Finally a book to recommend when people ask about resources on bodies and theology."
