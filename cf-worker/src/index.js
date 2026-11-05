@@ -3,6 +3,10 @@ const FORM_CONFIG = {
   "speaking-inquiry-2a": { action: "speaking-inquiry" },
 };
 
+// Allowed values for the "Type of Inquiry" dropdown; anything else is
+// reported as "Not specified" rather than echoed into the email.
+const INQUIRY_TYPES = new Set(["Speaking", "Books", "Consulting"]);
+
 function getExpectedHostnames(env) {
   return new Set(
     (env.TURNSTILE_HOSTNAMES ?? "")
@@ -98,6 +102,8 @@ export default {
 
     const name = (formData.get("name") || "").toString().slice(0, 200);
     const email = (formData.get("email") || "").toString().slice(0, 200);
+    const rawInquiryType = (formData.get("inquiry_type") || "").toString();
+    const inquiryType = INQUIRY_TYPES.has(rawInquiryType) ? rawInquiryType : "Not specified";
     const message = (formData.get("message") || formData.get("details") || "")
       .toString()
       .slice(0, 5000);
@@ -112,8 +118,8 @@ export default {
         from: env.FROM_EMAIL,
         to: env.TO_EMAIL,
         reply_to: email || undefined,
-        subject: `New message via ${formName} — ${name || "no name given"}`,
-        text: `Form: ${formName}\nName: ${name}\nEmail: ${email}\n\n${message}`,
+        subject: `New ${inquiryType === "Not specified" ? "" : `${inquiryType} `}inquiry via ${formName} — ${name || "no name given"}`,
+        text: `Form: ${formName}\nType of Inquiry: ${inquiryType}\nName: ${name}\nEmail: ${email}\n\n${message}`,
       }),
     });
 

@@ -13,7 +13,7 @@ routes = [
 # Where notification emails are sent from/to. FROM_EMAIL's domain must
 # be verified in Resend before mail will actually send.
 FROM_EMAIL = "forms@davidauble.com"
-TO_EMAIL = "CHANGE_ME@example.com"
+TO_EMAIL = "dauble2k5@gmail.com"
 SITE_ORIGIN = "https://davidauble.com"
 TURNSTILE_HOSTNAMES = "davidauble.com"
 

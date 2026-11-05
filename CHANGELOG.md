@@ -2,6 +2,26 @@
 
 All notable changes made during feedback/iteration sessions on this prototype site are logged here, newest first. This log (dated entries) is the versioning convention for this project — there's no separate semver number.
 
+## 2026-11-04 — Removed CTA band placeholder label
+
+- Removed the leftover "PHOTO: speaking engagement — full-bleed" placeholder label from the shared CTA band (`_includes/cta-band.html`), which sits above the footer on About, Books, Press, Talks, Contact, and Consulting. Also deleted its now-unused `.cta-band__label` rule from `assets/css/main.css`. The band's background, scrim, copy, and Inquire button are unchanged.
+
+## 2026-11-04 — "Type of Inquiry" dropdown on contact forms
+
+- Added a required **Type of Inquiry** `<select name="inquiry_type">` (Speaking / Books / Consulting) to both site forms: the Contact page (`contact.md`) and the Peace-ing Together Consulting inquiry form (`peace-ing-together-consulting.md`). It sits between Email and the message field. It follows the forms' existing placeholder-style pattern: "Type of Inquiry" is a disabled first option, plus an `aria-label`, and there's no separate visible label.
+- `assets/css/main.css`: `.inquiry__form select` now shares the input/textarea styling, with a custom chevron and placeholder-grey text until a choice is made.
+- `cf-worker/src/index.js`: the Worker now reads `inquiry_type`, checks it against an allowlist (anything else becomes "Not specified"), and includes it in the notification email's subject and body. **The Worker is not deployed by CI.** Until `npx wrangler deploy` is run, the deployed Worker silently drops the field (the forms still submit fine).
+
+## 2026-11-04 — Consulting hero photo replaced
+
+- Replaced the Peace-ing Together Consulting hero photo with the client-supplied image (a facilitated circle gathering, 11/1/26). Resized from the 5712×4284 original to 1536×1152 (same 1536px width as the previous hero), stripped metadata, and overwrote `assets/images/consulting/peace-ing-together-consult.jpg` (~310 KB) and `.webp` (~220 KB) in place so the existing `<picture>` markup needs no path changes.
+- Changed the hero image's inline `object-position` from `center 0` to `center 70%`. The new photo is taller (4:3 vs. 3:2), and the people are in its lower half, so top-anchoring the wide hero crop would have shown only the ceiling.
+
+## 2026-11-04 — Cover art for *Embodying Antiracist Christianity*
+
+- Added the client-supplied cover as `assets/images/books/embodying-antiracist-christianity.jpg` (348×522, matching the other covers' 522px height and 2:3 ratio) plus a `.webp` copy for the existing `<picture>` markup. `_books/embodying-antiracist-christianity.md` now sets `cover:` in place of `cover_pending: true`, so the homepage hero, book cards, and book detail page show the real cover (the "Cover Coming Soon" badge is gone).
+- Deleted `assets/images/books/README.md`, as it said to do once every book had a cover.
+
 ## 2026-10-25 — New book title, social links, and consulting-page copy
 
 - **Book retitled**: `_books/liberating-bodies.md` renamed to `_books/embodying-antiracist-christianity.md`. New title *Embodying Antiracist Christianity: Trauma, Transformation, and Liberation in the Church*, now published by Penguin Random House (was North Atlantic Books). Vendor buttons replaced with "Preorder now from Penguin Random House" (primary) and "Preorder on Amazon," linking to the client's supplied URLs. `formats`, `badge_label`, and `on_sale_date` were dropped rather than carried over or guessed — none are confirmed for the new title. `category` updated to "Theology · Antiracism & Liberation." The book's description/excerpt and body copy are left as bracketed pending-content placeholders (per this repo's convention) since no new blurb was supplied — only title/author/vendor info came in. Updated the "Get the New Book" nav link and `_data/endorsements.yml`'s key accordingly.
