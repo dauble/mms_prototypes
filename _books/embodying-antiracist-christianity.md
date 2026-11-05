@@ -4,12 +4,11 @@ date: 2026-10-25
 category: "Theology · Antiracism & Liberation"
 featured: true
 new_release: true
-cover_pending: true
+cover: /assets/images/books/embodying-antiracist-christianity.jpg
 # Title changed from "Liberating Bodies: Collective Transformation in a
 # 21st Century Whitelash" per client feedback 2026-10-25 — now published
 # by Penguin Random House (was North Atlantic Books) under this new
-# title. Cover image was referenced as "attached" in that feedback but
-# didn't come through — cover_pending stays true until the file arrives.
+# title. Cover image arrived 2026-11-04.
 # No confirmed on-sale date yet, so badge_label/on_sale_date are left
 # unset (badge defaults to "New Release" — consider "Preorder Now"
 # once there's a firmer date). formats dropped (Hardcover/eBook/audio

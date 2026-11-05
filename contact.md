@@ -34,6 +34,12 @@ permalink: /contact/
     <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
     <input type="text" name="name" placeholder="Name" aria-label="Name" required style="background:var(--bg-soft)">
     <input type="email" name="email" placeholder="Email" aria-label="Email" required style="background:var(--bg-soft)">
+    <select name="inquiry_type" aria-label="Type of Inquiry" required style="background-color:var(--bg-soft)">
+      <option value="" disabled selected>Type of Inquiry</option>
+      <option value="Speaking">Speaking</option>
+      <option value="Books">Books</option>
+      <option value="Consulting">Consulting</option>
+    </select>
     <textarea name="message" placeholder="Message" aria-label="Message" rows="4" required style="background:var(--bg-soft)"></textarea>
     <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}" data-action="contact"></div>
     <button type="submit" style="background:var(--navy);color:#fff">Send Message</button>

@@ -12,7 +12,7 @@ permalink: /peace-ing-together-consulting/
   <div class="hero-photo">
     <picture>
       <source srcset="{{ '/assets/images/consulting/peace-ing-together-consult.webp' | relative_url }}" type="image/webp">
-      <img src="{{ '/assets/images/consulting/peace-ing-together-consult.jpg' | relative_url }}" alt="" class="hero-photo__img" style="object-position:center 0" fetchpriority="high" decoding="async">
+      <img src="{{ '/assets/images/consulting/peace-ing-together-consult.jpg' | relative_url }}" alt="" class="hero-photo__img" style="object-position:center 70%" fetchpriority="high" decoding="async">
     </picture>
     <div class="hero-photo__scrim" style="background:linear-gradient(180deg,rgba(8,16,34,.55) 0%,rgba(8,16,34,.9) 100%)"></div>
     <div class="hero-photo__content">
@@ -83,6 +83,12 @@ permalink: /peace-ing-together-consulting/
       <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="name" placeholder="Name" aria-label="Name" required>
       <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+      <select name="inquiry_type" aria-label="Type of Inquiry" required>
+        <option value="" disabled selected>Type of Inquiry</option>
+        <option value="Speaking">Speaking</option>
+        <option value="Books">Books</option>
+        <option value="Consulting">Consulting</option>
+      </select>
       <textarea name="details" placeholder="Organization &amp; event details" aria-label="Organization &amp; event details" rows="3" required></textarea>
       <div class="cf-turnstile" data-sitekey="{{ site.turnstile_site_key }}" data-action="speaking-inquiry"></div>
       <button type="submit">Send Inquiry</button>
